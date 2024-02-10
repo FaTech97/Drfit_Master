@@ -2,26 +2,30 @@
 using UnityEngine.UI;
 using Zenject;
 
-namespace _GAME.scripts.Architecture.Architecture
+namespace _GAME.scripts.Architecture.Architecture.Services.LevelServices
 {
-    public class LevelStartInstaller: MonoInstaller
+    public class LevelEnviromentInstaller: MonoInstaller
     {
-        private LevelEvents _events;
         private WindowService _windowService;
 
         [Inject]
         private void Construct(WindowService windowService)
         {
             _windowService = windowService;
-            InstantiateCanvas();
+            InstantiateRootCanvasForWindows();
         }
    
         public override void InstallBindings()
         {
-            Container.Bind<LevelEvents>().AsSingle().NonLazy();
+            BindLevelEvents();
         }
-   
-        private void InstantiateCanvas()
+
+        private void BindLevelEvents()
+        {
+            Container.Bind<LevelEvents>().AsSingle();
+        }
+
+        private void InstantiateRootCanvasForWindows()
         {
             GameObject go = Instantiate(new GameObject("UI Root"));
             Canvas canvas = go.AddComponent<Canvas>();

@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using _GAME.scripts.Architecture.Architecture;
 using _GAME.scripts.Architecture.Architecture.Persistanse_Service;
+using _GAME.scripts.Architecture.Architecture.Services.LevelServices;
 using UnityEngine;
 using Zenject;
 

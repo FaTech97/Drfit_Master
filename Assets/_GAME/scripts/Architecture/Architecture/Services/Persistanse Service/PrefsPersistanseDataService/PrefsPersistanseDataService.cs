@@ -34,7 +34,7 @@
                 Data = progress;
                 return progress;
             }
-            catch (Exception e)
+            catch
             {
                 return new GameData();
             }

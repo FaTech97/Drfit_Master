@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace _GAME.scripts.Architecture.Architecture
+namespace _GAME.scripts.Architecture.Architecture.Services.LevelServices
 {
     class LevelEvents
     {
