@@ -35,6 +35,11 @@ namespace _GAME.scripts.Architecture.Architecture.Services.ScenesService
         {
             _sceneLoader.Load(levels[_currentLevelIndex].LevelName);
         }
+
+        public bool isNextLevelAvailable()
+        {
+            return _currentLevelIndex < levels.Count;
+        }
         
         public void GoToNextLevel()
         {

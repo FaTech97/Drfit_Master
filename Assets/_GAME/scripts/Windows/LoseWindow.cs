@@ -1,10 +1,6 @@
-using System.Collections;
-using System.Collections.Generic;
-using _GAME.scripts.Architecture.Architecture;
 using _GAME.scripts.Architecture.Architecture.Persistanse_Service;
 using _GAME.scripts.Architecture.Architecture.Services.ScenesService;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 using Zenject;
 
@@ -23,8 +19,7 @@ public class LoseWindow : WindowBase
         _levelManager = levelManager;
         _persistanseDataService = persistanseDataService;
     }
-
-
+    
     protected override void Initialize()
     {
         var HP = _persistanseDataService.Data.Player.PlayerHP;

@@ -57,7 +57,7 @@ namespace _GAME.scripts.Architecture.Architecture.Persistanse_Service
             LoadProgress();
             Initialization();
         }
-
+        
         public void DeleteProgress()
         {
             Data = new GameData();

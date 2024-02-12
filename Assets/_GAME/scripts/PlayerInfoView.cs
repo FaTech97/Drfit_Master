@@ -1,21 +1,24 @@
-﻿using System;
-using _GAME.scripts.Architecture.Architecture.Persistanse_Service;
+﻿using _GAME.scripts.Architecture.Architecture.Persistanse_Service;
+using _GAME.scripts.Architecture.Architecture.Services.ScenesService;
 using UnityEngine;
-using UnityEngine.Serialization;
 using UnityEngine.UI;
 using Zenject;
 
 namespace _GAME.scripts
 {
-    public class MoneyView: MonoBehaviour
+    public class PlayerInfoView: MonoBehaviour
     {
         [SerializeField] private Text counterText;
+        [SerializeField] private Text LevelText;
         private IPersistanseDataService _persistanseDataService;
+        private LevelManager _levelManager;
 
         [Inject]
-        private void Construct(IPersistanseDataService persistanseDataService)
+        private void Construct(LevelManager levelManager, IPersistanseDataService persistanseDataService)
         {
             _persistanseDataService = persistanseDataService;
+            _levelManager = levelManager;
+            LevelText.text = $"Уровень {_levelManager.GetLevelIndex() + 1}";
             RefreshCounterText();
         }
 
