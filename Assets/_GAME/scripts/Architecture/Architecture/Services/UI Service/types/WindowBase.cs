@@ -3,7 +3,7 @@ using UnityEngine.UI;
 
 public abstract class WindowBase : MonoBehaviour
 {
-    [SerializeField] private Button CloseButton;
+    [SerializeField] public Button CloseButton;
 
     private void Awake() =>
         OnAwake();
@@ -16,8 +16,6 @@ public abstract class WindowBase : MonoBehaviour
 
     public void Close()
     {
-        Time.timeScale = 1;
-        Debug.Log("Closed");
         OnDestroy();
     } 
 

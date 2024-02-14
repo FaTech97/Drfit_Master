@@ -6,6 +6,7 @@ public class WindowService
 {
     private UIFactory _uiFactory;
     private WindowBase activeWindow;
+    private bool isFirstSetRoot = true;
     
     [Inject]
     private void Construct(UIFactory uiFactory)
@@ -23,6 +24,7 @@ public class WindowService
         if (activeUI == null)
             throw new Exception($"[QWINO ERRROR] Could found UI with {id}. It doesn't found");
         activeWindow = activeUI;
+        Debug.Log(activeUI.name);
         return activeUI;
     }
 
@@ -32,5 +34,11 @@ public class WindowService
     public void SetRootObject(Transform go)
     {
         _uiFactory.SetRoot(go);
+        // TODO удалить костыль
+        if (isFirstSetRoot)
+        {
+            isFirstSetRoot = false;
+            Open(WindowId.Main);
+        }
     }
 }

@@ -35,6 +35,7 @@ namespace _GAME.scripts.Architecture.Architecture.Services
         {
             Container.Bind<UIFactory>().AsSingle();
             Container.BindInterfacesAndSelfTo<WindowService>().AsSingle();
+            
         }
     }
 }
