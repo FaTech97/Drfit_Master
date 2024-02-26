@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Linq;
 
 namespace _GAME.scripts.Architecture.Architecture.Persistanse_Service
 {
@@ -64,10 +65,24 @@ namespace _GAME.scripts.Architecture.Architecture.Persistanse_Service
             SaveProgress(Data);
         }
 
+        public void AddCar(string id)
+        {
+            GameData data = Data;
+            var carList = data.Player.BuysCarsIDs.ToList();
+            carList.Add(id);
+            data.Player.BuysCarsIDs = carList.ToArray();
+            Data = data;
+            SaveProgress(Data);
+        }
+
         protected abstract void Initialization();
+
         public abstract GameData LoadProgress();
+
         public abstract void SaveProgress(GameData gameData);
+
         public abstract void SetData(GameData newValue);
+
         public abstract GameData GetData();
     }
 }

@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 
 namespace _GAME.scripts.Architecture.Architecture.Persistanse_Service
 {
@@ -23,6 +24,7 @@ namespace _GAME.scripts.Architecture.Architecture.Persistanse_Service
         {
             public int Coins = 100;
             public int PlayerHP = 3;
+            public string[] BuysCarsIDs = new string[0];
         }
     }
 

@@ -180,11 +180,12 @@ GameObject:
   m_Component:
   - component: {fileID: 2863887956258460448}
   - component: {fileID: 1024801831055350199}
+  - component: {fileID: 3866163996272229903}
   - component: {fileID: 2468989158317706485}
   - component: {fileID: 3440624363306523904}
   - component: {fileID: 3056207935575331760}
   m_Layer: 5
-  m_Name: FreeBtn (1)
+  m_Name: Shop
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -218,6 +219,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2509406417905055184}
   m_CullTransparentMesh: 1
+--- !u!114 &3866163996272229903
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2509406417905055184}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d3a5e7bb651658b4889dec4175b38956, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ScemeName: Assets/_GAME/Scenes/Shop.unity
 --- !u!114 &2468989158317706485
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -10,7 +10,7 @@ public class ItemAnimation : MonoBehaviour
 
     private void Awake()
     {
-        initialPosition = transform.position;
+        initialPosition = transform.position - new Vector3(-100, 0 ,0);
     }
 
     private void Update()
