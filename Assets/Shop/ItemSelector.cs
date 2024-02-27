@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using _GAME.scripts.Architecture.Architecture.Persistanse_Service;
+using _GAME.scripts.Architecture.Architecture.Services.ScenesService;
 using UnityEngine;
 using UnityEngine.UI;
 using Zenject;
@@ -11,6 +12,7 @@ namespace Shop
     {
         [SerializeField] private Button prevButton;
         [SerializeField] private Button nextButton;
+        [SerializeField] private Button closeButton;
         [SerializeField] private Button BuyButton;
         [SerializeField] private string prefix;
         [SerializeField] private Text _priceText;
@@ -19,21 +21,29 @@ namespace Shop
         private int currentItemIndex;
         private List<ShopItemConfig> _items;
         private IPersistanseDataService _persistanseDataService;
+        private LevelManager _levelManager;
 
         [Inject]
-        private void Contruct(IPersistanseDataService persistanseDataService)
+        private void Contruct(IPersistanseDataService persistanseDataService, LevelManager levelManager)
         {
             _persistanseDataService = persistanseDataService;
+            _levelManager = levelManager;
         }
     
         private void Awake()
         {
             prevButton.onClick.AddListener(() => ChangeItem(-1));
             nextButton.onClick.AddListener(() => ChangeItem(1));
+            closeButton.onClick.AddListener(() => Close());
             BuyButton.onClick.AddListener(Buy);
             LoadAllConfigs();
             InstantiateAll();
             SelectItem(0);
+        }
+
+        private void Close()
+        {
+            this._levelManager.RestartCurrentLevel();
         }
 
         private void Buy()

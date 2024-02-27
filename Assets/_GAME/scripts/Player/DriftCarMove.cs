@@ -28,6 +28,7 @@ public class DriftCarMove : MonoBehaviour
     private LevelEvents _levelEvents;
     private WindowService _windowService;
     private IPersistanseDataService _persistanseDataService;
+    private bool _isDestoyed = false;
 
     [Inject]
     private void Construct(LevelEvents levelEvents, WindowService windowService,
@@ -46,12 +47,16 @@ public class DriftCarMove : MonoBehaviour
 
     public void DestroyCar(Vector3 damagePosition)
     {
-        MoveSpeed = 0;
-        MaxSpeed = 0;
-        _moveForce = Vector3.zero;
         PlayDamageEffect(damagePosition);
-        _persistanseDataService.SubscructHP();
-        _windowService.Open(WindowId.Fail);
+        if (!_isDestoyed)
+        {
+            _isDestoyed = true;
+            MoveSpeed = 0;
+            MaxSpeed = 0;
+            _moveForce = Vector3.zero;
+            _persistanseDataService.SubscructHP();
+            _windowService.Open(WindowId.Fail);   
+        }
     }
 
     private void PlayDamageEffect(Vector3 damagePosition)
