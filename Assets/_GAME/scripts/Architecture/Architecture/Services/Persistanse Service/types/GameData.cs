@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using Shop;
 
 namespace _GAME.scripts.Architecture.Architecture.Persistanse_Service
 {
@@ -23,8 +24,9 @@ namespace _GAME.scripts.Architecture.Architecture.Persistanse_Service
         public class PlayerData
         {
             public int Coins = 100;
-            public int PlayerHP = 3;
-            public string[] BuysCarsIDs = new string[0];
+            public int PlayerHP = 1;
+            public ItemId[] BuysItemsIDs = new ItemId[0];
+            public ItemId CurrectItemId = ItemId.DefaultItem;
         }
     }
 

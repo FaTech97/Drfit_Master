@@ -88,6 +88,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 48ea1787a4a64be8b01ce66335abb5a8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  YaObject: {fileID: 2211564899198745197, guid: caf9732433f4dc044845763962493607, type: 3}
   sceneLoader: {fileID: 7790223019379553948, guid: beb417fcdf54afa439baca8966bf15a7, type: 3}
   levelsList:
   - {fileID: 11400000, guid: 5ce51c4b3825371409c8ce6284d4122f, type: 2}

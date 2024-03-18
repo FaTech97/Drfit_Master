@@ -1,4 +1,6 @@
+using System;
 using _GAME.scripts.Architecture.Architecture.Persistanse_Service;
+using _GAME.scripts.Architecture.Architecture.Services.AdService;
 using _GAME.scripts.Architecture.Architecture.Services.ScenesService;
 using UnityEngine;
 using UnityEngine.UI;
@@ -12,11 +14,13 @@ public class LoseWindow : WindowBase
     [SerializeField] private Button FreeContinoeButton;
     private IPersistanseDataService _persistanseDataService;
     private LevelManager _levelManager;
+    private IAdService _adService;
 
     [Inject]
-    private void Construct(IPersistanseDataService persistanseDataService, LevelManager levelManager)
+    private void Construct(IPersistanseDataService persistanseDataService, LevelManager levelManager, IAdService adService)
     {
         _levelManager = levelManager;
+        _adService = adService;
         _persistanseDataService = persistanseDataService;
     }
     
@@ -55,18 +59,22 @@ public class LoseWindow : WindowBase
     
     private void ContinueForFree()
     {
-        // TODO create SceneLoader
         _levelManager.RestartCurrentLevel();
     }
 
     private void ContinueForRV()
     {
+        _adService.ShawReward(1234, AddLivesAndRestart);
+    }
+
+    private void AddLivesAndRestart()
+    {
+        _persistanseDataService.RefreshHP();
         _levelManager.RestartCurrentLevel();
     }
 
     private void ContinueForMonney()
     {
         _persistanseDataService.SpendMoney(30);
-        _levelManager.RestartCurrentLevel();
     }
 }

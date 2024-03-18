@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using System.Linq;
+using _GAME.scripts;
 using _GAME.scripts.Architecture.Architecture.Persistanse_Service;
 using _GAME.scripts.Architecture.Architecture.Services.ScenesService;
 using UnityEngine;
@@ -22,6 +23,7 @@ namespace Shop
         private List<ShopItemConfig> _items;
         private IPersistanseDataService _persistanseDataService;
         private LevelManager _levelManager;
+        private SizeAligner _sizeAligner;
 
         [Inject]
         private void Contruct(IPersistanseDataService persistanseDataService, LevelManager levelManager)
@@ -32,6 +34,7 @@ namespace Shop
     
         private void Awake()
         {
+            _sizeAligner = GetComponent<SizeAligner>();
             prevButton.onClick.AddListener(() => ChangeItem(-1));
             nextButton.onClick.AddListener(() => ChangeItem(1));
             closeButton.onClick.AddListener(() => Close());
@@ -74,15 +77,16 @@ namespace Shop
             for (int i = 0; i < transform.childCount; i++)
             {
                 transform.GetChild(i).gameObject.SetActive(i == _index);
-                if (_items[currentItemIndex].isOpen)
-                {
-                    MakeButtonIsOpen();
-                }
-                else
-                {
-                    _priceText.text = prefix + _items[_index].price + postfix;
-                    buttonText.text = "Купить";
-                }
+            }
+            _sizeAligner.AlignObjectSizeToColliderSize(transform.GetChild(currentItemIndex).gameObject);
+            if (_items[currentItemIndex].isOpen)
+            {
+                MakeButtonIsOpen();
+            }
+            else
+            {
+                _priceText.text = prefix + _items[_index].price + postfix;
+                buttonText.text = "Купить";
             }
         }
 
@@ -91,13 +95,14 @@ namespace Shop
             _priceText.text = "";
             buttonText.text = "Выбрать";
             BuyButton.onClick.RemoveListener(Buy);
-            BuyButton.onClick.RemoveListener(SetItem);
+            BuyButton.onClick.AddListener(SetItem);
             
         }
 
         private void SetItem()
         {
-            
+            _persistanseDataService.SetItem(_items[currentItemIndex].id);
+            _levelManager.RestartCurrentLevel();
         }
 
         public void ChangeItem(int _change)

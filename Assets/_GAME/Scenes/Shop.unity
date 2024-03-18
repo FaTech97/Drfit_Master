@@ -1425,6 +1425,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: LoseWindow
       objectReference: {fileID: 0}
+    - target: {fileID: 4641539174992209862, guid: 5f4b7d9f0786847439c479e6fca323fb, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5667239381494699198, guid: 5f4b7d9f0786847439c479e6fca323fb, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -1541,6 +1545,8 @@ GameObject:
   m_Component:
   - component: {fileID: 2100116460}
   - component: {fileID: 2100116461}
+  - component: {fileID: 2100116463}
+  - component: {fileID: 2100116462}
   m_Layer: 0
   m_Name: ShopSelector
   m_TagString: Untagged
@@ -1557,8 +1563,8 @@ Transform:
   m_GameObject: {fileID: 2100116459}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 0, y: 8.41, z: 0}
+  m_LocalScale: {x: 15.067536, y: 15.067536, z: 15.067536}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 931301150}
@@ -1583,6 +1589,39 @@ MonoBehaviour:
   _priceText: {fileID: 472261140}
   buttonText: {fileID: 818988214}
   postfix: $
+--- !u!65 &2100116462
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2100116459}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &2100116463
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2100116459}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 42d3087d688f440ab54527336d97e31b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2107813463
 GameObject:
   m_ObjectHideFlags: 0

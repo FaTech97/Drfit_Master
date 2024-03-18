@@ -1,30 +1,43 @@
-﻿namespace _GAME.scripts.Architecture.Architecture.Persistanse_Service.PrefsPersistanseDataService
+﻿using YG;
+
+namespace _GAME.scripts.Architecture.Architecture.Persistanse_Service.PrefsPersistanseDataService
 {
     public class YandexPersistentDataService : IPersistanseDataService
     {
         protected override void Initialization()
         {
-            // YandexGame.GetDataEvent += GetLoad;
+            YandexGame.GetDataEvent += GetLoad;
+        }
+        
+        private void GetLoad()
+        {
+            SetData(YandexGame.savesData.data);
         }
 
         public override GameData LoadProgress()
         {
-            throw new System.NotImplementedException();
+            if (YandexGame.Instance)
+            {
+                YandexGame.LoadProgress();
+            }
+
+            return Data;
         }
 
         public override void SaveProgress(GameData gameData)
         {
-            throw new System.NotImplementedException();
+            SetData(gameData);
+            YandexGame.SaveProgress();
         }
 
         public override void SetData(GameData newValue)
         {
-            throw new System.NotImplementedException();
+            YandexGame.savesData.data = newValue;
         }
 
         public override GameData GetData()
         {
-            throw new System.NotImplementedException();
+            return YandexGame.savesData.data ;
         }
     }
 }

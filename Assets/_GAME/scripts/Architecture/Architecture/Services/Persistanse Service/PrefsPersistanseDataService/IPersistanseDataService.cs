@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Linq;
+using Shop;
 
 namespace _GAME.scripts.Architecture.Architecture.Persistanse_Service
 {
@@ -22,6 +23,7 @@ namespace _GAME.scripts.Architecture.Architecture.Persistanse_Service
             GameData data = Data;
             data.Player.PlayerHP--;
             Data = data;
+            SaveProgress(Data);
         }
 
         public void RefreshHP()
@@ -29,6 +31,7 @@ namespace _GAME.scripts.Architecture.Architecture.Persistanse_Service
             GameData data = Data;
             data.Player.PlayerHP = GameConfig.PlayerMaxHp;
             Data = data;
+            SaveProgress(Data);
         }
 
         public void AddMoney(int coins)
@@ -43,7 +46,7 @@ namespace _GAME.scripts.Architecture.Architecture.Persistanse_Service
             GameData data = Data;
             data.Levels.CurrentLevelIndex = currentLevel;
             Data = data;
-            // SaveProgress(Data);
+            SaveProgress(Data);
         }
         
         public void SpendMoney(int count)
@@ -51,13 +54,14 @@ namespace _GAME.scripts.Architecture.Architecture.Persistanse_Service
             GameData data = Data;
             data.Player.Coins -= count;
             Data = data;
+            SaveProgress(Data);
         }
 
         public IPersistanseDataService()
         {
-            LoadProgress();
+            // LoadProgress();
             Initialization();
-        }
+        } 
         
         public void DeleteProgress()
         {
@@ -65,12 +69,23 @@ namespace _GAME.scripts.Architecture.Architecture.Persistanse_Service
             SaveProgress(Data);
         }
 
-        public void AddCar(string id)
+        public void AddCar(ItemId id)
         {
             GameData data = Data;
-            var carList = data.Player.BuysCarsIDs.ToList();
+            var carList = data.Player.BuysItemsIDs.ToList();
             carList.Add(id);
-            data.Player.BuysCarsIDs = carList.ToArray();
+            data.Player.BuysItemsIDs = carList.ToArray();
+            Data = data;
+            SaveProgress(Data);
+        }
+        
+        public void SetItem(ItemId id)
+        {
+            GameData data = Data;
+            var carList = data.Player.BuysItemsIDs.ToList();
+            carList.Add(id);
+            data.Player.BuysItemsIDs = carList.ToArray();
+            data.Player.CurrectItemId = id;
             Data = data;
             SaveProgress(Data);
         }
