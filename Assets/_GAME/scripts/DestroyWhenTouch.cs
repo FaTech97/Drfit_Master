@@ -20,7 +20,10 @@ public class DestroyWhenTouch : MonoBehaviour
             if (move.GetSpeed() > 10)
             {
                 _wasDestroyed = true;
-                _particles.Play();
+                if (_particles)
+                {
+                    _particles.Play();
+                }
                 _gui.SetActive(false);
                 OnWasDestroy?.Invoke(this);
                 Destroy(this.gameObject, 150);

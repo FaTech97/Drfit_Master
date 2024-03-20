@@ -381,6 +381,7 @@ GameObject:
   - component: {fileID: 4823195785374284813}
   - component: {fileID: 6395918916938753636}
   - component: {fileID: 5804803563802949577}
+  - component: {fileID: 162880167889515197}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -458,7 +459,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9a77f589aa8e8db429672da50975bf4b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  whileEffectPrefab: {fileID: 728645100867750683, guid: 5b5101fce2286894082bb87d093f211f, type: 3}
   GUI: {fileID: 5333021989041258029}
+--- !u!114 &162880167889515197
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2096770993339160301}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 42d3087d688f440ab54527336d97e31b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2451256167033897819
 GameObject:
   m_ObjectHideFlags: 0
@@ -1427,7 +1441,7 @@ Canvas:
   m_AdditionalShaderChannelsFlag: 0
   m_UpdateRectTransformForStandalone: 0
   m_SortingLayerID: 0
-  m_SortingOrder: 2
+  m_SortingOrder: 0
   m_TargetDisplay: 0
 --- !u!114 &2553450855445324397
 MonoBehaviour:

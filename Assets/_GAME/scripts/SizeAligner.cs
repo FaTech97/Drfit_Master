@@ -33,6 +33,10 @@ namespace _GAME.scripts
 
         public void AlignObjectSizeToColliderSize(GameObject newModel)
         {
+            if (_collider == null)
+            {
+                _collider = GetComponent<BoxCollider>();
+            }
             Transform transform = newModel.transform;
             transform.localPosition = _collider.center;
             float sizeComparedScale = _collider.size.magnitude / transform.localScale.magnitude;
