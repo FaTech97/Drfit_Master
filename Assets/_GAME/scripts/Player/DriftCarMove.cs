@@ -29,6 +29,15 @@ public class DriftCarMove : MonoBehaviour
     private WindowService _windowService;
     private IPersistanseDataService _persistanseDataService;
     private bool _isDestoyed = false;
+    
+    
+    private void OnCollisionEnter(Collision other)
+    {
+        if (other.collider.TryGetComponent(out DestroierItem driftCarMove))
+        {
+            this.DestroyCar(other.GetContact(0).point);
+        }
+    }
 
     [Inject]
     private void Construct(LevelEvents levelEvents, WindowService windowService,

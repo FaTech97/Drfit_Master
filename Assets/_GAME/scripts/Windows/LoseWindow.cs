@@ -27,20 +27,18 @@ public class LoseWindow : WindowBase
     protected override void Initialize()
     {
         var HP = _persistanseDataService.Data.Player.PlayerHP;
-        SetButtonVisible(HP  == 0);
-        if (HP == 0)
+        SetButtonVisible(HP  <= 0);
+        if (HP <= 0)
             lostHPTextBox.text = "Машина сломана!";
         else
             lostHPTextBox.text = $"Осталось {HP} жизней";
-        
-        ContinueForMonneyButton.onClick.AddListener(ContinueForMonney);
-        ContinueForRVButton.onClick.AddListener(ContinueForRV);
-        FreeContinoeButton.onClick.AddListener(ContinueForFree);
     }
 
     protected override void SubscribeUpdates()
     {
-        
+        ContinueForMonneyButton.onClick.AddListener(ContinueForMonney);
+        ContinueForRVButton.onClick.AddListener(ContinueForRV);
+        FreeContinoeButton.onClick.AddListener(ContinueForFree);
     }
 
     protected override void Cleanup()
@@ -75,6 +73,8 @@ public class LoseWindow : WindowBase
 
     private void ContinueForMonney()
     {
+        _persistanseDataService.RefreshHP(); 
         _persistanseDataService.SpendMoney(30);
+        _levelManager.RestartCurrentLevel();
     }
 }
