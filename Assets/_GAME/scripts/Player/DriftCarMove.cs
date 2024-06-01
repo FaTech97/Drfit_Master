@@ -30,7 +30,6 @@ public class DriftCarMove : MonoBehaviour
     private IPersistanseDataService _persistanseDataService;
     private bool _isDestoyed = false;
     
-    
     private void OnCollisionEnter(Collision other)
     {
         if (other.collider.TryGetComponent(out DestroierItem driftCarMove))
@@ -48,6 +47,12 @@ public class DriftCarMove : MonoBehaviour
         _persistanseDataService = persistanseDataService;
         _levelEvents.OnAllItemsGets += StopCar;
     }
+    
+    private void Start()
+    {
+        _windowService.Open(WindowId.Main);
+    }
+
 
     public void StartCar()
     {

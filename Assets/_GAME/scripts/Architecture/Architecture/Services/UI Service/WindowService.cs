@@ -1,11 +1,12 @@
 ﻿using System;
+using System.Collections.Generic;
 using UnityEngine;
 using Zenject;
 
 public class WindowService
 {
     private UIFactory _uiFactory;
-    private WindowBase activeWindow;
+    private Dictionary<WindowId, WindowBase> activeWindows = new Dictionary<WindowId, WindowBase>();
     private bool isFirstSetRoot = true;
     
     [Inject]
@@ -14,7 +15,13 @@ public class WindowService
         _uiFactory = uiFactory;
     }
     
-    public void Open(WindowId id) => CreateUI(id);
+    public void Open(WindowId id)
+    {
+        if (!IsWindowOpen(id))
+        {
+            CreateUI(id);
+        }
+    }
 
     public T Open<T>(WindowId id) where T:WindowBase => CreateUI(id) as T;
    
@@ -23,13 +30,29 @@ public class WindowService
         WindowBase activeUI = _uiFactory.CreateWindow(id);
         if (activeUI == null)
             throw new Exception($"[QWINO ERRROR] Could found UI with {id}. It doesn't found");
-        activeWindow = activeUI;
-        Debug.Log(activeUI.name);
+        SetWindow(id, activeUI);
         return activeUI;
     }
 
+    private void SetWindow(WindowId id, WindowBase activeUI)
+    {
+        Debug.Log("Closing " + id);
+        if (activeUI == null && IsWindowOpen(id))
+        { 
+            Debug.Log("Closing " + id);
+            activeWindows[id].Close();
+        }
+        activeWindows[id] = activeUI;
+    }
 
-    public void Close(WindowId id) => activeWindow.Close();
+    private bool IsWindowOpen(WindowId id)
+    {
+        WindowBase windowBase;
+        activeWindows.TryGetValue(id, out windowBase);
+        return windowBase != null;
+    }
+
+    public void Close(WindowId id) => SetWindow(id, null);
 
     public void SetRootObject(Transform go)
     {

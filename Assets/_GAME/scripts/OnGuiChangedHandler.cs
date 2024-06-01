@@ -66,27 +66,28 @@ public class OnGuiChangedHandler : MonoBehaviour
     private void SpawnWheelsShadow()
     {
         var _collider = GetComponent<BoxCollider>();
-        var leftSpawn = new Vector3(_collider.center.x - _collider.size.x / 2, _collider.center.y - _collider.size.y / 2,
-            _collider.center.z + _collider.size.z / 2);
-        var rightSpawn = new Vector3(_collider.center.x + _collider.size.x / 2, _collider.center.y - _collider.size.y / 2,
-            _collider.center.z + _collider.size.z / 2);
+        // FOR FRONT WHEELS EFFECT
+        // SpawnOneShadow(leftSpawn, "left");
+        // SpawnOneShadow(rightSpawn, "right");
+        // var leftSpawn = new Vector3(_collider.center.x - _collider.size.x / 2, _collider.center.y - _collider.size.y / 2,
+        //     _collider.center.z + _collider.size.z / 2);
+        // var rightSpawn = new Vector3(_collider.center.x + _collider.size.x / 2, _collider.center.y - _collider.size.y / 2,
+        //     _collider.center.z + _collider.size.z / 2);
         var leftBackSpawn = new Vector3(_collider.center.x - _collider.size.x / 2, _collider.center.y - _collider.size.y / 2,
             _collider.center.z - _collider.size.z / 2);
         var rightBackSpawn = new Vector3(_collider.center.x + _collider.size.x / 2, _collider.center.y - _collider.size.y / 2,
             _collider.center.z - _collider.size.z / 2);
-        SpawnOneShadow(leftSpawn, "left");
-        SpawnOneShadow(rightSpawn, "right");
         SpawnOneShadow(leftBackSpawn, "leftBack");
         SpawnOneShadow(rightBackSpawn, "rightBack");
     }
 
-    private void SpawnOneShadow(Vector3 leftSpawn, string name)
+    private void SpawnOneShadow(Vector3 spawnPosition, string name)
     {
-        GameObject leftObject =
+        GameObject newObject =
             Instantiate(whileEffectPrefab, Vector3.zero, Quaternion.identity);
-        leftObject.name = name;
-        leftObject.transform.parent = transform;
-        leftObject.transform.localPosition = leftSpawn;
-        leftObject.transform.parent = GUI.GetChild(0);
+        newObject.name = name;
+        newObject.transform.parent = transform;
+        newObject.transform.localPosition = spawnPosition;
+        newObject.transform.parent = transform.GetChild(0);
     }
 }
