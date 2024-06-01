@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: SppedRedCar
   m_EditorClassIdentifier: 
   id: 99
-  model: {fileID: 919132149155446097, guid: 81b583fc7ddc9494e8c36dbe43ed5fca, type: 3}
+  model: {fileID: 919132149155446097, guid: 9ab4a88afbfe4694c944c17822da9615, type: 3}
   price: 2000
   isOpen: 1

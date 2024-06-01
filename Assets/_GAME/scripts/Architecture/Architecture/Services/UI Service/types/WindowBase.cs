@@ -26,8 +26,7 @@ public abstract class WindowBase : MonoBehaviour
     {
         CloseButton?.onClick.AddListener(() =>
         {
-            Debug.Log("ONCLOSE");
-            Destroy(gameObject);
+            Close();
         });
     }
 
@@ -35,5 +34,8 @@ public abstract class WindowBase : MonoBehaviour
 
     protected virtual void SubscribeUpdates() {}
 
-    protected virtual void Cleanup() {}
+    protected virtual void Cleanup()
+    {
+        Destroy(gameObject);
+    }
 }
