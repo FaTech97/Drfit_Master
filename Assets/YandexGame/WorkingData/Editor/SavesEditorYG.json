@@ -4,11 +4,11 @@
       "IsAudioMute": false
     },
     "Levels": {
-      "CurrentLevelIndex": 1
+      "CurrentLevelIndex": 3
     },
     "Player": {
-      "Coins": 2010,
-      "PlayerHP": 3,
+      "Coins": 2600,
+      "PlayerHP": 1,
       "BuysItemsIDs": [
         99,
         99,
@@ -21,12 +21,17 @@
         99,
         99,
         99,
-        99
+        99,
+        8,
+        8,
+        5,
+        5,
+        3
       ],
-      "CurrectItemId": 99
+      "CurrectItemId": 3
     }
   },
-  "idSave": 206,
+  "idSave": 235,
   "isFirstSession": false,
   "language": "ru",
   "promptDone": false

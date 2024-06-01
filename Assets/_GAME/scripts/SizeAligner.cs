@@ -39,8 +39,8 @@ namespace _GAME.scripts
             }
             Transform transform = newModel.transform;
             transform.localPosition = _collider.center;
-            float sizeComparedScale = _collider.size.magnitude / transform.localScale.magnitude;
-            transform.localScale *= sizeComparedScale;
+            float sizeComparedScale = _collider.size.magnitude / (transform.localScale.magnitude * 1.5f);
+            newModel.transform.localScale *= sizeComparedScale;
         }
     }
 }

@@ -10,9 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ac5cd8301cd54e46a1dfb47f4dc6ee26, type: 3}
-  m_Name: SppedRedCar
+  m_Name: Taxi
   m_EditorClassIdentifier: 
-  id: 1
-  model: {fileID: 919132149155446097, guid: 61356750aa8824b49bd6c724f42ef8ac, type: 3}
-  price: 2000
-  isOpen: 1
+  id: 3
+  model: {fileID: 919132149155446097, guid: c005adb2b1aed014ba0aa85da9932104, type: 3}
+  price: 10
+  isOpen: 0

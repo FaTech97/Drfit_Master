@@ -86,10 +86,10 @@ public class DriftCarMove : MonoBehaviour
 
     private void Update()
     {
-        if (!_isStarted && Input.anyKey)
+        if (!_isStarted && (Input.GetKeyUp(KeyCode.W) || Input.GetKeyUp(KeyCode.Space) ||Input.GetKeyUp(KeyCode.D) || Input.GetKeyUp(KeyCode.LeftArrow) || Input.GetKeyUp(KeyCode.RightArrow)))
         {
             moveEducation.SetActive(false);
-            _windowService.Close(WindowId.Main);
+            CloseMain();
             StartCar();
         }
 
@@ -98,6 +98,11 @@ public class DriftCarMove : MonoBehaviour
             Move();
             Drift();
         }
+    }
+
+    public void CloseMain()
+    {
+        _windowService.Close(WindowId.Main);
     }
 
     public float GetSpeed()

@@ -334,14 +334,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: '[SceneInitializer]'
       objectReference: {fileID: 0}
-    - target: {fileID: 4823195785374284813, guid: 5108bfff638394e4c8276711a168ae14, type: 3}
-      propertyPath: Drag
-      value: 0.98
-      objectReference: {fileID: 0}
-    - target: {fileID: 4823195785374284813, guid: 5108bfff638394e4c8276711a168ae14, type: 3}
-      propertyPath: MoveSpeed
-      value: 130
-      objectReference: {fileID: 0}
     - target: {fileID: 9120537806146362447, guid: 5108bfff638394e4c8276711a168ae14, type: 3}
       propertyPath: m_LocalPosition.x
       value: 2
