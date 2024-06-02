@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using _GAME.scripts;
@@ -19,6 +20,8 @@ namespace Shop
         [SerializeField] private Text _priceText;
         [SerializeField] private Text buttonText;
         [SerializeField] private string postfix;
+        [SerializeField] private BoxesCounterViewer sizeViewer;
+        [SerializeField] private BoxesCounterViewer speedViewer;
         private int currentItemIndex;
         private List<ShopItemConfig> _items;
         private IPersistanseDataService _persistanseDataService;
@@ -66,6 +69,19 @@ namespace Shop
             }
         }
 
+        private void Update()
+        {
+            if (Input.GetKeyDown(KeyCode.A) || Input.GetKeyDown(KeyCode.LeftArrow))
+            {
+                ChangeItem(-1);
+            }
+            
+            if (Input.GetKeyDown(KeyCode.D) || Input.GetKeyDown(KeyCode.RightArrow))
+            {
+                ChangeItem(1);
+            }
+        }
+
         private void LoadAllConfigs() => 
             _items = Resources
                 .LoadAll<ShopItemConfig>("").ToList();
@@ -78,6 +94,8 @@ namespace Shop
             {
                 transform.GetChild(i).gameObject.SetActive(i == _index);
             }
+            speedViewer.SetCount(_items[currentItemIndex].speed);
+            sizeViewer.SetCount(_items[currentItemIndex].size);
             _sizeAligner.AlignObjectSizeToColliderSize(transform.GetChild(currentItemIndex).gameObject);
             if (_items[currentItemIndex].isOpen)
             {
@@ -107,6 +125,10 @@ namespace Shop
 
         public void ChangeItem(int _change)
         {
+            if ((currentItemIndex + _change > (_items.Count - 1)) || (currentItemIndex + _change < 0))
+            {
+                return;
+            }
             currentItemIndex += _change;
             SelectItem(currentItemIndex);
         }
