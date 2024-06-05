@@ -7,7 +7,7 @@
       "CurrentLevelIndex": 2
     },
     "Player": {
-      "Coins": 2800,
+      "Coins": 2860,
       "PlayerHP": 1,
       "BuysItemsIDs": [
         99,
@@ -33,7 +33,7 @@
       "CurrectItemId": 2
     }
   },
-  "idSave": 252,
+  "idSave": 259,
   "isFirstSession": false,
   "language": "ru",
   "promptDone": false

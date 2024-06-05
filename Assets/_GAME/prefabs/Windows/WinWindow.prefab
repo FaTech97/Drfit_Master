@@ -299,6 +299,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   CloseButton: {fileID: 0}
   nextLevelButton: {fileID: 9161660454515398470}
+  winText: {fileID: 5567569648497940063}
 --- !u!1 &6406998790815932232
 GameObject:
   m_ObjectHideFlags: 0
