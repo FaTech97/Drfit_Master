@@ -18,7 +18,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &6553671547271594065
 RectTransform:
   m_ObjectHideFlags: 0
@@ -379,6 +379,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5307085348381283876}
   - component: {fileID: 4823195785374284813}
+  - component: {fileID: 2617039255793362392}
   - component: {fileID: 6395918916938753636}
   - component: {fileID: 5804803563802949577}
   - component: {fileID: 162880167889515197}
@@ -427,6 +428,20 @@ MonoBehaviour:
   Drag: 0.98
   SteerAngle: 15
   Traction: 1
+--- !u!114 &2617039255793362392
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2096770993339160301}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 80d7e7be66cd4f1fbde77569cfb9c4ec, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  leftMoveButton: {fileID: 7472135067158821572}
+  rightMoveButton: {fileID: 1863668231805551798}
 --- !u!65 &6395918916938753636
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -990,6 +1005,7 @@ GameObject:
   - component: {fileID: 6666084723549465136}
   - component: {fileID: 7462984759991268799}
   - component: {fileID: 8511985532079784480}
+  - component: {fileID: 7472135067158821572}
   m_Layer: 0
   m_Name: left move
   m_TagString: Untagged
@@ -1098,6 +1114,19 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!114 &7472135067158821572
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5432743020965210260}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8e560eb2c6ba59a4ca885f9d22e78060, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pressing: 0
 --- !u!1 &5485761714201610410
 GameObject:
   m_ObjectHideFlags: 0
@@ -1345,6 +1374,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 5952334097608205661}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &6094786484506819926
 GameObject:
   m_ObjectHideFlags: 0
@@ -1455,6 +1496,7 @@ GameObject:
   - component: {fileID: 975942323313512827}
   - component: {fileID: 911644943677631500}
   - component: {fileID: 5873277962666644658}
+  - component: {fileID: 1863668231805551798}
   m_Layer: 0
   m_Name: right move
   m_TagString: Untagged
@@ -1563,6 +1605,19 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!114 &1863668231805551798
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6760198483251743164}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8e560eb2c6ba59a4ca885f9d22e78060, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pressing: 0
 --- !u!1 &6772595086288658214
 GameObject:
   m_ObjectHideFlags: 0

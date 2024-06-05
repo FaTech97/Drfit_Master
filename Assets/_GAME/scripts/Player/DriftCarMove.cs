@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using _GAME.scripts.Architecture.Architecture;
 using _GAME.scripts.Architecture.Architecture.Persistanse_Service;
+using _GAME.scripts.Architecture.Architecture.Services.InputService;
 using _GAME.scripts.Architecture.Architecture.Services.LevelServices;
 using UnityEngine;
 using UnityEngine.UI;
@@ -29,7 +30,8 @@ public class DriftCarMove : MonoBehaviour
     private WindowService _windowService;
     private IPersistanseDataService _persistanseDataService;
     private bool _isDestoyed = false;
-    
+    private IInputService _inputService;
+
     private void OnCollisionEnter(Collision other)
     {
         if (other.collider.TryGetComponent(out DestroierItem driftCarMove))
@@ -51,6 +53,7 @@ public class DriftCarMove : MonoBehaviour
     private void Start()
     {
         _windowService.Open(WindowId.Main);
+        _inputService = GetComponent<PCInput>();
     }
 
 
@@ -119,7 +122,7 @@ public class DriftCarMove : MonoBehaviour
 
     private void Drift()
     {
-        float steerInput = Input.GetAxis("Horizontal");
+        float steerInput = _inputService.MoveDirection;
         transform.Rotate(Vector3.up * steerInput * _moveForce.magnitude * SteerAngle * Time.deltaTime);
 
         // Сопротивление и ограничение максимальной скорости
