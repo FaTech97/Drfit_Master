@@ -16,3 +16,5 @@ MonoBehaviour:
   model: {fileID: 919132149155446097, guid: 9ab4a88afbfe4694c944c17822da9615, type: 3}
   price: 10
   isOpen: 0
+  size: 2
+  speed: 2

@@ -266,6 +266,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 590766465158107921, guid: dcd62405fe51d4247bc69b7ba97f3371, type: 3}
+      propertyPath: m_Constraints
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5187230428762047016, guid: dcd62405fe51d4247bc69b7ba97f3371, type: 3}
       propertyPath: m_Name
       value: Barrel

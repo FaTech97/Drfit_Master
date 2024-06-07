@@ -10,7 +10,7 @@ namespace Shop
         public GameObject model;
         public int price = 10;
         public bool isOpen = false;
-        public int size = 3;
-        public int speed = 3;
+        [Range(1,3)] public int size = 3;
+        [Range(1,3)] public int speed = 3;
     }
 }

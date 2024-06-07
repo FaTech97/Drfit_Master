@@ -5,6 +5,7 @@ using _GAME.scripts.Architecture.Architecture;
 using _GAME.scripts.Architecture.Architecture.Persistanse_Service;
 using _GAME.scripts.Architecture.Architecture.Services.InputService;
 using _GAME.scripts.Architecture.Architecture.Services.LevelServices;
+using Shop;
 using UnityEngine;
 using UnityEngine.UI;
 using Zenject;
@@ -19,8 +20,8 @@ public class DriftCarMove : MonoBehaviour
     [SerializeField] private Button RightButton;
 
     // Настройки
-    public float MoveSpeed = 50; // Скорость движения
-    public float MaxSpeed = 15; // Максимальная скорость
+    private float MoveSpeed = 1; // Скорость движения
+    private float MaxSpeed = 45; // Максимальная скорость
     public float Drag = 0.98f; // Сопротивление движению
     public float SteerAngle = 20; // Угол поворота
     public float Traction = 1; // Сцепление
@@ -31,6 +32,7 @@ public class DriftCarMove : MonoBehaviour
     private IPersistanseDataService _persistanseDataService;
     private bool _isDestoyed = false;
     private IInputService _inputService;
+    private ShopItemConfig carConfig;
 
     private void OnCollisionEnter(Collision other)
     {
@@ -115,8 +117,8 @@ public class DriftCarMove : MonoBehaviour
 
     private void Move()
     {
-        // Движение
-        _moveForce += transform.forward * MoveSpeed * 1 * Time.deltaTime;
+        // TechDept переписать логику дрифта с падением машинки
+        _moveForce += transform.forward * carConfig.speed * MoveSpeed;
         transform.position += _moveForce * Time.deltaTime;
     }
 
@@ -131,5 +133,10 @@ public class DriftCarMove : MonoBehaviour
 
         _moveForce = Vector3.Lerp(_moveForce.normalized, transform.forward, Traction * Time.deltaTime) *
                      _moveForce.magnitude;
+    }
+
+    public void SetNewConfig(ShopItemConfig newItem)
+    {
+        carConfig = newItem;
     }
 }

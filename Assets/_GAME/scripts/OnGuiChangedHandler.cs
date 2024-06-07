@@ -17,6 +17,7 @@ public class OnGuiChangedHandler : MonoBehaviour
     private ItemId _currentId;
     private StaticDataService _staticDataService;
     private SizeAligner _sizeAligner;
+    private DriftCarMove _driftCarScript;
 
     [Inject]
     private void Construct(IPersistanseDataService persistanseDataService, StaticDataService staticDataService)
@@ -28,6 +29,7 @@ public class OnGuiChangedHandler : MonoBehaviour
     private void Awake()
     {
         _sizeAligner = GetComponent<SizeAligner>();
+        _driftCarScript = GetComponent<DriftCarMove>();
     }
 
     private void Start()
@@ -58,6 +60,7 @@ public class OnGuiChangedHandler : MonoBehaviour
 
         _currentId = playerCurrectItemId;
         ShopItemConfig newItem = _staticDataService.Items.Get(playerCurrectItemId);
+        _driftCarScript.SetNewConfig(newItem);
         GameObject gameObject = Instantiate(newItem.model, GUI);
         _sizeAligner.AlignColliderSizeToObjectSize(gameObject);
         SpawnWheelsShadow();

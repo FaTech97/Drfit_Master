@@ -17,4 +17,4 @@ MonoBehaviour:
   price: 10
   isOpen: 0
   size: 1
-  speed: 5
+  speed: 3
