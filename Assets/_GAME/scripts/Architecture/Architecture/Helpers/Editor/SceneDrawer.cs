@@ -1,9 +1,7 @@
 ﻿using UnityEditor;
 using UnityEngine;
 
-namespace _GAME.scripts.Architecture.Architecture.Helpers.SceneChooseAttributes
-{
-    [CustomPropertyDrawer(typeof(SceneAttribute))]
+[CustomPropertyDrawer(typeof(SceneAttribute))]
     public class SceneDrawer : PropertyDrawer
     {
         public override void OnGUI(Rect position, SerializedProperty property, GUIContent label)
@@ -44,4 +42,3 @@ namespace _GAME.scripts.Architecture.Architecture.Helpers.SceneChooseAttributes
             return null;
         }
     }
-}

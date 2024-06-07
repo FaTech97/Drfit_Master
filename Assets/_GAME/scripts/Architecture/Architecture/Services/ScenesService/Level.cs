@@ -1,6 +1,4 @@
 ﻿using System;
-using _GAME.scripts.Architecture.Architecture.Helpers.ReadOnlyAttributes;
-using _GAME.scripts.Architecture.Architecture.Helpers.SceneChooseAttributes;
 using UnityEngine;
 
 namespace _GAME.scripts.Architecture.Architecture.Services.ScenesService
