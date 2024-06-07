@@ -39,7 +39,6 @@ namespace _GAME.scripts.Architecture.Architecture.Services
         private void BindSceneService()
         {
             Container.Bind<SceneLoader>().FromComponentInNewPrefab(sceneLoader).AsSingle().NonLazy();
-            // LevelManager levelManager = new LevelManager(levelsList);
             Container.Bind<LevelManager>().AsSingle().WithArguments(levelsList);
         }
 

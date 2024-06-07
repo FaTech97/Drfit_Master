@@ -13,10 +13,11 @@ using Zenject;
 public class DriftCarMove : MonoBehaviour
 {
     public ParticleSystem damageEffect;
-
+    
+    // TechDept удалить не используемое в проекте
+    // TechDept добавить линт
     [SerializeField] private GameObject moveEducation;
     [SerializeField] private Button LeftButton;
-
     [SerializeField] private Button RightButton;
 
     // Настройки
