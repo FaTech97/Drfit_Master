@@ -1,10 +1,10 @@
 # MineDrift
 
-#### **Genre:** Indie Game
+#### **Study name:** QWINO games
 #### **Platform:** HTML5, Android
-#### **Developer:**
-#### **Game designer:**
-#### **3D Artist:**
+#### **Developer:** [Dmitry Litvinov](https://t.me/FaTech97)
+#### **Game designer:** [Dmitry Litvinov](https://t.me/FaTech97)
+#### **3D Artist:** [Alexander Dvoretskii](https://t.me/MockingbirdVa)
 #### **Version:** 1.0
 
 ## Description
