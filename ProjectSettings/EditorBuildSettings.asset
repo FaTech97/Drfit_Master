@@ -18,7 +18,28 @@ EditorBuildSettings:
     path: Assets/_GAME/Scenes/Levels/Level 4.unity
     guid: e337935c927e3f44a8a183cfd8962d18
   - enabled: 1
-    path: Assets/_GAME/Scenes/Levels/Level 5.unity
+    path: Assets/_GAME/Scenes/Levels/Education 2.unity
+    guid: 3bd1e78bc7ae3594eb76464e3d107634
+  - enabled: 1
+    path: Assets/_GAME/Scenes/Levels/level 2+0.unity
+    guid: 6424f88cf3636cd4fb15f0e0a3623b22
+  - enabled: 1
+    path: Assets/_GAME/Scenes/Levels/Level 2+0.5.unity
+    guid: 3aa516d80c7a79b46bfa3bd246d888f6
+  - enabled: 1
+    path: Assets/_GAME/Scenes/Levels/Level 2+1.unity
+    guid: a66f30533e8f1c04180e89a69d00831b
+  - enabled: 1
+    path: Assets/_GAME/Scenes/Levels/Level 2+1 1.unity
+    guid: b1738ac79f255cd41bb77b25e25f889e
+  - enabled: 1
+    path: Assets/_GAME/Scenes/Levels/Level 3+1.unity
+    guid: a440993b7478a3140a989db1beb2625e
+  - enabled: 1
+    path: Assets/_GAME/Scenes/Levels/Level 3+1 1.unity
+    guid: 24e1310788bb12245b3ec117507a94b7
+  - enabled: 1
+    path: Assets/_GAME/Scenes/Levels/Level 2 + 1 0.5.unity
     guid: 2d25c2d65869d0f48aa4ce78989e15c8
   - enabled: 1
     path: Assets/_GAME/Scenes/Shop.unity
