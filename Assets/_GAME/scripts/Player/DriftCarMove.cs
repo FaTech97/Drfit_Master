@@ -19,10 +19,11 @@ public class DriftCarMove : MonoBehaviour
     [SerializeField] private GameObject moveEducation;
     [SerializeField] private Button LeftButton;
     [SerializeField] private Button RightButton;
+    [SerializeField] private ReadyStadyGoText rsgText;
 
     // Настройки
     private float MoveSpeed = 1; // Скорость движения
-    private float MaxSpeed = 45; // Максимальная скорость
+    private float MaxSpeed = 30; // Максимальная скорость
     public float Drag = 0.98f; // Сопротивление движению
     public float SteerAngle = 20; // Угол поворота
     public float Traction = 1; // Сцепление
