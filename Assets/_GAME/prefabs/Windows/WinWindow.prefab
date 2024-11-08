@@ -202,8 +202,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -23, y: 0.0011368}
-  m_SizeDelta: {x: 691.8252, y: 172.19}
+  m_AnchoredPosition: {x: -4.5898, y: 0.0011}
+  m_SizeDelta: {x: 488.0741, y: 172.19}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &3512909002099406834
 CanvasRenderer:
@@ -246,7 +246,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "\u0423\u0420\u041E\u0412\u0415\u041D\u042C 1\n\u041F\u0420\u041E\u0419\u0414\u0415\u041D!"
+  m_Text: "\u0423\u0420\u041E\u0412\u0415\u041D\u042C 1 \u041F\u0420\u041E\u0419\u0414\u0415\u041D!"
 --- !u!1 &4835056023178481840
 GameObject:
   m_ObjectHideFlags: 0
@@ -349,6 +349,7 @@ GameObject:
   - component: {fileID: 4425779557775531481}
   - component: {fileID: 1587775165405574006}
   - component: {fileID: 6637470376218004972}
+  - component: {fileID: 3363856643859776050}
   m_Layer: 5
   m_Name: Text (Legacy)
   m_TagString: Untagged
@@ -416,7 +417,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "\u0414\u0410\u041B\u042C\u0428\u0415"
+  m_Text: Windows.Win.NextLevel
 --- !u!114 &6637470376218004972
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -432,6 +433,19 @@ MonoBehaviour:
   m_EffectColor: {r: 0, g: 0, b: 0, a: 0.5}
   m_EffectDistance: {x: 1, y: -1}
   m_UseGraphicAlpha: 1
+--- !u!114 &3363856643859776050
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6832536241976935822}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2404a37f3bd75444aa4ad05d0f228347, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  LocalizationKey: Windows.Win.NextLevel
 --- !u!1 &7702334304037920052
 GameObject:
   m_ObjectHideFlags: 0

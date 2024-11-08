@@ -87,6 +87,7 @@ GameObject:
   - component: {fileID: 4138528262636862498}
   - component: {fileID: 2528079649060047302}
   - component: {fileID: 2827151964591617042}
+  - component: {fileID: 8177909390131389865}
   m_Layer: 5
   m_Name: Text (Legacy)
   m_TagString: Untagged
@@ -154,7 +155,20 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "\u0410\u0412\u0410\u0420\u0418\u042F!"
+  m_Text: Windows.Lose.Accident
+--- !u!114 &8177909390131389865
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 437356900330975399}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2404a37f3bd75444aa4ad05d0f228347, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  LocalizationKey: Windows.Lose.Accident
 --- !u!1 &440634314095390633
 GameObject:
   m_ObjectHideFlags: 0
@@ -167,6 +181,7 @@ GameObject:
   - component: {fileID: 3954524350092940835}
   - component: {fileID: 4012005946091758608}
   - component: {fileID: 8721089365683258527}
+  - component: {fileID: 7540357877665238412}
   m_Layer: 5
   m_Name: Text (Legacy)
   m_TagString: Untagged
@@ -234,7 +249,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "\u041F\u041E\u0427\u0418\u041D\u0418\u0422\u042C"
+  m_Text: Windows.Lose.Repair
 --- !u!114 &8721089365683258527
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -250,6 +265,19 @@ MonoBehaviour:
   m_EffectColor: {r: 0, g: 0, b: 0, a: 0.5}
   m_EffectDistance: {x: 1, y: -1}
   m_UseGraphicAlpha: 1
+--- !u!114 &7540357877665238412
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 440634314095390633}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2404a37f3bd75444aa4ad05d0f228347, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  LocalizationKey: Windows.Lose.Repair
 --- !u!1 &1172476568082141837
 GameObject:
   m_ObjectHideFlags: 0
@@ -649,6 +677,7 @@ GameObject:
   - component: {fileID: 1012398191562904274}
   - component: {fileID: 4028067620117830422}
   - component: {fileID: 4941230277723373760}
+  - component: {fileID: 8316918576509662584}
   m_Layer: 5
   m_Name: Text (Legacy)
   m_TagString: Untagged
@@ -672,8 +701,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 41.099976, y: -0.29999924}
-  m_SizeDelta: {x: 107.7478, y: -52.545097}
+  m_AnchoredPosition: {x: 41.100067, y: -0.29999924}
+  m_SizeDelta: {x: 67.5197, y: -52.5451}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &1012398191562904274
 CanvasRenderer:
@@ -716,7 +745,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "\u041F\u041E\u0427\u0418\u041D\u0418\u0422\u042C"
+  m_Text: Windows.Lose.Repair
 --- !u!114 &4941230277723373760
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -732,6 +761,19 @@ MonoBehaviour:
   m_EffectColor: {r: 0, g: 0, b: 0, a: 0.5}
   m_EffectDistance: {x: 1, y: -1}
   m_UseGraphicAlpha: 1
+--- !u!114 &8316918576509662584
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3078958682757649043}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2404a37f3bd75444aa4ad05d0f228347, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  LocalizationKey: Windows.Lose.Repair
 --- !u!1 &4641539174992209862
 GameObject:
   m_ObjectHideFlags: 0
@@ -975,6 +1017,7 @@ GameObject:
   - component: {fileID: 7741232477901117646}
   - component: {fileID: 1182156346010440967}
   - component: {fileID: 7535766787041434371}
+  - component: {fileID: 8485337074667301486}
   m_Layer: 5
   m_Name: Text (Legacy) (1)
   m_TagString: Untagged
@@ -996,10 +1039,10 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 7717558196478132106}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -0.000015258789, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: -0.00018883, y: 0.00014687}
+  m_SizeDelta: {x: 85.169, y: 60}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &7741232477901117646
 CanvasRenderer:
@@ -1042,8 +1085,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "\u041F\u041E\u0421\u041B\u0415 \n\u041F\u0420\u041E\u0421\u041C\u041E\u0422\u0420\u0410
-    \n\u0420\u0415\u041A\u041B\u0410\u041C\u042B"
+  m_Text: Windows.Lose.AfterWatchAdvertisement
 --- !u!114 &7535766787041434371
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1059,6 +1101,19 @@ MonoBehaviour:
   m_EffectColor: {r: 1, g: 1, b: 1, a: 0.5}
   m_EffectDistance: {x: 1, y: 1}
   m_UseGraphicAlpha: 1
+--- !u!114 &8485337074667301486
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5921025529638048764}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2404a37f3bd75444aa4ad05d0f228347, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  LocalizationKey: Windows.Lose.AfterWatchAdvertisement
 --- !u!1 &6070368384379024757
 GameObject:
   m_ObjectHideFlags: 0
@@ -1071,6 +1126,7 @@ GameObject:
   - component: {fileID: 6203515170549235780}
   - component: {fileID: 6046507618349685924}
   - component: {fileID: 5699233619411681473}
+  - component: {fileID: 128813812949989631}
   m_Layer: 5
   m_Name: Text (Legacy) (1)
   m_TagString: Untagged
@@ -1138,7 +1194,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "\u0437\u0430 30 $"
+  m_Text: Windows.Lose.RepairPrice
 --- !u!114 &5699233619411681473
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1154,6 +1210,19 @@ MonoBehaviour:
   m_EffectColor: {r: 1, g: 1, b: 1, a: 0.5}
   m_EffectDistance: {x: 1, y: 1}
   m_UseGraphicAlpha: 1
+--- !u!114 &128813812949989631
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6070368384379024757}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2404a37f3bd75444aa4ad05d0f228347, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  LocalizationKey: Windows.Lose.RepairPrice
 --- !u!1 &6223463527197569472
 GameObject:
   m_ObjectHideFlags: 0
@@ -1166,6 +1235,7 @@ GameObject:
   - component: {fileID: 3956196842759811324}
   - component: {fileID: 4990441177137277960}
   - component: {fileID: 7833822276856934688}
+  - component: {fileID: 687126068439696782}
   m_Layer: 5
   m_Name: Text (Legacy) (1)
   m_TagString: Untagged
@@ -1233,7 +1303,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "\u0411\u0415\u0421\u041F\u041B\u0410\u0422\u041D\u041E"
+  m_Text: Windows.Lose.Free
 --- !u!114 &7833822276856934688
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1249,6 +1319,19 @@ MonoBehaviour:
   m_EffectColor: {r: 0, g: 0, b: 0, a: 0.5}
   m_EffectDistance: {x: 1, y: -1}
   m_UseGraphicAlpha: 1
+--- !u!114 &687126068439696782
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6223463527197569472}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2404a37f3bd75444aa4ad05d0f228347, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  LocalizationKey: Windows.Lose.Free
 --- !u!1 &7895184531923877528
 GameObject:
   m_ObjectHideFlags: 0
@@ -1298,6 +1381,7 @@ GameObject:
   - component: {fileID: 7953175916207464817}
   - component: {fileID: 7431944431967774745}
   - component: {fileID: 2697859577512817227}
+  - component: {fileID: 3374431220971208880}
   m_Layer: 5
   m_Name: Text (Legacy)
   m_TagString: Untagged
@@ -1365,7 +1449,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "\u041F\u0420\u041E\u0414\u041E\u041B\u0416\u0418\u0422\u042C"
+  m_Text: Windows.Lose.Restart
 --- !u!114 &2697859577512817227
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1381,6 +1465,19 @@ MonoBehaviour:
   m_EffectColor: {r: 0, g: 0, b: 0, a: 0.5}
   m_EffectDistance: {x: 1, y: -1}
   m_UseGraphicAlpha: 1
+--- !u!114 &3374431220971208880
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7920943161432282082}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2404a37f3bd75444aa4ad05d0f228347, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  LocalizationKey: Windows.Lose.Restart
 --- !u!1 &8288857574554713113
 GameObject:
   m_ObjectHideFlags: 0
@@ -1459,7 +1556,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "\u041E\u0421\u0422\u0410\u041B\u041E\u0421\u042C 2 \u0416\u0418\u0417\u041D\u0418"
+  m_Text: YouLostLives
 --- !u!1 &9194343087687974961
 GameObject:
   m_ObjectHideFlags: 0

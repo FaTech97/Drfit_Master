@@ -285,6 +285,10 @@ PrefabInstance:
       propertyPath: SteerAngle
       value: 9
       objectReference: {fileID: 0}
+    - target: {fileID: 5245679413221948555, guid: 5108bfff638394e4c8276711a168ae14, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0.00012207031
+      objectReference: {fileID: 0}
     - target: {fileID: 5750622399321069733, guid: 5108bfff638394e4c8276711a168ae14, type: 3}
       propertyPath: far clip plane
       value: 1000.54

@@ -1,5 +1,6 @@
 ﻿using _GAME.scripts.Architecture.Architecture.Persistanse_Service;
 using _GAME.scripts.Architecture.Architecture.Services.ScenesService;
+using Assets.SimpleLocalization.Scripts;
 using UnityEngine;
 using UnityEngine.UI;
 using Zenject;
@@ -18,7 +19,8 @@ namespace _GAME.scripts
         {
             _persistanseDataService = persistanseDataService;
             _levelManager = levelManager;
-            LevelText.text = $"Уровень {_levelManager.GetLevelIndex() + 1}";
+            // TODO _levelManager.GetLevelIndex() + 1 => получать реальный номер уровня
+            LevelText.text = LocalizationManager.Localize("Common.Level", _levelManager.GetLevelIndex() + 1);
             RefreshCounterText();
         }
 

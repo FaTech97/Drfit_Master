@@ -816,7 +816,7 @@ GameObject:
   - component: {fileID: 1165255204827187496}
   - component: {fileID: 3088654574944156629}
   m_Layer: 0
-  m_Name: Level number (1)
+  m_Name: 3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -925,6 +925,7 @@ GameObject:
   - component: {fileID: 1981961174976720492}
   - component: {fileID: 4238160583084839789}
   - component: {fileID: 7384903314960746973}
+  - component: {fileID: 783830309134552414}
   m_Layer: 5
   m_Name: Press for continues...
   m_TagString: Untagged
@@ -948,7 +949,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 0}
-  m_AnchoredPosition: {x: 0.00012207, y: 99.399994}
+  m_AnchoredPosition: {x: 0.00012207031, y: 99.399994}
   m_SizeDelta: {x: 4.2041, y: 50.6507}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &1981961174976720492
@@ -992,8 +993,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "\u041A\u043E\u0441\u043D\u0438\u0442\u0435\u0441\u044C \u0447\u0442\u043E\u0431\u044B
-    \u043D\u0430\u0447\u0430\u0442\u044C..."
+  m_Text: Common.PressToContinue
 --- !u!114 &7384903314960746973
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1009,6 +1009,19 @@ MonoBehaviour:
   m_EffectColor: {r: 0, g: 0, b: 0, a: 1}
   m_EffectDistance: {x: 1, y: 1}
   m_UseGraphicAlpha: 1
+--- !u!114 &783830309134552414
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5057110104991171351}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2404a37f3bd75444aa4ad05d0f228347, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  LocalizationKey: Common.PressToContinue
 --- !u!1 &5284623408554593632
 GameObject:
   m_ObjectHideFlags: 0
@@ -1510,8 +1523,9 @@ GameObject:
   - component: {fileID: 8194355799358759776}
   - component: {fileID: 413662152457232160}
   - component: {fileID: 445279684668095429}
+  - component: {fileID: 7933499057129389046}
   m_Layer: 0
-  m_Name: Level number (4)
+  m_Name: GO
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1577,7 +1591,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "\u041F\u043E\u0435\u0445\u0430\u043B\u0438!"
+  m_Text: Common.GO
 --- !u!114 &413662152457232160
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1608,6 +1622,19 @@ MonoBehaviour:
   m_EffectColor: {r: 0, g: 0, b: 0, a: 0.5}
   m_EffectDistance: {x: 1, y: -1}
   m_UseGraphicAlpha: 1
+--- !u!114 &7933499057129389046
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6015901133874160973}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2404a37f3bd75444aa4ad05d0f228347, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  LocalizationKey: Common.GO
 --- !u!1 &6094786484506819926
 GameObject:
   m_ObjectHideFlags: 0
@@ -1720,7 +1747,7 @@ GameObject:
   - component: {fileID: 8933678089792489049}
   - component: {fileID: 6669747536771453147}
   m_Layer: 0
-  m_Name: Level number (3)
+  m_Name: 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2686,7 +2713,7 @@ GameObject:
   - component: {fileID: 8948313410920929220}
   - component: {fileID: 3263465362207411015}
   m_Layer: 0
-  m_Name: Level number (2)
+  m_Name: 2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3074,6 +3101,18 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 9120537806146362447}
     m_Modifications:
+    - target: {fileID: 58586270882205700, guid: 849cccf1a2ee4fd4bac9504cddea2236, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 74.5782
+      objectReference: {fileID: 0}
+    - target: {fileID: 58586270882205700, guid: 849cccf1a2ee4fd4bac9504cddea2236, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 37.303032
+      objectReference: {fileID: 0}
+    - target: {fileID: 3566050358236752140, guid: 849cccf1a2ee4fd4bac9504cddea2236, type: 3}
+      propertyPath: m_Text
+      value: Common.Level {0}
+      objectReference: {fileID: 0}
     - target: {fileID: 3566050358236752140, guid: 849cccf1a2ee4fd4bac9504cddea2236, type: 3}
       propertyPath: m_FontData.m_Font
       value: 
@@ -3082,6 +3121,18 @@ PrefabInstance:
       propertyPath: m_FontData.m_Font
       value: 
       objectReference: {fileID: 12800000, guid: 103c69071affe654180ab16cfb8da919, type: 3}
+    - target: {fileID: 4150230832835071872, guid: 849cccf1a2ee4fd4bac9504cddea2236, type: 3}
+      propertyPath: m_FontData.m_MinSize
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4150230832835071872, guid: 849cccf1a2ee4fd4bac9504cddea2236, type: 3}
+      propertyPath: m_FontData.m_FontSize
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 4150230832835071872, guid: 849cccf1a2ee4fd4bac9504cddea2236, type: 3}
+      propertyPath: m_FontData.m_FontStyle
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6153848964956379679, guid: 849cccf1a2ee4fd4bac9504cddea2236, type: 3}
       propertyPath: m_Name
       value: Level UI info canvas

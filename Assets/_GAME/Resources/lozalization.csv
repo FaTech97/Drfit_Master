@@ -1,0 +1,21 @@
+Key,English,Russian
+Common.GO,GO!,Вперед!
+Common.Level,Level {0},Уровень {0}
+Common.PressToContinue,Press to start...,Нажмите для старта...
+Common.Shop,SHOP,МАГАЗИН
+Common.Settings,SETTINGS,НАСТРОЙКИ
+Windows.Win.LevelWasDone,LEVEL {0} PASSED,УРОВЕНЬ {0} ПРОЙДЕН
+Windows.Win.NextLevel,NEXT,ДАЛЕЕ
+Windows.Lose.Accident,ACCIDENT,АВАРИЯ
+Windows.Lose.YouLostLives,LIVES LEFT: {0},ОСТАЛОСЬ ЖИЗНЕЙ: {0}
+Windows.Lose.YouAreBroken,CAR WAS BROKEN!,МАШИНА СЛОМАНА!
+Windows.Lose.AfterWatchAdvertisement,AFTER WATCHING THE ADVERTISEMENT,ПОСЛЕ ПРОСМОТРА РЕКЛАМЫ
+Windows.Lose.Repair,REPAIR,ПОЧИНИТЬ
+Windows.Lose.Free,Free,БЕСПЛАТНО
+Windows.Lose.RepairPrice,30$,30$
+Windows.Lose.Restart,RESTART,ПЕРЕИГРАТЬ
+SHOP.GoToMenu,GO TO MENU,В МЕНЮ
+SHOP.Buy,BUY,КУПИТЬ
+SHOP.Speed,SPEED:,СКОРОСТЬ:
+SHOP.Size,SIZE:,РАЗМЕР:
+

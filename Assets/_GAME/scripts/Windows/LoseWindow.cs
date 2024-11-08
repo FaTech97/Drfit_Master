@@ -2,6 +2,7 @@ using System;
 using _GAME.scripts.Architecture.Architecture.Persistanse_Service;
 using _GAME.scripts.Architecture.Architecture.Services.AdService;
 using _GAME.scripts.Architecture.Architecture.Services.ScenesService;
+using Assets.SimpleLocalization.Scripts;
 using UnityEngine;
 using UnityEngine.UI;
 using Zenject;
@@ -29,9 +30,9 @@ public class LoseWindow : WindowBase
         var HP = _persistanseDataService.Data.Player.PlayerHP;
         SetButtonVisible(HP  <= 0);
         if (HP <= 0)
-            lostHPTextBox.text = "Машина сломана!";
+            lostHPTextBox.text = LocalizationManager.Localize("Windows.Lose.YouAreBroken");
         else
-            lostHPTextBox.text = $"Осталось {HP} жизней";
+            lostHPTextBox.text = LocalizationManager.Localize("Windows.Lose.YouLostLives", HP);
     }
 
     protected override void SubscribeUpdates()
