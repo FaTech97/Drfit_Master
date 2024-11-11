@@ -1,21 +1,25 @@
-Key,English,Russian
-Common.GO,GO!,Вперед!
-Common.Level,Level {0},Уровень {0}
-Common.PressToContinue,Press to start...,Нажмите для старта...
-Common.Shop,SHOP,МАГАЗИН
-Common.Settings,SETTINGS,НАСТРОЙКИ
-Windows.Win.LevelWasDone,LEVEL {0} PASSED,УРОВЕНЬ {0} ПРОЙДЕН
-Windows.Win.NextLevel,NEXT,ДАЛЕЕ
-Windows.Lose.Accident,ACCIDENT,АВАРИЯ
-Windows.Lose.YouLostLives,LIVES LEFT: {0},ОСТАЛОСЬ ЖИЗНЕЙ: {0}
-Windows.Lose.YouAreBroken,CAR WAS BROKEN!,МАШИНА СЛОМАНА!
-Windows.Lose.AfterWatchAdvertisement,AFTER WATCHING THE ADVERTISEMENT,ПОСЛЕ ПРОСМОТРА РЕКЛАМЫ
-Windows.Lose.Repair,REPAIR,ПОЧИНИТЬ
-Windows.Lose.Free,Free,БЕСПЛАТНО
-Windows.Lose.RepairPrice,30$,30$
-Windows.Lose.Restart,RESTART,ПЕРЕИГРАТЬ
-SHOP.GoToMenu,GO TO MENU,В МЕНЮ
-SHOP.Buy,BUY,КУПИТЬ
-SHOP.Speed,SPEED:,СКОРОСТЬ:
-SHOP.Size,SIZE:,РАЗМЕР:
+Key,English,Russian,Turkey
+Common.GO,GO!,Вперед!,İleri!
+Common.Level,Level {0},Уровень {0},Seviye {0}
+Common.Back,BACK,НАЗАД,GERİ
+Common.PressToContinue,Press to start...,Нажмите для старта...,Basın başlatmak için...
+Common.Shop,SHOP,МАГАЗИН,MAĞAZA
+Common.Settings,SETTINGS,НАСТРОЙКИ,AYARLAR
+Windows.Win.LevelWasDone,LEVEL {0} PASSED,УРОВЕНЬ {0} ПРОЙДЕН,SEVİYE {0} TAMAMLANDI
+Windows.Win.NextLevel,NEXT,ДАЛЕЕ,SONRA
+Windows.Lose.Accident,ACCIDENT,АВАРИЯ,KAZA
+Windows.Lose.YouLostLives,LIVES LEFT: {0},ОСТАЛОСЬ ЖИЗНЕЙ: {0},HAYAT KALDI: {0}
+Windows.Lose.YouAreBroken,CAR WAS BROKEN!,МАШИНА СЛОМАНА!,ARABA BOZULDU!
+Windows.Lose.AfterWatchAdvertisement,AFTER WATCHING THE ADVERTISEMENT,ПОСЛЕ ПРОСМОТРА РЕКЛАМЫ,REKLAMLARI İZLEDİKTEN SONRA
+Windows.Lose.Repair,REPAIR,ПОЧИНИТЬ,TAMİR ETMEK
+Windows.Lose.Free,Free,БЕСПЛАТНО,ÜCRET
+Windows.Lose.RepairPrice,30$,30₽,30₺
+Windows.Lose.Restart,RESTART,ПЕРЕИГРАТЬ,TEKRAR OYNAMAK
+SHOP.GoToMenu,GO TO MENU,В МЕНЮ,MENÜDE
+SHOP.Buy,BUY,КУПИТЬ,ALMAK
+SHOP.Speed,SPEED:,СКОРОСТЬ:,HIZ:
+SHOP.Size,SIZE:,РАЗМЕР:,BOYUT:
+Settings.Title,SETTINGS,НАСТРОЙКИ,AYARLAR
+Settings.Music,SOUNDS,ЗВУКИ,SESLER
+Settings.Language,LANGUAGE,ЯЗЫК,DİL
 
