@@ -7,7 +7,7 @@ using Zenject;
 
 namespace _GAME.scripts
 {
-    public class PlayerInfoView: MonoBehaviour
+    public class PlayerInfoView : MonoBehaviour
     {
         [SerializeField] private Text counterText;
         [SerializeField] private Text LevelText;
