@@ -12,28 +12,28 @@ using Zenject;
 
 public class BackToLevelButton : MonoBehaviour
 {
-        [SerializeField] private Button closeButton;
-        private LevelManager _levelManager;
-        
-        [Inject]
-        private void Contruct( LevelManager levelManager)
-        {
-            _levelManager = levelManager;
-        }
-    
-        private void Awake()
-        {
-            closeButton = GetComponent<Button>();
-            closeButton.onClick.AddListener(Close);
-        }
+	[SerializeField] private Button closeButton;
+	private LevelManager _levelManager;
 
-        private void OnDestroy()
-        {
-            closeButton.onClick.RemoveListener(Close);
-        }
+	[Inject]
+	private void Contruct(LevelManager levelManager)
+	{
+		_levelManager = levelManager;
+	}
 
-        private void Close()
-        {
-            this._levelManager.RestartCurrentLevel();
-        }
+	private void Awake()
+	{
+		closeButton = GetComponent<Button>();
+		closeButton.onClick.AddListener(Close);
+	}
+
+	private void OnDestroy()
+	{
+		closeButton.onClick.RemoveListener(Close);
+	}
+
+	private void Close()
+	{
+		this._levelManager.RestartCurrentLevel();
+	}
 }

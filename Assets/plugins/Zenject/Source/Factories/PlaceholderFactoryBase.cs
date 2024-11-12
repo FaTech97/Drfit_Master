@@ -38,7 +38,7 @@ namespace Zenject
 
                 Assert.That(result == null || result.GetType().DerivesFromOrEqual<TValue>());
 
-                return (TValue) result;
+                return (TValue)result;
             }
             catch (Exception e)
             {

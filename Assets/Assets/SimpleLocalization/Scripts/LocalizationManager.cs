@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text.RegularExpressions;
@@ -6,31 +6,31 @@ using UnityEngine;
 
 namespace Assets.SimpleLocalization.Scripts
 {
-	/// <summary>
-	/// Localization manager.
-	/// </summary>
+    /// <summary>
+    /// Localization manager.
+    /// </summary>
     public static class LocalizationManager
     {
-		/// <summary>
-		/// Fired when localization changed.
-		/// </summary>
-        public static event Action OnLocalizationChanged = () => { }; 
+        /// <summary>
+        /// Fired when localization changed.
+        /// </summary>
+        public static event Action OnLocalizationChanged = () => { };
 
         public static Dictionary<string, Dictionary<string, string>> Dictionary = new();
         private static string _language = "English";
 
-		/// <summary>
-		/// Get or set language.
-		/// </summary>
+        /// <summary>
+        /// Get or set language.
+        /// </summary>
         public static string Language
         {
             get => _language;
             set { _language = value; OnLocalizationChanged(); }
         }
 
-		/// <summary>
-		/// Set default language.
-		/// </summary>
+        /// <summary>
+        /// Set default language.
+        /// </summary>
         public static void AutoLanguage()
         {
             Language = "English";
@@ -49,7 +49,7 @@ namespace Assets.SimpleLocalization.Scripts
             {
                 var textAsset = sheet.TextAsset;
                 var lines = GetLines(textAsset.text);
-				var languages = lines[0].Split(',').Select(i => i.Trim()).ToList();
+                var languages = lines[0].Split(',').Select(i => i.Trim()).ToList();
 
                 if (languages.Count != languages.Distinct().Count())
                 {
@@ -129,10 +129,10 @@ namespace Assets.SimpleLocalization.Scripts
             return Dictionary[Language][localizationKey];
         }
 
-	    /// <summary>
-	    /// Get localized value by localization key.
-	    /// </summary>
-		public static string Localize(string localizationKey, params object[] args)
+        /// <summary>
+        /// Get localized value by localization key.
+        /// </summary>
+        public static string Localize(string localizationKey, params object[] args)
         {
             var pattern = Localize(localizationKey);
 
@@ -142,7 +142,7 @@ namespace Assets.SimpleLocalization.Scripts
         public static List<string> GetLines(string text)
         {
             text = text.Replace("\r\n", "\n").Replace("\"\"", "[_quote_]");
-            
+
             var matches = Regex.Matches(text, "\"[\\s\\S]+?\"");
 
             foreach (Match match in matches)

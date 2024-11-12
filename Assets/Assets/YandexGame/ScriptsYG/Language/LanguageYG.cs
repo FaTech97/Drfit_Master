@@ -1,4 +1,4 @@
-﻿using UnityEngine;
+using UnityEngine;
 using UnityEngine.UI;
 using System.Collections;
 using YG.Utils.Lang;
@@ -214,7 +214,7 @@ namespace YG
             else if (textMPComponent)
                 textMPComponent.fontSize = baseFontSize;
 #endif
-            if (fontSizeArray.Length != 0 && fontSizeArray.Length -1 >= fontNumber)
+            if (fontSizeArray.Length != 0 && fontSizeArray.Length - 1 >= fontNumber)
             {
                 if (textLComponent)
                     textLComponent.fontSize += fontSizeArray[fontNumber];

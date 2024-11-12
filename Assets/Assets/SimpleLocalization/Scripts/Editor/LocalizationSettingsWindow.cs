@@ -1,4 +1,4 @@
-﻿using UnityEditor;
+using UnityEditor;
 using UnityEngine;
 using Object = UnityEngine.Object;
 
@@ -35,7 +35,7 @@ namespace Assets.SimpleLocalization.Scripts.Editor
         {
             MakeSettingsWindow();
         }
-        
+
         private void MakeSettingsWindow()
         {
             minSize = new Vector2(300, 500);
@@ -70,7 +70,7 @@ namespace Assets.SimpleLocalization.Scripts.Editor
                 var length = property.intValue;
 
                 property.Next(true);
-                
+
                 Settings.Sheets.Clear();
 
                 var lastIndex = length - 1;

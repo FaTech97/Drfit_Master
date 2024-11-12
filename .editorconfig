@@ -38,7 +38,7 @@ csharp_preserve_single_line_blocks = true
 csharp_using_directive_placement = outside_namespace
 
 # Ignore paths
-[Assets/Assets/**]
+[!Assets/_GAME/**.{cs,vb}]
 charset = unset
 end_of_line = unset
 insert_final_newline = unset

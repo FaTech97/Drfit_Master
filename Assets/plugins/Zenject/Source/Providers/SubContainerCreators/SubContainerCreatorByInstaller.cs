@@ -55,7 +55,7 @@ namespace Zenject
 
             installer.InstallBindings();
 
-            injectAction = () => 
+            injectAction = () =>
             {
                 subContainer.ResolveRoots();
             };

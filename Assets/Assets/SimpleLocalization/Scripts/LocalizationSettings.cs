@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.IO;
@@ -45,7 +45,7 @@ namespace Assets.SimpleLocalization.Scripts
             }
         }
 
-        public static event Action OnRunEditor = () => {};
+        public static event Action OnRunEditor = () => { };
 
         private static LocalizationSettings _instance;
 
@@ -57,7 +57,7 @@ namespace Assets.SimpleLocalization.Scripts
 
             if (settings != null) return settings;
 
-            #if UNITY_EDITOR
+#if UNITY_EDITOR
 
             settings = CreateInstance<LocalizationSettings>();
 
@@ -65,16 +65,16 @@ namespace Assets.SimpleLocalization.Scripts
             AssetDatabase.SaveAssets();
             AssetDatabase.Refresh();
 
-            #else
+#else
 
             throw new Exception($"Localization settings not found: {path}");
 
-            #endif
+#endif
 
             return settings;
         }
 
-        #if UNITY_EDITOR
+#if UNITY_EDITOR
 
         public void Awake()
         {
@@ -88,7 +88,7 @@ namespace Assets.SimpleLocalization.Scripts
         {
             EditorCoroutineUtility.StartCoroutineOwnerless(DownloadGoogleSheetsCoroutine(callback));
         }
-        
+
         public IEnumerator DownloadGoogleSheetsCoroutine(Action callback = null, bool silent = false)
         {
             if (string.IsNullOrEmpty(TableId) || Sheets.Count == 0)
@@ -116,7 +116,7 @@ namespace Assets.SimpleLocalization.Scripts
                     yield break;
                 }
             }
-            
+
             Timestamp = DateTime.UtcNow;
 
             if (!silent) ClearSaveFolder();
@@ -129,7 +129,7 @@ namespace Assets.SimpleLocalization.Scripts
                 Debug.Log($"Downloading <color=grey>{url}</color>");
 
                 var request = UnityWebRequest.Get(url);
-                var progress = (float) (i + 1) / Sheets.Count;
+                var progress = (float)(i + 1) / Sheets.Count;
 
                 if (EditorUtility.DisplayCancelableProgressBar("Downloading sheets...", $"[{(int)(100 * progress)}%] [{i + 1}/{Sheets.Count}] Downloading {sheet.Name}...", progress))
                 {
@@ -333,6 +333,6 @@ namespace Assets.SimpleLocalization.Scripts
             }
         }
 
-        #endif
+#endif
     }
 }

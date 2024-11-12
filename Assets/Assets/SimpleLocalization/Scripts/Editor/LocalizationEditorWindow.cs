@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.IO;
@@ -17,7 +17,7 @@ namespace Assets.SimpleLocalization.Scripts.Editor
         private static LocalizationEditorWindow _window;
         private static LocalizationEditor Editor => LocalizationEditor.Instance;
         private static LocalizationSettings Settings => LocalizationSettings.Instance;
-        
+
         private static int _columnWidth = 200;
         private static readonly Dictionary<string, Rect> LanguageButtons = new();
 
@@ -64,7 +64,7 @@ namespace Assets.SimpleLocalization.Scripts.Editor
 
                 return;
             }
-            
+
             if (Directory.GetFiles(AssetDatabase.GetAssetPath(Settings.SaveFolder)).Length == 0)
             {
                 if ((DateTime.UtcNow - LocalizationSettings.Timestamp).TotalSeconds < 10)
@@ -111,7 +111,7 @@ namespace Assets.SimpleLocalization.Scripts.Editor
                 MakeBottomMenu();
             }
         }
-        
+
         public void OnDestroy()
         {
             if (Editor.KeysActions.Count > 0)
@@ -148,7 +148,7 @@ namespace Assets.SimpleLocalization.Scripts.Editor
             {
                 MakeSheetRow(Editor.CurrentKey);
             }
-            
+
             GUILayout.BeginHorizontal("box");
 
             if (GUILayout.Button("−", GUILayout.Width(25)))
@@ -173,7 +173,7 @@ namespace Assets.SimpleLocalization.Scripts.Editor
             var style = new GUIStyle { normal = { textColor = Color.white }, alignment = TextAnchor.MiddleCenter };
 
             GUILayout.BeginHorizontal();
-            GUILayout.BeginHorizontal("box", GUILayout.MinWidth(MinColumnWidth)); 
+            GUILayout.BeginHorizontal("box", GUILayout.MinWidth(MinColumnWidth));
             GUILayout.Label("Key" + (Editor.CurrentKey == "" ? "" : Editor.Keys[Editor.CurrentKey] != Editor.CurrentKey ? " *" : ""), style, GUILayout.MinWidth(MinColumnWidth), GUILayout.MinHeight(20));
             GUILayout.EndHorizontal();
 
@@ -200,8 +200,8 @@ namespace Assets.SimpleLocalization.Scripts.Editor
         {
             GUILayout.BeginHorizontal();
 
-            var newValue = EditorGUILayout.TextField(Editor.Keys[key], GUILayout.MinHeight(50), GUILayout.MaxWidth(MinColumnWidth), GUILayout.MinWidth(MinColumnWidth + 7)); 
-            
+            var newValue = EditorGUILayout.TextField(Editor.Keys[key], GUILayout.MinHeight(50), GUILayout.MaxWidth(MinColumnWidth), GUILayout.MinWidth(MinColumnWidth + 7));
+
             if (Editor.Keys[key] != newValue)
             {
                 var duplicateKey = Editor.Keys.ContainsKey(newValue) ? Editor.Keys[newValue] : Editor.Keys.Values.Contains(newValue) ? Editor.Keys.First(i => i.Value == newValue).Key : "";
@@ -248,7 +248,7 @@ namespace Assets.SimpleLocalization.Scripts.Editor
                 ? Editor.Keys.Keys.Where(originalKey => !IsDeleted(originalKey) && originalKey.ToLower().Contains(filter) || originalKey == Editor.CurrentKey).ToArray()
                 : Editor.Keys.Keys.Where(originalKey => !IsDeleted(originalKey)).ToArray();
             var valuesArray = Editor.Keys.Where(i => keysArray.Contains(i.Key)).Select(i => i.Value).ToArray();
-            var selectedKeyArrayIndex = string.IsNullOrEmpty(Editor.CurrentKey) ? 0 : Array.IndexOf((Array) keysArray, Editor.CurrentKey);
+            var selectedKeyArrayIndex = string.IsNullOrEmpty(Editor.CurrentKey) ? 0 : Array.IndexOf((Array)keysArray, Editor.CurrentKey);
 
             EditorGUILayout.LabelField("Key:", GUILayout.MinWidth(MinColumnWidth + ButtonsColumnSizeFix), GUILayout.MaxWidth(MinColumnWidth + ButtonsColumnSizeFix));
             selectedKeyArrayIndex = EditorGUILayout.Popup(selectedKeyArrayIndex, valuesArray, GUILayout.MinWidth(MinColumnWidth + ButtonsColumnSizeFix), GUILayout.MaxWidth(MinColumnWidth + ButtonsColumnSizeFix));
@@ -284,12 +284,12 @@ namespace Assets.SimpleLocalization.Scripts.Editor
         {
             GUILayout.BeginHorizontal();
 
-            var sheetNamesArray = sheetNames.ToArray(); 
-            
+            var sheetNamesArray = sheetNames.ToArray();
+
             EditorGUILayout.LabelField("Sheet:", GUILayout.MinWidth(MinColumnWidth + ButtonsColumnSizeFix), GUILayout.MaxWidth(MinColumnWidth + ButtonsColumnSizeFix));
-            
+
             var newSheetIndex = EditorGUILayout.Popup(_selectedSheetIndex, sheetNamesArray, GUILayout.MinWidth(MinColumnWidth + ButtonsColumnSizeFix), GUILayout.MaxWidth(MinColumnWidth + ButtonsColumnSizeFix));
-            
+
             if (GUILayout.Button("▼ Download Sheets", GUILayout.MinWidth(MinColumnWidth + ButtonsColumnSizeFix), GUILayout.MaxWidth(MinColumnWidth + ButtonsColumnSizeFix)))
             {
                 Settings.DownloadGoogleSheets(Editor.ResetSheet);
@@ -326,7 +326,7 @@ namespace Assets.SimpleLocalization.Scripts.Editor
         public void MakeBottomMenu()
         {
             GUILayout.BeginHorizontal("box");
-            
+
             if (GUILayout.Button("Submit", GUILayout.MaxWidth(MinColumnWidth + 3)))
             {
                 EditorCoroutineUtility.StartCoroutine(SaveSheet(Editor.Keys, Editor.KeysActions, Editor.SheetDictionary), this);
@@ -368,7 +368,7 @@ namespace Assets.SimpleLocalization.Scripts.Editor
             }
 
             _timeStamp = DateTime.UtcNow;
-            
+
             var rows = new List<Dictionary<string, string>>();
 
             foreach (var action in actionTypes)

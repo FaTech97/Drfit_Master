@@ -4,5 +4,5 @@ using UnityEngine;
 
 public interface IWeapon
 {
-   void Attack(Transform playerTransform);
+	void Attack(Transform playerTransform);
 }

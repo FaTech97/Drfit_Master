@@ -5,24 +5,24 @@ using Zenject;
 
 public class OpenSceneOnClick : MonoBehaviour
 {
-    private Button _button;
-    private SceneLoader _sceneLoader;
-    [Scene] public string ScemeName;
+	private Button _button;
+	private SceneLoader _sceneLoader;
+	[Scene] public string ScemeName;
 
-    [Inject]
-    private void Construct(SceneLoader loader)
-    {
-        _sceneLoader = loader;
-    }
+	[Inject]
+	private void Construct(SceneLoader loader)
+	{
+		_sceneLoader = loader;
+	}
 
-    private void Start()
-    {
-        _button = GetComponent<Button>();
-        _button.onClick.AddListener(LoadScene);
-    }
+	private void Start()
+	{
+		_button = GetComponent<Button>();
+		_button.onClick.AddListener(LoadScene);
+	}
 
-    private void LoadScene()
-    {
-        _sceneLoader.Load(ScemeName);
-    }
+	private void LoadScene()
+	{
+		_sceneLoader.Load(ScemeName);
+	}
 }

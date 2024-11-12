@@ -1,4 +1,4 @@
-﻿
+
 using _GAME.scripts.Architecture.Architecture.Persistanse_Service;
 
 namespace YG
@@ -12,7 +12,7 @@ namespace YG
         public bool isFirstSession = true;
         public string language = "ru";
         public bool promptDone;
-        
+
         public SavesYG()
         {
         }

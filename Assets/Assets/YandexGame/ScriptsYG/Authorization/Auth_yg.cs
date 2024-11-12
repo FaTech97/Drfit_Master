@@ -1,4 +1,4 @@
-﻿using System.Runtime.InteropServices;
+using System.Runtime.InteropServices;
 using UnityEngine;
 
 namespace YG
@@ -124,7 +124,7 @@ namespace YG
             GetDataInvoke();
         }
 
-        
+
         [DllImport("__Internal")]
         private static extern void OpenAuthDialog();
 

@@ -1,4 +1,4 @@
-﻿#if UNITY_EDITOR
+#if UNITY_EDITOR
 using UnityEngine;
 using System.Collections;
 using UnityEngine.UI;
@@ -24,7 +24,7 @@ namespace YG.Insides
             YandexGame.Instance.OpenVideo();
             if (!YandexGame.Instance.infoYG.testErrorOfRewardedAdsInEditor)
                 DrawScreen(new Color(0, 0, 1, 0.5f));
-            else 
+            else
                 DrawScreen(new Color(1, 0, 0, 0.5f));
 
             yield return new WaitForSecondsRealtime(duration);

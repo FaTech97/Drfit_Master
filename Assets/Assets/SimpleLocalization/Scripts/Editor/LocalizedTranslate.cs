@@ -76,7 +76,7 @@ namespace Assets.SimpleLocalization.Scripts.Editor
                 if (ValidateInput())
                 {
                     _emptyOnly = false;
-                    EditorCoroutineUtility.StartCoroutine(TranslateColumn(), this); 
+                    EditorCoroutineUtility.StartCoroutine(TranslateColumn(), this);
                     GUILayout.EndVertical();
                     editorWindow.Close();
                 }
@@ -92,7 +92,7 @@ namespace Assets.SimpleLocalization.Scripts.Editor
 
         private IEnumerator TranslateCell()
         {
-            yield return Translate(new[] { DestinationLanguage }, Editor.CurrentKey, 1, 1, _ => {} );
+            yield return Translate(new[] { DestinationLanguage }, Editor.CurrentKey, 1, 1, _ => { });
 
             EditorUtility.ClearProgressBar();
             editorWindow.Close();
@@ -112,7 +112,7 @@ namespace Assets.SimpleLocalization.Scripts.Editor
             var progressMax = emptyKeys.Length + (_emptyOnly ? 0 : translatedKeys.Length);
             var i = 1;
 
-            foreach(var key in emptyKeys)
+            foreach (var key in emptyKeys)
             {
                 yield return Translate(new[] { DestinationLanguage }, key, i++, progressMax, (result) => { success = result; });
             }
@@ -123,7 +123,7 @@ namespace Assets.SimpleLocalization.Scripts.Editor
 
                 foreach (var key in translatedKeys)
                 {
-                    yield return Translate(new[] { DestinationLanguage }, key,i++, progressMax, (result) => { success = result; });
+                    yield return Translate(new[] { DestinationLanguage }, key, i++, progressMax, (result) => { success = result; });
                 }
             }
 
@@ -171,7 +171,7 @@ namespace Assets.SimpleLocalization.Scripts.Editor
 
             for (var i = 0; i < languages.Length; i++)
             {
-                var progress = (float) (i + keyProgress) / progressMax;
+                var progress = (float)(i + keyProgress) / progressMax;
 
                 if (EditorUtility.DisplayCancelableProgressBar("Submitting data...", $"[{(int)(100 * progress)}%] [{i + keyProgress}/{progressMax}] ...", progress))
                 {
@@ -230,7 +230,7 @@ namespace Assets.SimpleLocalization.Scripts.Editor
             if (request.error == null)
             {
                 var result = string.Join(null, JArray.Parse(request.downloadHandler.text)[0].Select(i => i[0].Value<string>()));
-                
+
                 callback(null, result);
             }
             else

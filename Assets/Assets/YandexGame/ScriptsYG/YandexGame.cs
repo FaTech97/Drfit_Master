@@ -134,7 +134,7 @@ namespace YG
 
         static void Message(string message)
         {
-            if (Instance.infoYG.debug) 
+            if (Instance.infoYG.debug)
                 Debug.Log(message);
         }
 
@@ -151,7 +151,7 @@ namespace YG
                 firstSceneLoad = false;
             else if (infoYG.AdWhenLoadingScene)
                 _FullscreenShow();
-        }  
+        }
 
         #region For ECS
 #if UNITY_EDITOR
@@ -191,7 +191,7 @@ namespace YG
 
         #endregion Methods
 
-        
+
 
         // Sending messages
 

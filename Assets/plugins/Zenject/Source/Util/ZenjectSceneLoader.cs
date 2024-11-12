@@ -53,12 +53,12 @@ namespace Zenject
             // we can't do that in this case since the scene isn't loaded until the next frame
         }
 
-            public AsyncOperation LoadSceneAsync(
-            string sceneName,
-            LoadSceneMode loadMode = LoadSceneMode.Single,
-            Action<DiContainer> extraBindings = null,
-            LoadSceneRelationship containerMode = LoadSceneRelationship.None,
-            Action<DiContainer> extraBindingsLate = null)
+        public AsyncOperation LoadSceneAsync(
+        string sceneName,
+        LoadSceneMode loadMode = LoadSceneMode.Single,
+        Action<DiContainer> extraBindings = null,
+        LoadSceneRelationship containerMode = LoadSceneRelationship.None,
+        Action<DiContainer> extraBindingsLate = null)
         {
             PrepareForLoadScene(loadMode, extraBindings, extraBindingsLate, containerMode);
 

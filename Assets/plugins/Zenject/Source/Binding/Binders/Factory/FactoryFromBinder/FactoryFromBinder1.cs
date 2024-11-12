@@ -67,7 +67,7 @@ namespace Zenject
             // constraints below
             where TContract : IPoolable<TParam1, IMemoryPool>
         {
-            return fromBinder.FromPoolableMemoryPool<TParam1, TContract>(x => {});
+            return fromBinder.FromPoolableMemoryPool<TParam1, TContract>(x => { });
         }
 
         public static ArgConditionCopyNonLazyBinder FromPoolableMemoryPool<TParam1, TContract>(
@@ -87,7 +87,7 @@ namespace Zenject
             // constraints below
             where TContract : Component, IPoolable<TParam1, IMemoryPool>
         {
-            return fromBinder.FromMonoPoolableMemoryPool<TParam1, TContract>(x => {});
+            return fromBinder.FromMonoPoolableMemoryPool<TParam1, TContract>(x => { });
         }
 
         public static ArgConditionCopyNonLazyBinder FromMonoPoolableMemoryPool<TParam1, TContract>(
@@ -108,7 +108,7 @@ namespace Zenject
             where TContract : IPoolable<TParam1, IMemoryPool>
             where TMemoryPool : MemoryPool<TParam1, IMemoryPool, TContract>
         {
-            return fromBinder.FromPoolableMemoryPool<TParam1, TContract, TMemoryPool>(x => {});
+            return fromBinder.FromPoolableMemoryPool<TParam1, TContract, TMemoryPool>(x => { });
         }
 
         public static ArgConditionCopyNonLazyBinder FromPoolableMemoryPool<TParam1, TContract, TMemoryPool>(

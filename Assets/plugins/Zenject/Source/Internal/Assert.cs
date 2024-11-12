@@ -183,7 +183,7 @@ namespace ModestTree
 #endif
         public static void IsNotEqual(object left, object right, Func<string> messageGenerator)
         {
-            if(object.Equals(left, right))
+            if (object.Equals(left, right))
             {
                 left = left ?? "<NULL>";
                 right = right ?? "<NULL>";

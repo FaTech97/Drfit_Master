@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using YG.Utils.Lang;
 
 namespace YG.Utils.LB
@@ -66,7 +66,7 @@ namespace YG.Utils.LB
     {
         public static string TimeTypeConvertStatic(int score, int decimalSize)
         {
-            if (score < 1000) 
+            if (score < 1000)
                 return "00:00";
 
             if (decimalSize == 1)

@@ -76,10 +76,12 @@ namespace Zenject.Tests.Other
             Assert.IsEqual(bar, Container.Resolve<IBar<int>>());
         }
 
-        public interface IQux {
+        public interface IQux
+        {
         }
 
-        public class Qux : IQux {
+        public class Qux : IQux
+        {
         }
 
         [Test]

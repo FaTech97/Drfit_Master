@@ -1,4 +1,4 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
@@ -12,7 +12,7 @@ public class JoystickSetterExample : MonoBehaviour
 
     public void ModeChanged(int index)
     {
-        switch(index)
+        switch (index)
         {
             case 0:
                 variableJoystick.SetMode(JoystickType.Fixed);
@@ -25,7 +25,7 @@ public class JoystickSetterExample : MonoBehaviour
                 break;
             default:
                 break;
-        }     
+        }
     }
 
     public void AxisChanged(int index)

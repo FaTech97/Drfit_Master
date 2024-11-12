@@ -6,43 +6,43 @@ using UnityEngine;
 public class MapManager : MonoBehaviour
 {
 
-    public GameObject map;
-    public static bool mapEnabled;
+	public GameObject map;
+	public static bool mapEnabled;
 
-    private void Start()
-    {
-        MapDisable();
-    }
+	private void Start()
+	{
+		MapDisable();
+	}
 
-    void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.M))
-        {
-            if (mapEnabled)
-            {
-                MapDisable();
-                
-            }
-            else
-            {
-                MapEnable();
-               
-            }
-        }
-    }
+	void Update()
+	{
+		if (Input.GetKeyDown(KeyCode.M))
+		{
+			if (mapEnabled)
+			{
+				MapDisable();
 
-    void MapEnable()
-    {
-        map.SetActive(true);
-        mapEnabled = true;
+			}
+			else
+			{
+				MapEnable();
 
-    }
+			}
+		}
+	}
 
-    void MapDisable()
-    {
-        map.SetActive(false);
-        mapEnabled = false;
+	void MapEnable()
+	{
+		map.SetActive(true);
+		mapEnabled = true;
 
-    }
+	}
+
+	void MapDisable()
+	{
+		map.SetActive(false);
+		mapEnabled = false;
+
+	}
 
 }

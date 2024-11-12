@@ -1,4 +1,4 @@
-﻿using UnityEditor;
+using UnityEditor;
 using UnityEngine;
 
 namespace UnityToolbag
@@ -19,8 +19,8 @@ namespace UnityToolbag
 
         public override float GetPropertyHeight(SerializedProperty property, GUIContent label)
         {
-            return ShouldDisplay(property) 
-                ? EditorGUI.GetPropertyHeight(property, label, includeChildren: true) 
+            return ShouldDisplay(property)
+                ? EditorGUI.GetPropertyHeight(property, label, includeChildren: true)
                 : 0;
         }
 

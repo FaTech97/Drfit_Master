@@ -186,7 +186,7 @@ namespace Zenject
 
         public void Update()
         {
-            if(IsPaused)
+            if (IsPaused)
             {
                 return;
             }
@@ -201,7 +201,7 @@ namespace Zenject
 
         public void FixedUpdate()
         {
-            if(IsPaused)
+            if (IsPaused)
             {
                 return;
             }
@@ -216,7 +216,7 @@ namespace Zenject
 
         public void LateUpdate()
         {
-            if(IsPaused)
+            if (IsPaused)
             {
                 return;
             }

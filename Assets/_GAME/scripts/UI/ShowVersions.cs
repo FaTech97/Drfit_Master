@@ -5,11 +5,11 @@ using UnityEngine.UI;
 
 public class ShowVersions : MonoBehaviour
 {
-    private Text text;
-    
-    void Start()
-    {
-        text = GetComponent<Text>();
-        text.text = "u-" + Application.unityVersion + "-v-" + Application.version; 
-    }
+	private Text text;
+
+	void Start()
+	{
+		text = GetComponent<Text>();
+		text.text = "u-" + Application.unityVersion + "-v-" + Application.version;
+	}
 }

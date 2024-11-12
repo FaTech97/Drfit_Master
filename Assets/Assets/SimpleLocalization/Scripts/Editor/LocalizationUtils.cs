@@ -60,7 +60,7 @@ namespace Assets.SimpleLocalization.Scripts.Editor
                 EditorUtility.DisplayDialog("Error", $"Can't save data to table: {error}", "OK");
             }
         }
-        
+
         public static Dictionary<string, string> CreateRow(string key, ActionType action, Dictionary<string, string> keys, Dictionary<string, SortedDictionary<string, string>> sheetDictionary) // OnDestroy required
         {
             var dict = new Dictionary<string, string> { { "Key", action == ActionType.Add ? "" : key }, { "NewKey", action == ActionType.Delete ? "" : keys[key] } };

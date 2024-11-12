@@ -34,12 +34,12 @@ namespace ModestTree
 
         public static bool HasMoreThan<T>(this IEnumerable<T> enumerable, int amount)
         {
-            return enumerable.HasAtLeast(amount+1);
+            return enumerable.HasAtLeast(amount + 1);
         }
 
         public static bool HasLessThan<T>(this IEnumerable<T> enumerable, int amount)
         {
-            return enumerable.HasAtMost(amount-1);
+            return enumerable.HasAtMost(amount - 1);
         }
 
         public static bool HasAtMost<T>(this IEnumerable<T> enumerable, int amount)

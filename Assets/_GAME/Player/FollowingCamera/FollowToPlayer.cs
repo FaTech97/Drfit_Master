@@ -5,11 +5,11 @@ using UnityEngine.Serialization;
 
 public class FollowToPlayer : MonoBehaviour
 {
-    public Transform player;
-    private Camera _camera;
+	public Transform player;
+	private Camera _camera;
 
-    private void LateUpdate()
-    {
-        transform.position = player.position;
-    }
+	private void LateUpdate()
+	{
+		transform.position = player.position;
+	}
 }

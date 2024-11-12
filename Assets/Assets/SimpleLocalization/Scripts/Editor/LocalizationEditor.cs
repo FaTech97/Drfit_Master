@@ -23,7 +23,7 @@ namespace Assets.SimpleLocalization.Scripts.Editor
         private static LocalizationEditor _instance;
 
         private static LocalizationSettings Settings => LocalizationSettings.Instance;
-        
+
         private static string SheetFileName(string sheetName) => AssetDatabase.GetAssetPath(Settings.SaveFolder) + "/" + sheetName + ".csv";
 
         public void LoadSetting()
@@ -126,7 +126,7 @@ namespace Assets.SimpleLocalization.Scripts.Editor
 
             return key;
         }
-        
+
         public void ResetSheet()
         {
             CurrentKey = PrevKey != "" ? Keys[PrevKey] : PrevKey;

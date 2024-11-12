@@ -14,7 +14,7 @@ namespace Assets.SimpleLocalization.Scripts.Editor
         {
             DrawDefaultInspector();
 
-            var component = (Text) target;
+            var component = (Text)target;
 
             if (component.GetComponent<LocalizedText>()) return;
 

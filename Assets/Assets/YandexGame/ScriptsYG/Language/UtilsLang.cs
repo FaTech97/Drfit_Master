@@ -1,4 +1,4 @@
-﻿using UnityEngine;
+using UnityEngine;
 #if YG_TEXT_MESH_PRO
 using TMPro;
 #endif

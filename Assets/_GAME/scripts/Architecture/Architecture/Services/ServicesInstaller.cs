@@ -10,48 +10,48 @@ using Zenject;
 
 namespace _GAME.scripts.Architecture.Architecture.Services
 {
-    public class ServicesInstaller: MonoInstaller
-    {
-        [SerializeField] private GameObject YaObject;
-        [SerializeField] private SceneLoader sceneLoader;
-        [SerializeField] private List<Level> levelsList;
-    
-        public override void InstallBindings()
-        {
-            BindUiService();
-            BindSceneService();
-            BindPersistanseService();
-            BindStaticDataServoce();
-            BindAdService();
-        }
+	public class ServicesInstaller : MonoInstaller
+	{
+		[SerializeField] private GameObject YaObject;
+		[SerializeField] private SceneLoader sceneLoader;
+		[SerializeField] private List<Level> levelsList;
 
-        private void BindStaticDataServoce()
-        {
-            Container.Bind<StaticDataService>().AsSingle().NonLazy();
-        }
+		public override void InstallBindings()
+		{
+			BindUiService();
+			BindSceneService();
+			BindPersistanseService();
+			BindStaticDataServoce();
+			BindAdService();
+		}
 
-        private void BindAdService()
-        {
-            Container.Bind<YandexGame>().FromComponentInNewPrefab(YaObject).AsSingle().NonLazy();
-            Container.Bind<IAdService>().To<YandexAdService>().AsSingle();
-        }
+		private void BindStaticDataServoce()
+		{
+			Container.Bind<StaticDataService>().AsSingle().NonLazy();
+		}
 
-        private void BindSceneService()
-        {
-            Container.Bind<SceneLoader>().FromComponentInNewPrefab(sceneLoader).AsSingle().NonLazy();
-            Container.Bind<LevelManager>().AsSingle().WithArguments(levelsList);
-        }
+		private void BindAdService()
+		{
+			Container.Bind<YandexGame>().FromComponentInNewPrefab(YaObject).AsSingle().NonLazy();
+			Container.Bind<IAdService>().To<YandexAdService>().AsSingle();
+		}
 
-        private void BindPersistanseService()
-        {
-            Container.Bind<IPersistanseDataService>().To<YandexPersistentDataService>().AsSingle();
-        }
+		private void BindSceneService()
+		{
+			Container.Bind<SceneLoader>().FromComponentInNewPrefab(sceneLoader).AsSingle().NonLazy();
+			Container.Bind<LevelManager>().AsSingle().WithArguments(levelsList);
+		}
 
-        private void BindUiService()
-        {
-            Container.Bind<UIFactory>().AsSingle();
-            Container.BindInterfacesAndSelfTo<WindowService>().AsSingle();
-            
-        }
-    }
+		private void BindPersistanseService()
+		{
+			Container.Bind<IPersistanseDataService>().To<YandexPersistentDataService>().AsSingle();
+		}
+
+		private void BindUiService()
+		{
+			Container.Bind<UIFactory>().AsSingle();
+			Container.BindInterfacesAndSelfTo<WindowService>().AsSingle();
+
+		}
+	}
 }

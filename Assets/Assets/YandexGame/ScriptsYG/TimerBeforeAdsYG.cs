@@ -1,11 +1,11 @@
-﻿using System.Collections;
+using System.Collections;
 using UnityEngine;
 using UnityEngine.Events;
 using YG;
 
 public class TimerBeforeAdsYG : MonoBehaviour
 {
-    [SerializeField, 
+    [SerializeField,
         Tooltip("Объект таймера перед показом рекламы. Он будет активироваться и деактивироваться в нужное время.")]
     private GameObject secondsPanelObject;
     [SerializeField,
@@ -18,7 +18,7 @@ public class TimerBeforeAdsYG : MonoBehaviour
 
     [Space(20)]
     [SerializeField]
-    private UnityEvent onShowTimer; 
+    private UnityEvent onShowTimer;
     [SerializeField]
     private UnityEvent onHideTimer;
 
@@ -102,7 +102,7 @@ public class TimerBeforeAdsYG : MonoBehaviour
             yield return new WaitForSeconds(2.5f);
         else
             yield return new WaitForSecondsRealtime(2.5f);
-        
+
         if (objSecCounter != 0)
         {
             secondsPanelObject.SetActive(false);

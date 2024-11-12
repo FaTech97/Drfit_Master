@@ -1,13 +1,13 @@
-﻿using UnityEditor;
+using UnityEditor;
 
 namespace Assets.SimpleLocalization.Scripts.Editor
 {
     [CustomEditor(typeof(LocalizationSettings))]
-    public class LocalizationSettingsEditor : UnityEditor.Editor 
+    public class LocalizationSettingsEditor : UnityEditor.Editor
     {
         public override void OnInspectorGUI()
         {
-            var settings = (LocalizationSettings) target;
+            var settings = (LocalizationSettings)target;
 
             settings.DisplayHelp();
             DrawDefaultInspector();

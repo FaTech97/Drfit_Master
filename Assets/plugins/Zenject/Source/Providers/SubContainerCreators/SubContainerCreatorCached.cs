@@ -48,7 +48,7 @@ namespace Zenject
 
                     Assert.IsNotNull(_subContainer);
                 }
-                else 
+                else
                 {
                     injectAction = null;
                 }
