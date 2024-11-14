@@ -10,24 +10,28 @@ namespace _GAME.scripts.Architecture.Architecture.Persistanse_Service
 		public SettingsData Settings = new SettingsData();
 		public LevelsData Levels = new LevelsData();
 		public PlayerData Player = new PlayerData();
+	}
 
-		public class SettingsData
-		{
-			public bool IsAudioMute = false;
-		}
+	[Serializable]
+	public class SettingsData
+	{
+		public bool IsAudioMute = false;
+		public Langs Language = Langs.Russian;
+	}
 
-		public class LevelsData
-		{
-			public int CurrentLevelIndex = 0;
-		}
+	[Serializable]
+	public class LevelsData
+	{
+		public int CurrentLevelIndex = 0;
+	}
 
-		public class PlayerData
-		{
-			public int Coins = 100;
-			public int PlayerHP = 1;
-			public ItemId[] BuysItemsIDs = new ItemId[0];
-			public ItemId CurrectItemId = ItemId.DefaultItem;
-		}
+	[Serializable]
+	public class PlayerData
+	{
+		public int Coins = 100;
+		public int PlayerHP = 1;
+		public ItemId[] BuysItemsIDs = new ItemId[0];
+		public ItemId CurrectItemId = ItemId.DefaultItem;
 	}
 
 }

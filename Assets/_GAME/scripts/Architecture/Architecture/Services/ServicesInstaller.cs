@@ -45,6 +45,7 @@ namespace _GAME.scripts.Architecture.Architecture.Services
 		private void BindPersistanseService()
 		{
 			Container.Bind<IPersistanseDataService>().To<YandexPersistentDataService>().AsSingle();
+
 		}
 
 		private void BindUiService()

@@ -1,4 +1,5 @@
-﻿using YG;
+﻿using Assets.SimpleLocalization.Scripts;
+using YG;
 
 namespace _GAME.scripts.Architecture.Architecture.Persistanse_Service.PrefsPersistanseDataService
 {
@@ -12,6 +13,7 @@ namespace _GAME.scripts.Architecture.Architecture.Persistanse_Service.PrefsPersi
 		private void GetLoad()
 		{
 			SetData(YandexGame.savesData.data);
+			LocalizationManager.Language = YandexGame.savesData.data.Settings.Language.ToString();
 		}
 
 		public override GameData LoadProgress()

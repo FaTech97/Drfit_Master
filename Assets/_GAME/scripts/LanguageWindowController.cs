@@ -2,14 +2,16 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using Assets.SimpleLocalization.Scripts;
+using Assets.SimpleLocalization.Scripts;
 using UnityEngine;
+using UnityEngine.Serialization;
 using UnityEngine.UI;
 
 public enum Langs
 {
 	English,
 	Russian,
-	Turkey
+	Turkish
 }
 
 public class LanguageWindowController : MonoBehaviour
@@ -20,37 +22,34 @@ public class LanguageWindowController : MonoBehaviour
 	[SerializeField] private Button enButton;
 	[SerializeField] private Button turkButton;
 	[SerializeField] private GameObject settings;
-	private Image _ruImage;
-	private Image _enImage;
-	private Image _tuImage;
+	[SerializeField] private Image ruImage;
+	[SerializeField] private Image enImage;
+	[SerializeField] private Image tuImage;
 
 	void Start()
 	{
 		close.onClick.AddListener(ClosePressed);
-		ruButton.onClick.AddListener(ruPressed);
-		enButton.onClick.AddListener(enPressed);
-		turkButton.onClick.AddListener(tuPressed);
-		_ruImage = ruButton.GetComponent<Image>();
-		_enImage = enButton.GetComponent<Image>();
-		_tuImage = turkButton.GetComponent<Image>();
-		ChooseLang(Langs.English);
+		ruButton.onClick.AddListener(RuPressed);
+		enButton.onClick.AddListener(EnPressed);
+		turkButton.onClick.AddListener(TuPressed);
 	}
 
 	private void OnDestroy()
 	{
 		close.onClick.RemoveListener(ClosePressed);
-		ruButton.onClick.RemoveListener(ruPressed);
-		enButton.onClick.RemoveListener(enPressed);
-		turkButton.onClick.RemoveListener(tuPressed);
+		ruButton.onClick.RemoveListener(RuPressed);
+		enButton.onClick.RemoveListener(EnPressed);
+		turkButton.onClick.RemoveListener(TuPressed);
 	}
 
 
 	public void ChooseLang(Langs lang)
 	{
 		LocalizationManager.Language = lang.ToString();
-		ChangeChoosesByLang(lang, Langs.Russian, _ruImage);
-		ChangeChoosesByLang(lang, Langs.English, _enImage);
-		ChangeChoosesByLang(lang, Langs.Turkey, _tuImage);
+		OnLangChanged?.Invoke(lang);
+		ChangeChoosesByLang(lang, Langs.Russian, ruImage);
+		ChangeChoosesByLang(lang, Langs.English, enImage);
+		ChangeChoosesByLang(lang, Langs.Turkish, tuImage);
 	}
 
 	public void ShowLangPage()
@@ -65,8 +64,8 @@ public class LanguageWindowController : MonoBehaviour
 		image.color = new Color(color.r, color.g, color.b, transparency);
 	}
 
-	private void enPressed() => ChooseLang(Langs.English);
-	private void ruPressed() => ChooseLang(Langs.Russian);
-	private void tuPressed() => ChooseLang(Langs.Turkey);
+	private void EnPressed() => ChooseLang(Langs.English);
+	private void RuPressed() => ChooseLang(Langs.Russian);
+	private void TuPressed() => ChooseLang(Langs.Turkish);
 	private void ClosePressed() => settings.SetActive(false);
 }

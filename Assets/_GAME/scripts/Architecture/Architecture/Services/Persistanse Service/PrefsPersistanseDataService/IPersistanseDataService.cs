@@ -18,6 +18,15 @@ namespace _GAME.scripts.Architecture.Architecture.Persistanse_Service
 			}
 		}
 
+		// TechDept решить проблему такого костыля с записью в дату
+		public void ChangeLanguage(Langs lang)
+		{
+			GameData data = Data;
+			data.Settings.Language = lang;
+			Data = data;
+			SaveProgress(Data);
+		}
+
 		public void SubscructHP()
 		{
 			GameData data = Data;
@@ -59,7 +68,6 @@ namespace _GAME.scripts.Architecture.Architecture.Persistanse_Service
 
 		public IPersistanseDataService()
 		{
-			// LoadProgress();
 			Initialization();
 		}
 
@@ -86,6 +94,14 @@ namespace _GAME.scripts.Architecture.Architecture.Persistanse_Service
 			carList.Add(id);
 			data.Player.BuysItemsIDs = carList.ToArray();
 			data.Player.CurrectItemId = id;
+			Data = data;
+			SaveProgress(Data);
+		}
+
+		public void ChangeIsMute(bool isMute)
+		{
+			GameData data = Data;
+			data.Settings.IsAudioMute = isMute;
 			Data = data;
 			SaveProgress(Data);
 		}
