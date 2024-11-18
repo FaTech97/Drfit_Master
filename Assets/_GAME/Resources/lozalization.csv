@@ -17,6 +17,7 @@ Windows.Lose.RepairPrice,30$,30₽,30₺
 Windows.Lose.Restart,RESTART,ПЕРЕИГРАТЬ,TEKRAR OYNAMAK
 SHOP.GoToMenu,GO TO MENU,В МЕНЮ,MENÜDE
 SHOP.Buy,BUY,КУПИТЬ,ALMAK
+SHOP.Choose,СHOOSE,ВЫБРАТЬ,SEÇMEK
 SHOP.Speed,SPEED:,СКОРОСТЬ:,HIZ:
 SHOP.Size,SIZE:,РАЗМЕР:,BOYUT:
 Settings.Title,SETTINGS,НАСТРОЙКИ,AYARLAR

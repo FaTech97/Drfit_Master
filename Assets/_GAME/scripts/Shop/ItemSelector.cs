@@ -4,6 +4,7 @@ using System.Linq;
 using _GAME.scripts;
 using _GAME.scripts.Architecture.Architecture.Persistanse_Service;
 using _GAME.scripts.Architecture.Architecture.Services.ScenesService;
+using Assets.SimpleLocalization.Scripts;
 using UnityEngine;
 using UnityEngine.UI;
 using Zenject;
@@ -16,10 +17,8 @@ namespace Shop
 		[SerializeField] private Button nextButton;
 		[SerializeField] private Button closeButton;
 		[SerializeField] private Button BuyButton;
-		[SerializeField] private string prefix;
 		[SerializeField] private Text _priceText;
 		[SerializeField] private Text buttonText;
-		[SerializeField] private string postfix;
 		[SerializeField] private BoxesCounterViewer sizeViewer;
 		[SerializeField] private BoxesCounterViewer speedViewer;
 		private int currentItemIndex;
@@ -103,15 +102,17 @@ namespace Shop
 			}
 			else
 			{
-				_priceText.text = prefix + _items[_index].price + postfix;
-				buttonText.text = "Купить";
+				_priceText.gameObject.SetActive(true);
+				_priceText.text = _items[_index].price.ToString();
+				buttonText.text = LocalizationManager.Localize("SHOP.Buy");
+				;
 			}
 		}
 
 		private void MakeButtonIsOpen()
 		{
-			_priceText.text = "";
-			buttonText.text = "Выбрать";
+			_priceText.gameObject.SetActive(false);
+			buttonText.text = LocalizationManager.Localize("SHOP.Choose");
 			BuyButton.onClick.RemoveListener(Buy);
 			BuyButton.onClick.AddListener(SetItem);
 
