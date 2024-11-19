@@ -56,7 +56,6 @@ public class DriftCarMove : MonoBehaviour
 
 	private void Start()
 	{
-		_windowService.Open(WindowId.Main);
 		_inputService = GetComponent<PCInput>();
 	}
 

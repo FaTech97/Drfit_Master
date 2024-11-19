@@ -1,6 +1,9 @@
 Key,English,Russian,Turkish
+Common.GameName,STEVE NOOB DRIFTER,НУБИК ДРИФТЕР,STEVE ÇAYLAK SERSERİ
+Common.StudioName,QWINO games,QWINO games,QWINO games
 Common.GO,GO!,Вперед!,İleri!
 Common.Level,Level {0},Уровень {0},Seviye {0}
+Common.Play,Play {0} level,Играть {0} уровень,{0} seviyesini oyna
 Common.Back,BACK,НАЗАД,GERİ
 Common.PressToContinue,Press to start...,Нажмите для старта...,Basın başlatmak için...
 Common.Shop,SHOP,МАГАЗИН,MAĞAZA

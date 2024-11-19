@@ -57,11 +57,5 @@ public class WindowService
 	public void SetRootObject(Transform go)
 	{
 		_uiFactory.SetRoot(go);
-		// TODO удалить костыль
-		if (isFirstSetRoot)
-		{
-			isFirstSetRoot = false;
-			Open(WindowId.Main);
-		}
 	}
 }

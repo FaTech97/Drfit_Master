@@ -448,7 +448,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d3a5e7bb651658b4889dec4175b38956, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ScemeName: Assets/_GAME/Scenes/Settings.unity
+  ScemeName: Assets/_GAME/Scenes/Shop.unity
 --- !u!114 &7043855918113575150
 MonoBehaviour:
   m_ObjectHideFlags: 0

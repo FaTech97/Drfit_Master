@@ -1647,10 +1647,10 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 742344183}
-  - component: {fileID: 742344187}
   - component: {fileID: 742344186}
   - component: {fileID: 742344185}
   - component: {fileID: 742344184}
+  - component: {fileID: 742344187}
   m_Layer: 5
   m_Name: BackToMenu
   m_TagString: Untagged
@@ -1770,10 +1770,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 742344182}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 48bb948f1e82f594f9322625bc5cc774, type: 3}
+  m_Script: {fileID: 11500000, guid: d3a5e7bb651658b4889dec4175b38956, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  closeButton: {fileID: 0}
+  ScemeName: Assets/_GAME/Scenes/GameStart.unity
 --- !u!1 &931301149
 GameObject:
   m_ObjectHideFlags: 0
