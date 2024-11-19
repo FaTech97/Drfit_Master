@@ -6974,6 +6974,7 @@ GameObject:
   - component: {fileID: 1320692222}
   - component: {fileID: 1320692221}
   - component: {fileID: 1320692220}
+  - component: {fileID: 1320692223}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -7024,7 +7025,7 @@ Camera:
   far clip plane: 1000
   field of view: 80
   orthographic: 1
-  orthographic size: 110
+  orthographic size: 150
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -7055,6 +7056,20 @@ Transform:
   m_Children: []
   m_Father: {fileID: 2107336649}
   m_LocalEulerAnglesHint: {x: 30, y: 0, z: 0}
+--- !u!114 &1320692223
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1320692219}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7a67263b59cfb494296d9b6673153637, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  DefaultResolution: {x: 1200, y: 2664}
+  WidthOrHeight: 0.3
 --- !u!1001 &1363945265
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -8972,7 +8987,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 09bd1db3628918e4f82ec9b80b01661c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  touchArea2: {fileID: 0}
   speedRotateX: 5
   speedRotateY: 5
 --- !u!1660057539 &9223372036854775807
