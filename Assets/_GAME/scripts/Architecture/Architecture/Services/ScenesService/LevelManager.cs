@@ -31,6 +31,11 @@ namespace _GAME.scripts.Architecture.Architecture.Services.ScenesService
 			return _currentLevelIndex;
 		}
 
+		public void SetLevelIndex(int index)
+		{
+			_currentLevelIndex = index;
+		}
+
 		public void RestartCurrentLevel()
 		{
 			_sceneLoader.Load(levels[_currentLevelIndex].LevelName);

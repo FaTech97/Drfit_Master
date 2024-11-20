@@ -7,7 +7,9 @@ namespace _GAME.scripts.Architecture.Architecture.Persistanse_Service
 	public abstract class IPersistanseDataService
 	{
 		public event Action OnDataChanged;
+		public event Action OnDataWasLoad;
 		public GameConfig GameConfig = new GameConfig();
+
 		public GameData Data
 		{
 			get { return GetData(); }
@@ -16,6 +18,11 @@ namespace _GAME.scripts.Architecture.Architecture.Persistanse_Service
 				SetData(value);
 				OnDataChanged?.Invoke();
 			}
+		}
+
+		protected void InvokeDate()
+		{
+			OnDataWasLoad.Invoke();
 		}
 
 		// TechDept решить проблему такого костыля с записью в дату
@@ -41,6 +48,12 @@ namespace _GAME.scripts.Architecture.Architecture.Persistanse_Service
 			data.Player.PlayerHP = GameConfig.PlayerMaxHp;
 			Data = data;
 			SaveProgress(Data);
+		}
+
+		public void ResetProgress()
+		{
+			GameData gameData = new GameData();
+			SaveProgress(gameData);
 		}
 
 		public void AddMoney(int coins)

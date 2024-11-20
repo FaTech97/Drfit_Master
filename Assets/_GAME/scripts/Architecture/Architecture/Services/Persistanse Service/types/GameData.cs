@@ -16,7 +16,7 @@ namespace _GAME.scripts.Architecture.Architecture.Persistanse_Service
 	public class SettingsData
 	{
 		public bool IsAudioMute = false;
-		public Langs Language = Langs.Russian;
+		public Langs Language;
 	}
 
 	[Serializable]

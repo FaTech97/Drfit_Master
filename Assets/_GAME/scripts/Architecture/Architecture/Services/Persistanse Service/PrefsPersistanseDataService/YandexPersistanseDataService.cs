@@ -1,45 +1,59 @@
-﻿using Assets.SimpleLocalization.Scripts;
+﻿using System;
+using _GAME.scripts.Architecture.Architecture.Persistanse_Service;
+using Assets.SimpleLocalization.Scripts;
 using YG;
 
-namespace _GAME.scripts.Architecture.Architecture.Persistanse_Service.PrefsPersistanseDataService
+public class YandexPersistentDataService : IPersistanseDataService
 {
-	public class YandexPersistentDataService : IPersistanseDataService
+	protected override void Initialization()
 	{
-		protected override void Initialization()
-		{
-			YandexGame.GetDataEvent += GetLoad;
-		}
+		YandexGame.GetDataEvent += GetLoad;
+	}
 
-		private void GetLoad()
+	private void GetLoad()
+	{
+		SetData(YandexGame.savesData.data);
+		if (YandexGame.savesData.data.Settings.Language.ToString() != null)
 		{
-			SetData(YandexGame.savesData.data);
 			LocalizationManager.Language = YandexGame.savesData.data.Settings.Language.ToString();
 		}
-
-		public override GameData LoadProgress()
+		else if (YandexGame.savesData.language != null)
 		{
-			if (YandexGame.Instance)
-			{
-				YandexGame.LoadProgress();
-			}
-
-			return Data;
+			LocalizationManager.Language = YandexGame.savesData.language == "ru"
+				? Langs.Russian.ToString()
+				: Langs.English.ToString();
+		}
+		else
+		{
+			LocalizationManager.Language = Langs.English.ToString();
 		}
 
-		public override void SaveProgress(GameData gameData)
+		InvokeDate();
+	}
+
+	public override GameData LoadProgress()
+	{
+		if (YandexGame.Instance)
 		{
-			SetData(gameData);
-			YandexGame.SaveProgress();
+			YandexGame.LoadProgress();
 		}
 
-		public override void SetData(GameData newValue)
-		{
-			YandexGame.savesData.data = newValue;
-		}
+		return Data;
+	}
 
-		public override GameData GetData()
-		{
-			return YandexGame.savesData.data;
-		}
+	public override void SaveProgress(GameData gameData)
+	{
+		SetData(gameData);
+		YandexGame.SaveProgress();
+	}
+
+	public override void SetData(GameData newValue)
+	{
+		YandexGame.savesData.data = newValue;
+	}
+
+	public override GameData GetData()
+	{
+		return YandexGame.savesData.data;
 	}
 }

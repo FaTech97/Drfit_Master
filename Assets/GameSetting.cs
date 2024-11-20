@@ -18,6 +18,11 @@ public class GameSetting : MonoBehaviour
         _persistanseDataService = persistanseDataService;
     }
 
+    public void ResetProgress()
+    {
+        _persistanseDataService.ResetProgress();
+    }
+
     private void Start()
     {
         SetupIsLang();

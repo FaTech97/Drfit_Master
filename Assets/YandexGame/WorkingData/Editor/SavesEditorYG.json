@@ -5,19 +5,20 @@
       "Language": 1
     },
     "Levels": {
-      "CurrentLevelIndex": 1
+      "CurrentLevelIndex": 2
     },
     "Player": {
-      "Coins": 360,
-      "PlayerHP": -1,
+      "Coins": 500,
+      "PlayerHP": -2,
       "BuysItemsIDs": [
         2,
-        2
+        2,
+        5
       ],
-      "CurrectItemId": 2
+      "CurrectItemId": 5
     }
   },
-  "idSave": 605,
+  "idSave": 611,
   "isFirstSession": false,
   "language": "ru",
   "promptDone": false
