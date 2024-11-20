@@ -15,7 +15,6 @@ namespace Shop
 	{
 		[SerializeField] private Button prevButton;
 		[SerializeField] private Button nextButton;
-		[SerializeField] private Button closeButton;
 		[SerializeField] private Button BuyButton;
 		[SerializeField] private Text _priceText;
 		[SerializeField] private Text buttonText;
@@ -39,16 +38,10 @@ namespace Shop
 			_sizeAligner = GetComponent<SizeAligner>();
 			prevButton.onClick.AddListener(() => ChangeItem(-1));
 			nextButton.onClick.AddListener(() => ChangeItem(1));
-			closeButton.onClick.AddListener(() => Close());
 			BuyButton.onClick.AddListener(Buy);
 			LoadAllConfigs();
 			InstantiateAll();
 			SelectItem(0);
-		}
-
-		private void Close()
-		{
-			this._levelManager.RestartCurrentLevel();
 		}
 
 		private void Buy()

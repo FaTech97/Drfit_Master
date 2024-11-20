@@ -13,6 +13,7 @@ public class MainMenuUIController : MonoBehaviour
     [SerializeField] private Text playText;
     private LevelManager _sceneLoader;
     private IPersistanseDataService _persistanseDataService;
+    private MainMusicController mainMusic;
 
     [Inject]
     private void Construct(LevelManager sceneLoader, IPersistanseDataService persistanseDataService)
@@ -23,6 +24,8 @@ public class MainMenuUIController : MonoBehaviour
     
     void Start()
     {
+        mainMusic = FindObjectOfType<MainMusicController>();
+        mainMusic.Play();
         Langs lang = _persistanseDataService.Data.Settings.Language;
         LocalizationManager.Language = lang.ToString();
         playButton.onClick.AddListener(OnPlayClick);
@@ -31,6 +34,7 @@ public class MainMenuUIController : MonoBehaviour
 
     private void OnPlayClick()
     {
+        mainMusic.Stop();
         _sceneLoader.RestartCurrentLevel();
     }
 }
