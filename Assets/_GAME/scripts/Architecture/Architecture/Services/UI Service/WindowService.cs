@@ -1,9 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using Zenject;
+using Object = UnityEngine.Object;
 
-public class WindowService
+public class WindowService: IInitializable
 {
 	private UIFactory _uiFactory;
 	private Dictionary<WindowId, WindowBase> activeWindows = new Dictionary<WindowId, WindowBase>();
@@ -52,8 +54,20 @@ public class WindowService
 
 	public void Close(WindowId id) => SetWindow(id, null);
 
-	public void SetRootObject(Transform go)
+	private void SetRootObject(Transform go)
 	{
 		_uiFactory.SetRoot(go);
+	}
+
+	public void Initialize()
+	{
+		GameObject go = new GameObject("[UI Root]");
+		Object.DontDestroyOnLoad(go);
+		Canvas canvas = go.AddComponent<Canvas>();
+		go.AddComponent<GraphicRaycaster>();
+		canvas.renderMode = RenderMode.ScreenSpaceOverlay;
+		RectTransform rectTransform = go.GetComponent<RectTransform>();
+		rectTransform.localPosition = Vector3.zero;
+		SetRootObject(go.transform);
 	}
 }
