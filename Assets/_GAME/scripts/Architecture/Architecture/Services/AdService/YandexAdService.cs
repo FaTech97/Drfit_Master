@@ -19,15 +19,12 @@ namespace _GAME.scripts.Architecture.Architecture.Services.AdService
 		{
 			_actions[id]();
 			_actions.Remove(id);
-			Debug.Log("Rew" + id);
 		}
 
 		public override void ShawReward(int id, Action action)
 		{
-			Debug.Log("Shwo" + id);
 			_actions[id] = action;
 			YandexGame.RewVideoShow(id);
-			Debug.Log("Shwoeeed" + id);
 		}
 	}
 }

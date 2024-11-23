@@ -25,6 +25,8 @@ namespace _GAME.scripts.Architecture.Architecture.Services.LevelServices
 			Container.Bind<LevelEvents>().AsSingle();
 		}
 
+
+		// Techdept сейчас канвас передается а нужно тобы создавался
 		private void InstantiateRootCanvasForWindows()
 		{
 			GameObject go = Instantiate(new GameObject("UI Root"));

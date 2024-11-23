@@ -3,6 +3,7 @@ using _GAME.scripts.Architecture.Architecture.Persistanse_Service;
 using _GAME.scripts.Architecture.Architecture.Persistanse_Service.PrefsPersistanseDataService;
 using _GAME.scripts.Architecture.Architecture.Services.AdService;
 using _GAME.scripts.Architecture.Architecture.Services.ScenesService;
+using _GAME.scripts.Architecture.Architecture.Services.SoundService;
 using _GAME.scripts.Architecture.Architecture.Services.StaticData;
 using UnityEngine;
 using YG;
@@ -19,6 +20,7 @@ namespace _GAME.scripts.Architecture.Architecture.Services
 		public override void InstallBindings()
 		{
 			BindUiService();
+			InstallSoundsService();
 			BindSceneService();
 			BindPersistanseService();
 			BindStaticDataServoce();
@@ -52,7 +54,12 @@ namespace _GAME.scripts.Architecture.Architecture.Services
 		{
 			Container.Bind<UIFactory>().AsSingle();
 			Container.BindInterfacesAndSelfTo<WindowService>().AsSingle();
+		}
 
+		public void InstallSoundsService()
+		{
+			Container.BindInterfacesAndSelfTo<SoundsService>().AsSingle();
+			Container.Bind<SoundsFactory>().AsSingle();
 		}
 	}
 }

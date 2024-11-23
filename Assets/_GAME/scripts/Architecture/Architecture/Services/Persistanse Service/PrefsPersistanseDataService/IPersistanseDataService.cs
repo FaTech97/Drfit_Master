@@ -54,6 +54,7 @@ namespace _GAME.scripts.Architecture.Architecture.Persistanse_Service
 		{
 			GameData gameData = new GameData();
 			SaveProgress(gameData);
+			OnDataChanged?.Invoke();
 		}
 
 		public void AddMoney(int coins)

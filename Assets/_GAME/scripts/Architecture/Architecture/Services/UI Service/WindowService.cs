@@ -36,10 +36,8 @@ public class WindowService
 
 	private void SetWindow(WindowId id, WindowBase activeUI)
 	{
-		Debug.Log("Closing " + id);
 		if (activeUI == null && IsWindowOpen(id))
 		{
-			Debug.Log("Closing " + id);
 			activeWindows[id].Close();
 		}
 		activeWindows[id] = activeUI;

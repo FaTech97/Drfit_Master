@@ -16,7 +16,6 @@ namespace _GAME.scripts.Architecture.types
 			this.windowService = windowService;
 		}
 
-		// Start is called before the first frame update
 		void Start()
 		{
 			_button = GetComponent<Button>();
