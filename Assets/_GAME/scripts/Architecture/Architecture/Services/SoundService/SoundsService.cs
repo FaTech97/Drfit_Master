@@ -10,7 +10,7 @@ namespace _GAME.scripts.Architecture.Architecture.Services.SoundService
 	public class SoundsService
 	{
 		private SoundsFactory _soundsFactory;
-		private Dictionary<SoundID, AudioSource> activeWindows = new Dictionary<SoundID, AudioSource>();
+		private Dictionary<SoundID, AudioSource> activeSounds = new Dictionary<SoundID, AudioSource>();
 
 		[Inject]
 		private void Construct(SoundsFactory soundsFactory)
@@ -31,7 +31,7 @@ namespace _GAME.scripts.Architecture.Architecture.Services.SoundService
 			if (IsSoundPlaing(id))
 			{
 				AudioSource audioSource;
-				activeWindows.TryGetValue(id, out audioSource);
+				activeSounds.TryGetValue(id, out audioSource);
 				Object.Destroy(audioSource!.gameObject);
 			}
 		}
@@ -39,7 +39,7 @@ namespace _GAME.scripts.Architecture.Architecture.Services.SoundService
 		private bool IsSoundPlaing(SoundID id)
 		{
 			AudioSource audioSource;
-			activeWindows.TryGetValue(id, out audioSource);
+			activeSounds.TryGetValue(id, out audioSource);
 			return audioSource != null;
 		}
 
@@ -56,9 +56,25 @@ namespace _GAME.scripts.Architecture.Architecture.Services.SoundService
 		{
 			if (IsSoundPlaing(id))
 			{
-				activeWindows[id].Stop();
+				activeSounds[id].Stop();
 			}
-			activeWindows[id] = activeUI;
+			activeSounds[id] = activeUI;
+		}
+
+		public void PlayAll()
+		{
+			foreach(KeyValuePair<SoundID, AudioSource> sound in activeSounds)
+			{
+				sound.Value.Play();
+			}
+		}
+
+		public void PauseAll()
+		{
+			foreach(KeyValuePair<SoundID, AudioSource> sound in activeSounds)
+			{
+				sound.Value.Stop();
+			}
 		}
 	}
 }

@@ -8,6 +8,7 @@ namespace _GAME.scripts.Enemy
 	{
 		[SerializeField] private GameObject _gui;
 		[SerializeField] private GameObject _effect;
+		
 
 		private void OnCollisionEnter(Collision other)
 		{
