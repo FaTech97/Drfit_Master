@@ -76,7 +76,7 @@ namespace Shop
 
 		private void LoadAllConfigs() =>
 			_items = Resources
-				.LoadAll<ShopItemConfig>("").ToList();
+				.LoadAll<ShopItemConfig>("Items").ToList();
 
 		private void SelectItem(int _index)
 		{

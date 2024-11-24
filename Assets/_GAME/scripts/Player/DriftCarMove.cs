@@ -5,6 +5,8 @@ using _GAME.scripts.Architecture.Architecture;
 using _GAME.scripts.Architecture.Architecture.Persistanse_Service;
 using _GAME.scripts.Architecture.Architecture.Services.InputService;
 using _GAME.scripts.Architecture.Architecture.Services.LevelServices;
+using _GAME.scripts.Architecture.Architecture.Services.SoundService;
+using _GAME.scripts.Architecture.Architecture.Services.SoundService.types;
 using Shop;
 using UnityEngine;
 using UnityEngine.UI;
@@ -35,6 +37,8 @@ public class DriftCarMove : MonoBehaviour
 	private bool _isDestoyed = false;
 	private IInputService _inputService;
 	private ShopItemConfig carConfig;
+	private bool _ifFinished = false;
+	private SoundsService _soundsService;
 
 	private void OnCollisionEnter(Collision other)
 	{
@@ -46,12 +50,13 @@ public class DriftCarMove : MonoBehaviour
 
 	[Inject]
 	private void Construct(LevelEvents levelEvents, WindowService windowService,
-		IPersistanseDataService persistanseDataService)
+		IPersistanseDataService persistanseDataService, SoundsService soundsService)
 	{
 		_levelEvents = levelEvents;
+		_soundsService = soundsService;
 		_windowService = windowService;
 		_persistanseDataService = persistanseDataService;
-		_levelEvents.OnAllItemsGets += StopCar;
+		_levelEvents.OnAllItemsGets += OnCollectAllItemsHandler;
 	}
 
 	private void Start()
@@ -67,6 +72,10 @@ public class DriftCarMove : MonoBehaviour
 
 	public void DestroyCar(Vector3 damagePosition)
 	{
+		if (_ifFinished)
+		{
+			return;
+		}
 		PlayDamageEffect(damagePosition);
 		if (!_isDestoyed)
 		{
@@ -75,7 +84,9 @@ public class DriftCarMove : MonoBehaviour
 			MaxSpeed = 0;
 			_moveForce = Vector3.zero;
 			_persistanseDataService.SubscructHP();
+			_soundsService.Stop(SoundID.Move);
 			_windowService.Open(WindowId.Fail);
+			_soundsService.Stop(SoundID.Drift);
 		}
 	}
 
@@ -85,23 +96,24 @@ public class DriftCarMove : MonoBehaviour
 			this.transform);
 	}
 
-	private void StopCar()
+	private void OnCollectAllItemsHandler()
 	{
+		_ifFinished = true;
 		MoveSpeed = 0;
 	}
 
 	private void Update()
 	{
-		if (!_isStarted && (Input.GetKeyUp(KeyCode.W) || Input.GetKeyUp(KeyCode.Space) || Input.GetKeyUp(KeyCode.D) || Input.GetKeyUp(KeyCode.LeftArrow) || Input.GetKeyUp(KeyCode.RightArrow)))
+		if (!_isStarted && !_isDestoyed && (Input.GetKeyUp(KeyCode.W) || Input.GetKeyUp(KeyCode.Space) || Input.GetKeyUp(KeyCode.D) || Input.GetKeyUp(KeyCode.LeftArrow) || Input.GetKeyUp(KeyCode.RightArrow)))
 		{
 			moveEducation.SetActive(false);
 			CloseMain();
 			StartCar();
 		}
 
-		if (_isStarted)
+		if (_isStarted && !_isDestoyed)
 		{
-			Move();
+			MoveForward();
 			Drift();
 		}
 	}
@@ -116,24 +128,37 @@ public class DriftCarMove : MonoBehaviour
 		return _moveForce.magnitude;
 	}
 
-	private void Move()
+	private void MoveForward()
 	{
+		if(_ifFinished)
+			return;
 		// TechDept переписать логику дрифта с падением машинки
 		_moveForce += transform.forward * carConfig.speed * MoveSpeed;
 		transform.position += _moveForce * Time.deltaTime;
+		_soundsService.Play(SoundID.Move);
 	}
 
 	private void Drift()
 	{
+		if(_ifFinished)
+			return;
 		float steerInput = _inputService.MoveDirection;
-		transform.Rotate(Vector3.up * steerInput * _moveForce.magnitude * SteerAngle * Time.deltaTime);
+
+		_moveForce *= Drag;
+		if (Mathf.Abs(steerInput) > 0)
+		{
+			_soundsService.Play(SoundID.Drift);
+			transform.Rotate(Vector3.up * steerInput * _moveForce.magnitude * SteerAngle * Time.deltaTime);
+		}
+		else
+		{
+			_soundsService.Stop(SoundID.Drift);
+		}
 
 		// Сопротивление и ограничение максимальной скорости
-		_moveForce *= Drag;
-		_moveForce = Vector3.ClampMagnitude(_moveForce, MaxSpeed);
-
 		_moveForce = Vector3.Lerp(_moveForce.normalized, transform.forward, Traction * Time.deltaTime) *
-					 _moveForce.magnitude;
+		             _moveForce.magnitude;
+		_moveForce = Vector3.ClampMagnitude(_moveForce, MaxSpeed);
 	}
 
 	public void SetNewConfig(ShopItemConfig newItem)

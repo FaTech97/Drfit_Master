@@ -8,13 +8,25 @@ using Object = UnityEngine.Object;
 public class WindowService: IInitializable
 {
 	private UIFactory _uiFactory;
-	private Dictionary<WindowId, WindowBase> activeWindows = new Dictionary<WindowId, WindowBase>();
-	private bool isFirstSetRoot = true;
+	private readonly Dictionary<WindowId, WindowBase> _activeWindows = new Dictionary<WindowId, WindowBase>();
 
 	[Inject]
 	private void Construct(UIFactory uiFactory)
 	{
 		_uiFactory = uiFactory;
+	}
+
+	public void Initialize()
+	{
+		GameObject go = new GameObject("[UI Root]");
+		Object.DontDestroyOnLoad(go);
+		Canvas canvas = go.AddComponent<Canvas>();
+		canvas.sortingOrder = 10;
+		go.AddComponent<GraphicRaycaster>();
+		canvas.renderMode = RenderMode.ScreenSpaceOverlay;
+		RectTransform rectTransform = go.GetComponent<RectTransform>();
+		rectTransform.localPosition = Vector3.zero;
+		_uiFactory.SetRoot(go.transform);
 	}
 
 	public void Open(WindowId id)
@@ -40,34 +52,18 @@ public class WindowService: IInitializable
 	{
 		if (activeUI == null && IsWindowOpen(id))
 		{
-			activeWindows[id].Close();
+			Debug.Log("[QWINO] Close window: " + id);
+			_activeWindows[id].Close();
 		}
-		activeWindows[id] = activeUI;
+		_activeWindows[id] = activeUI;
 	}
 
 	private bool IsWindowOpen(WindowId id)
 	{
 		WindowBase windowBase;
-		activeWindows.TryGetValue(id, out windowBase);
+		_activeWindows.TryGetValue(id, out windowBase);
 		return windowBase != null;
 	}
 
 	public void Close(WindowId id) => SetWindow(id, null);
-
-	private void SetRootObject(Transform go)
-	{
-		_uiFactory.SetRoot(go);
-	}
-
-	public void Initialize()
-	{
-		GameObject go = new GameObject("[UI Root]");
-		Object.DontDestroyOnLoad(go);
-		Canvas canvas = go.AddComponent<Canvas>();
-		go.AddComponent<GraphicRaycaster>();
-		canvas.renderMode = RenderMode.ScreenSpaceOverlay;
-		RectTransform rectTransform = go.GetComponent<RectTransform>();
-		rectTransform.localPosition = Vector3.zero;
-		SetRootObject(go.transform);
-	}
 }

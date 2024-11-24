@@ -16,10 +16,12 @@ public class LoseWindow : WindowBase
 	private IPersistanseDataService _persistanseDataService;
 	private LevelManager _levelManager;
 	private IAdService _adService;
+	private WindowService _windowService;
 
 	[Inject]
-	private void Construct(IPersistanseDataService persistanseDataService, LevelManager levelManager, IAdService adService)
+	private void Construct(IPersistanseDataService persistanseDataService, LevelManager levelManager, IAdService adService,WindowService windowService)
 	{
+		_windowService = windowService;
 		_levelManager = levelManager;
 		_adService = adService;
 		_persistanseDataService = persistanseDataService;
@@ -47,6 +49,8 @@ public class LoseWindow : WindowBase
 		ContinueForMonneyButton.onClick.RemoveListener(ContinueForMonney);
 		ContinueForRVButton.onClick.RemoveListener(ContinueForRV);
 		FreeContinoeButton.onClick.RemoveListener(ContinueForFree);
+		_levelManager.RestartCurrentLevel();
+		base.Cleanup();
 	}
 
 	private void SetButtonVisible(bool isHpZero)
@@ -58,7 +62,7 @@ public class LoseWindow : WindowBase
 
 	private void ContinueForFree()
 	{
-		_levelManager.RestartCurrentLevel();
+		RestartLevel();
 	}
 
 	private void ContinueForRV()
@@ -69,13 +73,19 @@ public class LoseWindow : WindowBase
 	private void AddLivesAndRestart()
 	{
 		_persistanseDataService.RefreshHP();
-		_levelManager.RestartCurrentLevel();
+		RestartLevel();
 	}
 
 	private void ContinueForMonney()
 	{
 		_persistanseDataService.RefreshHP();
 		_persistanseDataService.SpendMoney(30);
+		RestartLevel();
+	}
+
+	private void RestartLevel()
+	{
 		_levelManager.RestartCurrentLevel();
+		_windowService.Close(WindowId.Fail);
 	}
 }

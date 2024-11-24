@@ -22,7 +22,7 @@ namespace _GAME.scripts.Architecture.Architecture.Persistanse_Service
 
 		protected void InvokeDate()
 		{
-			OnDataWasLoad.Invoke();
+			OnDataWasLoad?.Invoke();
 		}
 
 		// TechDept решить проблему такого костыля с записью в дату
