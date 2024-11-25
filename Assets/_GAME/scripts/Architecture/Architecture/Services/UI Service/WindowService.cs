@@ -23,6 +23,9 @@ public class WindowService: IInitializable
 		Canvas canvas = go.AddComponent<Canvas>();
 		canvas.sortingOrder = 10;
 		go.AddComponent<GraphicRaycaster>();
+		CanvasScaler scaler = go.AddComponent<CanvasScaler>();
+		scaler.uiScaleMode = CanvasScaler.ScaleMode.ScaleWithScreenSize;
+		scaler.matchWidthOrHeight = 0.7f;
 		canvas.renderMode = RenderMode.ScreenSpaceOverlay;
 		RectTransform rectTransform = go.GetComponent<RectTransform>();
 		rectTransform.localPosition = Vector3.zero;

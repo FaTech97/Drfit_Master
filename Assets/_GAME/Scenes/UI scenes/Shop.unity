@@ -1580,8 +1580,8 @@ RectTransform:
   m_Children:
   - {fileID: 5667239380047988229}
   - {fileID: 1877257830}
-  - {fileID: 742344183}
   - {fileID: 284296486}
+  - {fileID: 742344183}
   - {fileID: 1948623297}
   m_Father: {fileID: 931301150}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -2709,7 +2709,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   prevButton: {fileID: 1877257833}
   nextButton: {fileID: 284296489}
-  closeButton: {fileID: 742344184}
   BuyButton: {fileID: 2790303179361439540}
   _priceText: {fileID: 6046507619175632415}
   buttonText: {fileID: 4028067620910877101}
@@ -3084,7 +3083,7 @@ GameObject:
   - component: {fileID: 5667239380047988229}
   - component: {fileID: 2009404095}
   m_Layer: 5
-  m_Name: LoseWindow
+  m_Name: BuyCounter
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

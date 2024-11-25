@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using _GAME.scripts.Architecture.Architecture.Services.SoundService;
@@ -14,14 +15,19 @@ public class MuteAudioWhenOnNoFocus : MonoBehaviour
         _soundsService = soundsService;
     }
 
+    private void Start()
+    {
+        DontDestroyOnLoad(this.gameObject);
+    }
+
     void OnApplicationFocus(bool hasFocus)
     {
-        SetValuesForAll(hasFocus);
+        SetValuesForAll(!hasFocus);
     }
 
     void OnApplicationPause(bool isPaused)
     {
-        SetValuesForAll(!isPaused);
+        SetValuesForAll(isPaused);
     }
 
     private void SetValuesForAll(bool isSilence)

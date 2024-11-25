@@ -3,6 +3,7 @@ using UnityEngine;
 
 namespace _GAME.scripts.Enemy
 {
+	// TODO delete - not use class
 	public class ArtGun : MonoBehaviour, IWeapon
 	{
 		public GameObject bullet;

@@ -10,6 +10,6 @@ public class ShowVersions : MonoBehaviour
 	void Start()
 	{
 		text = GetComponent<Text>();
-		text.text = "u-" + Application.unityVersion + "-v-" + Application.version;
+		text.text = $"--version-{Application.version}-U-{Application.unityVersion}";
 	}
 }

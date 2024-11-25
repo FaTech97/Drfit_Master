@@ -36,10 +36,9 @@ namespace Shop
 		private void Awake()
 		{
 			_sizeAligner = GetComponent<SizeAligner>();
+			LoadAllConfigs();
 			prevButton.onClick.AddListener(() => ChangeItem(-1));
 			nextButton.onClick.AddListener(() => ChangeItem(1));
-			BuyButton.onClick.AddListener(Buy);
-			LoadAllConfigs();
 			InstantiateAll();
 			SelectItem(0);
 		}
@@ -49,15 +48,18 @@ namespace Shop
 			_persistanseDataService.SpendMoney(_items[currentItemIndex].price);
 			_persistanseDataService.AddCar(_items[currentItemIndex].id);
 			_items[currentItemIndex].isOpen = true;
-			MakeButtonIsOpen();
+			MakeButtonIsOpen(_items[currentItemIndex]);
 		}
 
 		private void InstantiateAll()
 		{
 			foreach (ShopItemConfig itemConfig in _items)
 			{
-				var a = Instantiate(itemConfig.model, transform.position, Quaternion.identity, transform);
-				a.AddComponent<ItemAnimation>();
+				itemConfig.isOpen = (itemConfig.id == ItemId.DefaultItem) ||
+				                    _persistanseDataService.Data.Player.BuysItemsIDs.Contains(itemConfig.id);
+				GameObject shopItemInstance =
+					Instantiate(itemConfig.model, transform.position, Quaternion.identity, transform);
+				shopItemInstance.AddComponent<ItemAnimation>();
 			}
 		}
 
@@ -86,35 +88,46 @@ namespace Shop
 			{
 				transform.GetChild(i).gameObject.SetActive(i == _index);
 			}
+
 			speedViewer.SetCount(_items[currentItemIndex].speed);
 			sizeViewer.SetCount(_items[currentItemIndex].size);
 			_sizeAligner.AlignObjectSizeToColliderSize(transform.GetChild(currentItemIndex).gameObject);
 			if (_items[currentItemIndex].isOpen)
 			{
-				MakeButtonIsOpen();
+				MakeButtonIsOpen(_items[currentItemIndex]);
 			}
 			else
 			{
 				_priceText.gameObject.SetActive(true);
 				_priceText.text = _items[_index].price.ToString();
 				buttonText.text = LocalizationManager.Localize("SHOP.Buy");
-				;
+				BuyButton.onClick.RemoveAllListeners();
+				BuyButton.onClick.AddListener(Buy);
+				BuyButton.interactable = _persistanseDataService.Data.Player.Coins > _items[_index].price;
 			}
 		}
 
-		private void MakeButtonIsOpen()
+		private void MakeButtonIsOpen(ShopItemConfig item)
 		{
-			_priceText.gameObject.SetActive(false);
-			buttonText.text = LocalizationManager.Localize("SHOP.Choose");
-			BuyButton.onClick.RemoveListener(Buy);
-			BuyButton.onClick.AddListener(SetItem);
+			if (item.id == _persistanseDataService.Data.Player.CurrectItemId)
+			{
+				buttonText.text = LocalizationManager.Localize("SHOP.Selected");
+			}
+			else
+			{
+				buttonText.text = LocalizationManager.Localize("SHOP.Choose");
+			}
 
+			_priceText.gameObject.SetActive(false);
+			BuyButton.onClick.RemoveAllListeners();
+			BuyButton.onClick.AddListener(SetItem);
 		}
 
 		private void SetItem()
 		{
 			_persistanseDataService.SetItem(_items[currentItemIndex].id);
-			_levelManager.RestartCurrentLevel();
+			_priceText.gameObject.SetActive(false);
+			buttonText.text = LocalizationManager.Localize("SHOP.Selected");
 		}
 
 		public void ChangeItem(int _change)
@@ -123,6 +136,7 @@ namespace Shop
 			{
 				return;
 			}
+
 			currentItemIndex += _change;
 			SelectItem(currentItemIndex);
 		}

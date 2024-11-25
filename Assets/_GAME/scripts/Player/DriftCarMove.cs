@@ -37,7 +37,7 @@ public class DriftCarMove : MonoBehaviour
 	private bool _isDestoyed = false;
 	private IInputService _inputService;
 	private ShopItemConfig carConfig;
-	private bool _ifFinished = false;
+	private bool _iSFinished = false;
 	private SoundsService _soundsService;
 
 	private void OnCollisionEnter(Collision other)
@@ -72,10 +72,11 @@ public class DriftCarMove : MonoBehaviour
 
 	public void DestroyCar(Vector3 damagePosition)
 	{
-		if (_ifFinished)
+		if (_iSFinished)
 		{
 			return;
 		}
+
 		PlayDamageEffect(damagePosition);
 		if (!_isDestoyed)
 		{
@@ -84,9 +85,8 @@ public class DriftCarMove : MonoBehaviour
 			MaxSpeed = 0;
 			_moveForce = Vector3.zero;
 			_persistanseDataService.SubscructHP();
-			_soundsService.Stop(SoundID.Move);
 			_windowService.Open(WindowId.Fail);
-			_soundsService.Stop(SoundID.Drift);
+			StopAllAudio();
 		}
 	}
 
@@ -98,20 +98,33 @@ public class DriftCarMove : MonoBehaviour
 
 	private void OnCollectAllItemsHandler()
 	{
-		_ifFinished = true;
+		_iSFinished = true;
 		MoveSpeed = 0;
+		StopAllAudio();
+	}
+
+	private void OnDestroy()
+	{
+		StopAllAudio();
+	}
+
+	private void StopAllAudio()
+	{
+		_soundsService.Stop(SoundID.Move);
+		_soundsService.Stop(SoundID.Drift);
 	}
 
 	private void Update()
 	{
-		if (!_isStarted && !_isDestoyed && (Input.GetKeyUp(KeyCode.W) || Input.GetKeyUp(KeyCode.Space) || Input.GetKeyUp(KeyCode.D) || Input.GetKeyUp(KeyCode.LeftArrow) || Input.GetKeyUp(KeyCode.RightArrow)))
+		if (!_isStarted && (Input.GetKeyUp(KeyCode.W) || Input.GetKeyUp(KeyCode.Space) || Input.GetKeyUp(KeyCode.D) ||
+		                    Input.GetKeyUp(KeyCode.LeftArrow) || Input.GetKeyUp(KeyCode.RightArrow)))
 		{
 			moveEducation.SetActive(false);
 			CloseMain();
 			StartCar();
 		}
 
-		if (_isStarted && !_isDestoyed)
+		if (_isStarted)
 		{
 			MoveForward();
 			Drift();
@@ -130,7 +143,7 @@ public class DriftCarMove : MonoBehaviour
 
 	private void MoveForward()
 	{
-		if(_ifFinished)
+		if (_iSFinished || _isDestoyed)
 			return;
 		// TechDept переписать логику дрифта с падением машинки
 		_moveForce += transform.forward * carConfig.speed * MoveSpeed;
@@ -140,7 +153,7 @@ public class DriftCarMove : MonoBehaviour
 
 	private void Drift()
 	{
-		if(_ifFinished)
+		if (_iSFinished || _isDestoyed)
 			return;
 		float steerInput = _inputService.MoveDirection;
 
