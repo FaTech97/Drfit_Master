@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: BlueCar
   m_EditorClassIdentifier: 
   id: 2
-  model: {fileID: 919132149155446097, guid: 59e54f48d0e489a489a808db3f425438, type: 3}
-  price: 10
-  isOpen: 0
+  model: {fileID: 266365353038710469, guid: 042af6c1e3a905548979af32a953a00f, type: 3}
+  price: 33
+  isOpen: 1
   size: 2
   speed: 2

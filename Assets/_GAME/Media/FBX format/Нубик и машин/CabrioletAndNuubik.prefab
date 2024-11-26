@@ -1,0 +1,141 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &1545059961763416912
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 6851798992392833049}
+    m_Modifications:
+    - target: {fileID: -8679921383154817045, guid: de6169f966a297748a8e86bac1c71449, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: de6169f966a297748a8e86bac1c71449, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: de6169f966a297748a8e86bac1c71449, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: de6169f966a297748a8e86bac1c71449, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.0020251465
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: de6169f966a297748a8e86bac1c71449, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.0026017847
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: de6169f966a297748a8e86bac1c71449, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0.007329999
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: de6169f966a297748a8e86bac1c71449, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.4794439
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: de6169f966a297748a8e86bac1c71449, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0.4794439
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: de6169f966a297748a8e86bac1c71449, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0.51974374
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: de6169f966a297748a8e86bac1c71449, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0.5197438
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: de6169f966a297748a8e86bac1c71449, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: de6169f966a297748a8e86bac1c71449, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: -94.619
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: de6169f966a297748a8e86bac1c71449, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: de6169f966a297748a8e86bac1c71449, type: 3}
+      propertyPath: m_Name
+      value: Nubik sitting
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: de6169f966a297748a8e86bac1c71449, type: 3}
+--- !u!4 &1367861339571825851 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: de6169f966a297748a8e86bac1c71449, type: 3}
+  m_PrefabInstance: {fileID: 1545059961763416912}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1001 &6385193450434277362
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: -8679921383154817045, guid: 94ec5ac31d71c5146b2ecb308225846c, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 94ec5ac31d71c5146b2ecb308225846c, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 94ec5ac31d71c5146b2ecb308225846c, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 94ec5ac31d71c5146b2ecb308225846c, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.7071067
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 94ec5ac31d71c5146b2ecb308225846c, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 94ec5ac31d71c5146b2ecb308225846c, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 94ec5ac31d71c5146b2ecb308225846c, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 94ec5ac31d71c5146b2ecb308225846c, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 94ec5ac31d71c5146b2ecb308225846c, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 94ec5ac31d71c5146b2ecb308225846c, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 94ec5ac31d71c5146b2ecb308225846c, type: 3}
+      propertyPath: m_Name
+      value: CabrioletAndNuubik
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects:
+    - targetCorrespondingSourceObject: {fileID: -8679921383154817045, guid: 94ec5ac31d71c5146b2ecb308225846c, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1367861339571825851}
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 94ec5ac31d71c5146b2ecb308225846c, type: 3}
+--- !u!4 &6851798992392833049 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 94ec5ac31d71c5146b2ecb308225846c, type: 3}
+  m_PrefabInstance: {fileID: 6385193450434277362}
+  m_PrefabAsset: {fileID: 0}

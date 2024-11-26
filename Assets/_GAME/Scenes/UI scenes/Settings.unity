@@ -375,11 +375,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6251532204824659218, guid: 2c2205df9cf85934387b0ee4f31c31b5, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 476.837
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6251532204824659218, guid: 2c2205df9cf85934387b0ee4f31c31b5, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -110
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6251532204824659218, guid: 2c2205df9cf85934387b0ee4f31c31b5, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -580,11 +580,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6251532204824659218, guid: 2c2205df9cf85934387b0ee4f31c31b5, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 476.837
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6251532204824659218, guid: 2c2205df9cf85934387b0ee4f31c31b5, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -270
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6251532204824659218, guid: 2c2205df9cf85934387b0ee4f31c31b5, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -655,7 +655,7 @@ MonoBehaviour:
     m_PressedTrigger: Pressed
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
-  m_Interactable: 0
+  m_Interactable: 1
   m_TargetGraphic: {fileID: 234584167}
   m_OnClick:
     m_PersistentCalls:
@@ -995,7 +995,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &326522324
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1136,8 +1136,8 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 856146872}
   m_HandleRect: {fileID: 856146871}
   m_Direction: 2
-  m_Value: 1
-  m_Size: 0.76845384
+  m_Value: 0.9999997
+  m_Size: 0.76094896
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -1782,11 +1782,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6251532204824659218, guid: 2c2205df9cf85934387b0ee4f31c31b5, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 476.837
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6251532204824659218, guid: 2c2205df9cf85934387b0ee4f31c31b5, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -190
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6251532204824659218, guid: 2c2205df9cf85934387b0ee4f31c31b5, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -2041,8 +2041,8 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 1201804023}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0.23154616}
-  m_AnchorMax: {x: 1, y: 1}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 20, y: 20}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -2119,9 +2119,9 @@ RectTransform:
   m_Father: {fileID: 942826527}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
+  m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: -20, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &891624159
 MonoBehaviour:
@@ -3654,11 +3654,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6251532204824659218, guid: 2c2205df9cf85934387b0ee4f31c31b5, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 476.837
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6251532204824659218, guid: 2c2205df9cf85934387b0ee4f31c31b5, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -350
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6251532204824659218, guid: 2c2205df9cf85934387b0ee4f31c31b5, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -3721,7 +3721,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 460}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &1733818322
 MonoBehaviour:
@@ -3877,11 +3877,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6251532204824659218, guid: 2c2205df9cf85934387b0ee4f31c31b5, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 476.837
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6251532204824659218, guid: 2c2205df9cf85934387b0ee4f31c31b5, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -430
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6251532204824659218, guid: 2c2205df9cf85934387b0ee4f31c31b5, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -3963,7 +3963,7 @@ MonoBehaviour:
     m_PressedTrigger: Pressed
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
-  m_Interactable: 0
+  m_Interactable: 1
   m_TargetGraphic: {fileID: 1749756005}
   m_OnClick:
     m_PersistentCalls:
@@ -4277,11 +4277,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6251532204824659218, guid: 2c2205df9cf85934387b0ee4f31c31b5, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 476.837
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6251532204824659218, guid: 2c2205df9cf85934387b0ee4f31c31b5, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -30
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6251532204824659218, guid: 2c2205df9cf85934387b0ee4f31c31b5, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -4493,7 +4493,7 @@ MonoBehaviour:
     m_PressedTrigger: Pressed
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
-  m_Interactable: 0
+  m_Interactable: 1
   m_TargetGraphic: {fileID: 1930857062}
   m_OnClick:
     m_PersistentCalls:
@@ -4689,12 +4689,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   close: {fileID: 676521746}
   ruButton: {fileID: 188121235}
-  enButton: {fileID: 1847722806}
-  turkButton: {fileID: 720736141}
-  settings: {fileID: 326522323}
   ruImage: {fileID: 188121234}
+  enButton: {fileID: 1847722806}
   enImage: {fileID: 1847722805}
+  turkButton: {fileID: 720736141}
   tuImage: {fileID: 720736140}
+  germButton: {fileID: 1930857061}
+  germImage: {fileID: 1930857062}
+  frButton: {fileID: 234584166}
+  frImage: {fileID: 234584167}
+  spButton: {fileID: 1749756006}
+  spImage: {fileID: 1749756005}
+  settings: {fileID: 326522323}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

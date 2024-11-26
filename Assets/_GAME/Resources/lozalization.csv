@@ -1,36 +1,42 @@
-Key,English,Russian,Turkish
-Common.GameName,STEVE NOOB DRIFTER,НУБИК ДРИФТЕР,STEVE ÇAYLAK SERSERİ
+Key,English,Russian,Turkish,German,French,Spanish
+Common.GameName,STEVE NOOB DRIFTER,НУБИК ДРИФТЕР,STEVE ÇAYLAK SERSERİ,STEVE NOOB DRIFTER,STEVE NOOB VAGABOND,STEVE NOVATO VAGABUNDO
 Common.StudioName,"QWINO 
 GAMES
 studio","студия
 QWINO 
 GAMES","QWINO
 GAMES
-stüdyo"
-Common.GO,GO!,Вперед!,İleri!
-Common.Level,Level {0},Уровень {0},Seviye {0}
-Common.Play,Play {0} level,Играть {0} уровень,{0} seviyesini oyna
-Common.Back,BACK,НАЗАД,GERİ
-Common.PressToContinue,Press to start...,Нажмите для старта...,Basın başlatmak için...
-Common.Shop,SHOP,МАГАЗИН,MAĞAZA
-Common.Settings,SETTINGS,НАСТРОЙКИ,AYARLAR
-Windows.Win.LevelWasDone,LEVEL {0} PASSED,УРОВЕНЬ {0} ПРОЙДЕН,SEVİYE {0} TAMAMLANDI
-Windows.Win.NextLevel,NEXT,ДАЛЕЕ,SONRA
-Windows.Lose.Accident,ACCIDENT,АВАРИЯ,KAZA
-Windows.Lose.YouLostLives,LIVES LEFT: {0},ОСТАЛОСЬ ЖИЗНЕЙ: {0},HAYAT KALDI: {0}
-Windows.Lose.YouAreBroken,CAR WAS BROKEN!,МАШИНА СЛОМАНА!,ARABA BOZULDU!
-Windows.Lose.AfterWatchAdvertisement,AFTER WATCHING THE ADVERTISEMENT,ПОСЛЕ ПРОСМОТРА РЕКЛАМЫ,REKLAMLARI İZLEDİKTEN SONRA
-Windows.Lose.Repair,REPAIR,ПОЧИНИТЬ,TAMİR ETMEK
-Windows.Lose.Free,Free,БЕСПЛАТНО,ÜCRET
-Windows.Lose.RepairPrice,30$,30₽,30₺
-Windows.Lose.Restart,RESTART,ПЕРЕИГРАТЬ,TEKRAR OYNAMAK
-SHOP.GoToMenu,GO TO MENU,В МЕНЮ,MENÜDE
-SHOP.Buy,BUY,КУПИТЬ,ALMAK
-SHOP.Selected,SELECTED,ВЫБРАНО,ALMAK
-SHOP.Choose,СHOOSE,ВЫБРАТЬ,SEÇMEK
-SHOP.Speed,SPEED:,СКОРОСТЬ:,HIZ:
-SHOP.Size,SIZE:,РАЗМЕР:,BOYUT:
-Settings.Title,SETTINGS,НАСТРОЙКИ,AYARLAR
-Settings.Music,SOUNDS,ЗВУКИ,SESLER
-Settings.Language,LANGUAGE,ЯЗЫК,DİL
-Settings.QwinoNews,Studio news in Telegram,Новости студии в Телеграмм,Telegram'da stüdyo haberleri
+stüdyo","QWINO 
+GAMES
+studio","QWINO 
+GAMES
+atelier","QWINO 
+GAMES
+estudio"
+Common.GO,GO!,Вперед!,İleri!,LOS!,Allez-y!,¡VETE!
+Common.Level,Level {0},Уровень {0},Seviye {0},Stufe {0},Niveau {0},Nivel {0}
+Common.Play,Play {0} level,Играть {0} уровень,{0} seviyesini oyna,{0} Level abspielen,"Jouer au niveau {0} ","Nivel de juego {0} "
+Common.Back,BACK,НАЗАД,GERİ,ZURÜCK,RETOUR,ATRÁS
+Common.PressToContinue,Press to start...,Нажмите для старта...,Basın başlatmak için...,"Drücken Sie, um zu starten...",Appuyez sur pour démarrer...,Presione para comenzar...
+Common.Shop,SHOP,МАГАЗИН,MAĞAZA,GESCHÄFT,BOUTIQUE,TIENDA
+Common.Settings,SETTINGS,НАСТРОЙКИ,AYARLAR,EINSTELLUNG,PARAMÈTRES,AJUSTES
+Windows.Win.LevelWasDone,LEVEL {0} PASSED,УРОВЕНЬ {0} ПРОЙДЕН,SEVİYE {0} TAMAMLANDI,STUFE {0} BESTANDEN,NIVEAU {0} RÉUSSI,NIVEL {0} APROBADO
+Windows.Win.NextLevel,NEXT,ДАЛЕЕ,SONRA,NÄCHSTEN,SUIVANT,SIGUIENTE
+Windows.Lose.Accident,ACCIDENT,АВАРИЯ,KAZA,UNFALL,ACCIDENT,ACCIDENTE
+Windows.Lose.YouLostLives,LIVES LEFT: {0},ОСТАЛОСЬ ЖИЗНЕЙ: {0},HAYAT KALDI: {0},VERBLEIBENDE LEBEN: {0},VIES RESTANTES: {0},VIDAS RESTANTES: {0}
+Windows.Lose.YouAreBroken,CAR WAS BROKEN!,МАШИНА СЛОМАНА!,ARABA BOZULDU!,AUTO WAR KAPUTT!,LA VOITURE ÉTAIT CASSÉE!,¡EL AUTO ESTABA ROTO!
+Windows.Lose.AfterWatchAdvertisement,AFTER WATCHING THE ADVERTISEMENT,ПОСЛЕ ПРОСМОТРА РЕКЛАМЫ,REKLAMLARI İZLEDİKTEN SONRA,NACH DEM ANSCHAUEN DER WERBUNG,APRÈS AVOIR REGARDÉ LA PUBLICITÉ,DESPUÉS DE VER EL ANUNCIO
+Windows.Lose.Repair,REPAIR,ПОЧИНИТЬ,TAMİR ETMEK,REPARATUR,RÉPARATION,REPARACIÓN
+Windows.Lose.Free,Free,БЕСПЛАТНО,ÜCRET,Kostenlos,Gratuit,Gratis
+Windows.Lose.RepairPrice,30,30,30,30,30,30
+Windows.Lose.Restart,RESTART,ПЕРЕИГРАТЬ,TEKRAR OYNAMAK,STARTEN,REDÉMARRER,REINICIAR
+SHOP.GoToMenu,GO TO MENU,В МЕНЮ,MENÜDE,GEHE ZUM MENÜ,ALLER AU MENU,IR AL MENÚ
+SHOP.Buy,BUY,КУПИТЬ,ALMAK,KAUFEN,ACHETER,COMPRAR
+SHOP.Selected,SELECTED,ВЫБРАНО,ALMAK,AUSGEW,SÉLECTIONNÉ,SELECCIONADOS
+SHOP.Choose,СHOOSE,ВЫБРАТЬ,SEÇMEK,WÄHLEN SIE,CHOISIR,Elige
+SHOP.Speed,SPEED:,СКОРОСТЬ:,HIZ:,GESCHWINDIGKEIT:,VITESSE:,VELOCIDAD:
+SHOP.Size,SIZE:,РАЗМЕР:,BOYUT:,GRÖßE:,TAILLE:,TAMAÑO:
+Settings.Title,SETTINGS,НАСТРОЙКИ,AYARLAR,EINSTELLUNG,PARAMÈTRES,AJUSTES
+Settings.Music,SOUNDS,ЗВУКИ,SESLER,MSN,SONS,SONIDOS
+Settings.Language,LANGUAGE,ЯЗЫК,DİL,SPRACHLICH,LANGUE,IDIOMA
+Settings.QwinoNews,Studio news in Telegram,Новости студии в Телеграмм,Telegram'da stüdyo haberleri,Studionachrichten im Telegram,Nouvelles du studio dans Telegram,Noticias de estudio en Telegram
