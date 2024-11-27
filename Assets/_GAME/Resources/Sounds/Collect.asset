@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 399a4cc2c21b41cf9e65cb5ec580ae93, type: 3}
-  m_Name: Lose
+  m_Name: Collect
   m_EditorClassIdentifier: 
-  id: 5
-  audioSource: {fileID: 413605993015529918, guid: 2b78c9f7adf6b104abc3c6c1af5550ca, type: 3}
+  id: 6
+  audioSource: {fileID: 6354697492341214873, guid: 92d1426b832eb7a4c8007499833402c2, type: 3}

@@ -28,7 +28,7 @@ namespace _GAME.scripts.Architecture.Architecture.Persistanse_Service
 	[Serializable]
 	public class PlayerData
 	{
-		public int Coins = 100;
+		public int Coins = 10000;
 		public int PlayerHP = 1;
 		public ItemId[] BuysItemsIDs = new ItemId[0];
 		public ItemId CurrectItemId = ItemId.DefaultItem;

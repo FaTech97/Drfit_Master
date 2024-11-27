@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 399a4cc2c21b41cf9e65cb5ec580ae93, type: 3}
   m_Name: Pip
   m_EditorClassIdentifier: 
-  id: 0
-  audioSource: {fileID: 0}
+  id: 3
+  audioSource: {fileID: 8952030782165347346, guid: 0e269d151f5d0224a94dab8c8d120e98, type: 3}

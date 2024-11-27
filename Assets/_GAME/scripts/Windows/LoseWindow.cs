@@ -2,6 +2,8 @@ using System;
 using _GAME.scripts.Architecture.Architecture.Persistanse_Service;
 using _GAME.scripts.Architecture.Architecture.Services.AdService;
 using _GAME.scripts.Architecture.Architecture.Services.ScenesService;
+using _GAME.scripts.Architecture.Architecture.Services.SoundService;
+using _GAME.scripts.Architecture.Architecture.Services.SoundService.types;
 using Assets.SimpleLocalization.Scripts;
 using UnityEngine;
 using UnityEngine.UI;
@@ -17,14 +19,17 @@ public class LoseWindow : WindowBase
 	private LevelManager _levelManager;
 	private IAdService _adService;
 	private WindowService _windowService;
+	private SoundsService _soundsService;
 
 	[Inject]
-	private void Construct(IPersistanseDataService persistanseDataService, LevelManager levelManager, IAdService adService,WindowService windowService)
+	private void Construct(IPersistanseDataService persistanseDataService, LevelManager levelManager, IAdService adService,WindowService windowService,SoundsService soundsService)
 	{
+		_soundsService = soundsService;
 		_windowService = windowService;
 		_levelManager = levelManager;
 		_adService = adService;
 		_persistanseDataService = persistanseDataService;
+		_soundsService.Play(SoundID.Lose);
 	}
 
 	protected override void Initialize()
@@ -85,6 +90,7 @@ public class LoseWindow : WindowBase
 
 	private void RestartLevel()
 	{
+		_soundsService.Stop(SoundID.Lose);
 		_levelManager.RestartCurrentLevel();
 		_windowService.Close(WindowId.Fail);
 	}

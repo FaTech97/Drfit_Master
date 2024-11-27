@@ -8,5 +8,6 @@ namespace Shop
 		Cabriolete = 1,
 		Pickup = 2,
 		SpeedCar = 3,
+		Batauto = 4,
 	}
 }

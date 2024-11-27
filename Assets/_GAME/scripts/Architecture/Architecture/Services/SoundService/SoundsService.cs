@@ -18,8 +18,13 @@ namespace _GAME.scripts.Architecture.Architecture.Services.SoundService
 			_soundsFactory = soundsFactory;
 		}
 
-		public void Play(SoundID id)
+		public void Play(SoundID id, bool playAgain = false)
 		{
+			if (playAgain && IsSoundPlaing(id))
+			{
+				Stop(id);
+				InitSound(id);
+			}
 			if (!IsSoundPlaing(id))
 			{
 				InitSound(id);
@@ -71,9 +76,22 @@ namespace _GAME.scripts.Architecture.Architecture.Services.SoundService
 
 		public void PauseAll()
 		{
+			List<SoundID> nullableValues = new List<SoundID>();
 			foreach(KeyValuePair<SoundID, AudioSource> sound in activeSounds)
 			{
-				sound.Value.Stop();
+				try
+				{
+					sound.Value.Stop();
+				}
+				catch
+				{
+					nullableValues.Add(sound.Key);
+				}
+			}
+
+			foreach (SoundID id in nullableValues)
+			{
+				activeSounds.Remove(id);
 			}
 		}
 	}

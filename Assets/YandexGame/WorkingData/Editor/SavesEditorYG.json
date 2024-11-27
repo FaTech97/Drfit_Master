@@ -2,29 +2,19 @@
   "data": {
     "Settings": {
       "IsAudioMute": false,
-      "Language": 1
+      "Language": 0
     },
     "Levels": {
-      "CurrentLevelIndex": 1
+      "CurrentLevelIndex": 0
     },
     "Player": {
-      "Coins": 177,
-      "PlayerHP": -3,
-      "BuysItemsIDs": [
-        0,
-        2,
-        2,
-        2,
-        2,
-        4,
-        4,
-        0,
-        0
-      ],
+      "Coins": 10000,
+      "PlayerHP": 1,
+      "BuysItemsIDs": [],
       "CurrectItemId": 0
     }
   },
-  "idSave": 872,
+  "idSave": 904,
   "isFirstSession": false,
   "language": "ru",
   "promptDone": false
