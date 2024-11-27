@@ -119,9 +119,8 @@ public class DriftCarMove : MonoBehaviour
 		if (!_isStarted && (Input.GetKeyUp(KeyCode.W) || Input.GetKeyUp(KeyCode.Space) || Input.GetKeyUp(KeyCode.D) ||
 		                    Input.GetKeyUp(KeyCode.LeftArrow) || Input.GetKeyUp(KeyCode.RightArrow)))
 		{
+			rsgText.Show();
 			moveEducation.SetActive(false);
-			CloseMain();
-			StartCar();
 		}
 
 		if (_isStarted)
@@ -129,11 +128,6 @@ public class DriftCarMove : MonoBehaviour
 			MoveForward();
 			Drift();
 		}
-	}
-
-	public void CloseMain()
-	{
-		_windowService.Close(WindowId.Main);
 	}
 
 	public float GetSpeed()
