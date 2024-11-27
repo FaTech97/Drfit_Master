@@ -39,6 +39,7 @@ public class DriftCarMove : MonoBehaviour
 	private ShopItemConfig carConfig;
 	private bool _iSFinished = false;
 	private SoundsService _soundsService;
+	private bool _timerStarted = false;
 
 	private void OnCollisionEnter(Collision other)
 	{
@@ -116,9 +117,9 @@ public class DriftCarMove : MonoBehaviour
 
 	private void Update()
 	{
-		if (!_isStarted && (Input.GetKeyUp(KeyCode.W) || Input.GetKeyUp(KeyCode.Space) || Input.GetKeyUp(KeyCode.D) ||
-		                    Input.GetKeyUp(KeyCode.LeftArrow) || Input.GetKeyUp(KeyCode.RightArrow)))
+		if (!_isStarted && !_timerStarted && _inputService.MoveDirection != 0)
 		{
+			_timerStarted = true;
 			rsgText.Show();
 			moveEducation.SetActive(false);
 		}
