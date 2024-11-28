@@ -53,6 +53,7 @@ namespace Shop
 
 		private void InstantiateAll()
 		{
+			_items = _items.OrderBy(item => item.price).ToList();
 			foreach (ShopItemConfig itemConfig in _items)
 			{
 				itemConfig.isOpen = (itemConfig.id == ItemId.DefaultItem) ||

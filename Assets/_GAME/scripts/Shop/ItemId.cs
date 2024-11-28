@@ -9,5 +9,7 @@ namespace Shop
 		Pickup = 2,
 		SpeedCar = 3,
 		Batauto = 4,
+		GreenCar = 5,
+		Bus = 6,
 	}
 }
