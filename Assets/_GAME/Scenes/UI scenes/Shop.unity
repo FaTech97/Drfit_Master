@@ -2424,7 +2424,7 @@ PrefabInstance:
       objectReference: {fileID: 12800000, guid: baf76e109ded61f4a971d5e86b4f1a9e, type: 3}
     - target: {fileID: 4150230832835071872, guid: 849cccf1a2ee4fd4bac9504cddea2236, type: 3}
       propertyPath: m_Text
-      value: 99999
+      value: "9999\U0001F48E\U0001F48E\U0001F48E9"
       objectReference: {fileID: 0}
     - target: {fileID: 4150230832835071872, guid: 849cccf1a2ee4fd4bac9504cddea2236, type: 3}
       propertyPath: m_FontData.m_Font

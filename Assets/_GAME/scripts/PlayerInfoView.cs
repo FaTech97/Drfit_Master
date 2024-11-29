@@ -19,7 +19,6 @@ namespace _GAME.scripts
 		{
 			_persistanseDataService = persistanseDataService;
 			_levelManager = levelManager;
-			// TODO _levelManager.GetLevelIndex() + 1 => получать реальный номер уровня
 			LevelText.text = LocalizationManager.Localize("Common.Level", _levelManager.GetLevelIndex() + 1);
 			RefreshCounterText();
 		}
