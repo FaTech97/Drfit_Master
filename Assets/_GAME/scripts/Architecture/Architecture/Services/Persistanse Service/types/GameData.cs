@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using Shop;
+using UnityEngine.Serialization;
 
 namespace _GAME.scripts.Architecture.Architecture.Persistanse_Service
 {
@@ -29,7 +30,9 @@ namespace _GAME.scripts.Architecture.Architecture.Persistanse_Service
 	public class PlayerData
 	{
 		public int Coins = 10000;
-		public int PlayerHP = 1;
+		public int PlayerHP = 3;
+		public int MaxHp = 3;
+		public int RepairPrice = 25;
 		public ItemId[] BuysItemsIDs = new ItemId[0];
 		public ItemId CurrectItemId = ItemId.DefaultItem;
 	}

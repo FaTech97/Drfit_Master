@@ -54,7 +54,7 @@ namespace Shop
 
 		private void InstantiateAll()
 		{
-			_items = _items.OrderBy(item => item.price).ToList();
+			_items = _items.OrderBy(item => item.HP).ThenBy(item => item.price).ToList();
 			foreach (ShopItemConfig itemConfig in _items)
 			{
 				itemConfig.isOpen = (itemConfig.id == ItemId.DefaultItem) ||
@@ -127,7 +127,7 @@ namespace Shop
 
 		private void SetItem()
 		{
-			_persistanseDataService.SetItem(_items[currentItemIndex].id);
+			_persistanseDataService.SetItem(_items[currentItemIndex]);
 			_priceText.gameObject.SetActive(false);
 			buttonText.text = LocalizationManager.Localize("SHOP.Selected");
 		}

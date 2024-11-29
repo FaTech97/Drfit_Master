@@ -15,6 +15,7 @@ public class LoseWindow : WindowBase
 	[SerializeField] private Button ContinueForMonneyButton;
 	[SerializeField] private Button ContinueForRVButton;
 	[SerializeField] private Button FreeContinoeButton;
+	[SerializeField] private Text repairPriceText;
 	private IPersistanseDataService _persistanseDataService;
 	private LevelManager _levelManager;
 	private IAdService _adService;
@@ -37,7 +38,10 @@ public class LoseWindow : WindowBase
 		var HP = _persistanseDataService.Data.Player.PlayerHP;
 		SetButtonVisible(HP <= 0);
 		if (HP <= 0)
+		{
 			lostHPTextBox.text = LocalizationManager.Localize("Windows.Lose.YouAreBroken");
+			repairPriceText.text = _persistanseDataService.Data.Player.RepairPrice.ToString();
+		}
 		else
 			lostHPTextBox.text = LocalizationManager.Localize("Windows.Lose.YouLostLives", HP);
 	}

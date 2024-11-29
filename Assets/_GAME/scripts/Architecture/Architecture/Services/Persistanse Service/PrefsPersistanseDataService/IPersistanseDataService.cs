@@ -45,7 +45,7 @@ namespace _GAME.scripts.Architecture.Architecture.Persistanse_Service
 		public void RefreshHP()
 		{
 			GameData data = Data;
-			data.Player.PlayerHP = GameConfig.PlayerMaxHp;
+			data.Player.PlayerHP = Data.Player.MaxHp;
 			Data = data;
 			SaveProgress(Data);
 		}
@@ -101,13 +101,15 @@ namespace _GAME.scripts.Architecture.Architecture.Persistanse_Service
 			SaveProgress(Data);
 		}
 
-		public void SetItem(ItemId id)
+		public void SetItem(ShopItemConfig item)
 		{
 			GameData data = Data;
 			var carList = data.Player.BuysItemsIDs.ToList();
-			carList.Add(id);
+			carList.Add(item.id);
 			data.Player.BuysItemsIDs = carList.ToArray();
-			data.Player.CurrectItemId = id;
+			data.Player.CurrectItemId = item.id;
+			data.Player.MaxHp = item.HP;
+			data.Player.RepairPrice = item.RepairPrice;
 			Data = data;
 			SaveProgress(Data);
 		}

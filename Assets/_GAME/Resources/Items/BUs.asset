@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   id: 6
   model: {fileID: 8634266056398465, guid: 4c3e4a4ee114e7446a66caf125836964, type: 3}
-  price: 500
+  price: 800
   isOpen: 0
-  size: 3
-  speed: 1
+  HP: 7
+  RepairPrice: 60
