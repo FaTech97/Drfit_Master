@@ -25,7 +25,6 @@ public class WinWindow : WindowBase
 		_windowService = windowService;
 		_levelManager = levelManager;
 		winText.text = LocalizationManager.Localize("Windows.Win.LevelWasDone", _levelManager.GetLevelIndex() + 1);
-		nextLevelButton.interactable = levelManager.isNextLevelAvailable();
 		nextLevelButton.onClick.AddListener(OnNextLevelClickHandler);
 		_soundsService.Play(SoundID.Win);
 	}

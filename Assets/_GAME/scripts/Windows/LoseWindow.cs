@@ -54,7 +54,6 @@ public class LoseWindow : WindowBase
 		ContinueForMonneyButton.onClick.RemoveListener(ContinueForMonney);
 		ContinueForRVButton.onClick.RemoveListener(ContinueForRV);
 		FreeContinoeButton.onClick.RemoveListener(ContinueForFree);
-		_levelManager.RestartCurrentLevel();
 		base.Cleanup();
 	}
 

@@ -23,6 +23,13 @@ Common.Settings,SETTINGS,НАСТРОЙКИ,AYARLAR,EINSTELLUNG,PARAMÈTRES,AJUS
 Common.DriftLeft,DRIFT TO THE LEFT,ДРИФТ ВЛЕВО,SOLA SÜRÜKLENME,DRIFT NACH LINKS,DRIFT À GAUCHE,DRIFT IZQUIERDA
 Common.DriftRight,DRIFT TO THE RIGHT,ДРИФТ ВПРАВО,SAĞA DOĞRU SÜRÜKLENME,NACH RECHTS DRIFTEN,DRIFT VERS LA DROITE,DERIVA A LA DERECHA
 Common.Target,"TO WIN, KNOCK DOWN ALL THE DIAMOND BLOCKS",ДЛЯ ПОБЕДЫ СБЕЙТЕ ВСЕ АЛМАЗНЫЕ БЛОКИ,KAZANMAK İÇİN TÜM ELMAS BLOKLARI YIKIN,"UM ZU GEWINNEN, KLOPFEN SIE ALLE DIAMANTBLÖCKE AB",POUR GAGNER ABATTRE TOUS LES BLOCS DE DIAMANT,PARA GANAR DERRIBAR TODOS LOS BLOQUES DE DIAMANTES
+Common.CommingSoonAndGenerate,"This map is automatically generated every time you start
+There will be new levels soon","Эта карта автоматически генерируется при каждом запуске
+Скоро будут новые уровни","Bu harita her başlattığınızda otomatik olarak oluşturulur
+Yakında yeni seviyeler olacak","Diese Karte wird bei jedem Start automatisch generiert
+Es wird bald neue Level geben","Cette carte est générée automatiquement à chaque démarrage
+Il y aura bientôt de nouveaux niveaux","Este mapa se genera automáticamente cada vez que comienzas
+Pronto habrá nuevos niveles"
 Windows.Win.LevelWasDone,LEVEL {0} PASSED,УРОВЕНЬ {0} ПРОЙДЕН,SEVİYE {0} TAMAMLANDI,STUFE {0} BESTANDEN,NIVEAU {0} RÉUSSI,NIVEL {0} APROBADO
 Windows.Win.NextLevel,NEXT,ДАЛЕЕ,SONRA,NÄCHSTEN,SUIVANT,SIGUIENTE
 Windows.Lose.Accident,ACCIDENT,АВАРИЯ,KAZA,UNFALL,ACCIDENT,ACCIDENTE

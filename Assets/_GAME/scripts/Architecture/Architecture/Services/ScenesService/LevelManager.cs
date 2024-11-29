@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using _GAME.scripts.Architecture.Architecture.Persistanse_Service;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using Zenject;
 
 namespace _GAME.scripts.Architecture.Architecture.Services.ScenesService
@@ -38,7 +39,14 @@ namespace _GAME.scripts.Architecture.Architecture.Services.ScenesService
 
 		public void RestartCurrentLevel()
 		{
-			_sceneLoader.Load(levels[_currentLevelIndex].LevelName);
+			if (!isNextLevelAvailable())
+			{
+				_sceneLoader.Load("Last level");
+			}
+			else
+			{
+				_sceneLoader.Load(levels[_currentLevelIndex].LevelName);
+			}
 		}
 
 		public bool isNextLevelAvailable()
@@ -49,8 +57,21 @@ namespace _GAME.scripts.Architecture.Architecture.Services.ScenesService
 		public void GoToNextLevel()
 		{
 			_currentLevelIndex++;
-			_sceneLoader.Load(levels[_currentLevelIndex].LevelName);
-			_persistanseDataService.ChangeLevel(_currentLevelIndex);
+			if (!isNextLevelAvailable())
+			{
+				StartGeneratedLevel();
+				_persistanseDataService.ChangeLevel(levels.Count);
+			}
+			else
+			{
+				_sceneLoader.Load(levels[_currentLevelIndex].LevelName);
+				_persistanseDataService.ChangeLevel(_currentLevelIndex);
+			}
+		}
+
+		private void StartGeneratedLevel()
+		{
+			_sceneLoader.Load("Last level");
 		}
 	}
 }
