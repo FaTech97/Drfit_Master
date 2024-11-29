@@ -141,7 +141,7 @@ public class DriftCarMove : MonoBehaviour
 		if (_iSFinished || _isDestoyed)
 			return;
 		// TechDept переписать логику дрифта с падением машинки
-		_moveForce += transform.forward * carConfig.speed * MoveSpeed;
+		_moveForce += transform.forward * carConfig.RepairPrice * MoveSpeed;
 		transform.position += _moveForce * Time.deltaTime;
 		_soundsService.Play(SoundID.Move);
 	}

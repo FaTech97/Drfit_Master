@@ -6,6 +6,7 @@ using _GAME.scripts.Architecture.Architecture.Persistanse_Service;
 using _GAME.scripts.Architecture.Architecture.Services.ScenesService;
 using Assets.SimpleLocalization.Scripts;
 using UnityEngine;
+using UnityEngine.Serialization;
 using UnityEngine.UI;
 using Zenject;
 
@@ -18,8 +19,8 @@ namespace Shop
 		[SerializeField] private Button BuyButton;
 		[SerializeField] private Text _priceText;
 		[SerializeField] private Text buttonText;
-		[SerializeField] private BoxesCounterViewer sizeViewer;
-		[SerializeField] private BoxesCounterViewer speedViewer;
+		[SerializeField] private Text HPViewer;
+		[SerializeField] private Text RepairPrice;
 		private int currentItemIndex;
 		private List<ShopItemConfig> _items;
 		private IPersistanseDataService _persistanseDataService;
@@ -90,8 +91,8 @@ namespace Shop
 				transform.GetChild(i).gameObject.SetActive(i == _index);
 			}
 
-			speedViewer.SetCount(_items[currentItemIndex].speed);
-			sizeViewer.SetCount(_items[currentItemIndex].size);
+			RepairPrice.text = ( _items[currentItemIndex].RepairPrice.ToString());
+			HPViewer.text = (_items[currentItemIndex].HP.ToString());
 			_sizeAligner.AlignObjectSizeToColliderSize(transform.GetChild(currentItemIndex).gameObject);
 			if (_items[currentItemIndex].isOpen)
 			{
