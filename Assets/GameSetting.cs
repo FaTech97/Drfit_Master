@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using _GAME.scripts.Architecture.Architecture.Persistanse_Service;
+using _GAME.scripts.Architecture.Architecture.Services.SoundService;
 using UnityEngine;
 using UnityEngine.Serialization;
 using UnityEngine.UI;
@@ -11,11 +12,13 @@ public class GameSetting : MonoBehaviour
     [SerializeField] private Toggle audioMuteToggle;
     [SerializeField] private LanguageWindowController langController;
     private IPersistanseDataService _persistanseDataService;
+    private SoundsService _soundsService;
 
     [Inject]
-    private void Construct(IPersistanseDataService persistanseDataService)
+    private void Construct(IPersistanseDataService persistanseDataService, SoundsService soundsService)
     {
         _persistanseDataService = persistanseDataService;
+        _soundsService = soundsService;
     }
 
     public void ResetProgress()
@@ -41,7 +44,7 @@ public class GameSetting : MonoBehaviour
     {
         bool isMute = _persistanseDataService.Data.Settings.IsAudioMute;
         audioMuteToggle.isOn = !isMute;
-        AudioToggleChanged(isMute);
+        AudioToggleChanged(!isMute);
     }
 
     private void LangChange(Langs newLang) => _persistanseDataService.ChangeLanguage(newLang);
@@ -49,6 +52,6 @@ public class GameSetting : MonoBehaviour
     private void AudioToggleChanged(bool isTrue)
     {
         _persistanseDataService.ChangeIsMute(!isTrue);
-        AudioListener.pause = !isTrue;
+        _soundsService.SetMuteForAll(_persistanseDataService.Data.Settings.IsAudioMute);
     }
 }

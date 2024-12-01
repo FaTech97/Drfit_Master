@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using _GAME.scripts.Architecture.Architecture.Persistanse_Service;
 using _GAME.scripts.Architecture.Architecture.Services.SoundService.types;
 using UnityEngine;
 using Zenject;
@@ -11,11 +12,24 @@ namespace _GAME.scripts.Architecture.Architecture.Services.SoundService
 	{
 		private SoundsFactory _soundsFactory;
 		private Dictionary<SoundID, AudioSource> activeSounds = new Dictionary<SoundID, AudioSource>();
+		private bool _isMuted = false;
 
 		[Inject]
 		private void Construct(SoundsFactory soundsFactory)
 		{
 			_soundsFactory = soundsFactory;
+		}
+
+		public void SetMuteForAll(bool isMute)
+		{
+			if(_isMuted == isMute)
+				return;
+
+			_isMuted = isMute;
+			if (isMute)
+				PauseAll();
+			else
+				PlayAll();
 		}
 
 		public void Play(SoundID id, bool playAgain = false)
@@ -54,6 +68,10 @@ namespace _GAME.scripts.Architecture.Architecture.Services.SoundService
 			if (activeUI == null)
 				throw new Exception($"[QWINO ERRROR] Could found SOUND with {id}. It doesn't found");
 			SetSoundAsActive(id, activeUI);
+			if (_isMuted)
+			{
+				activeUI.Pause();
+			}
 			return activeUI;
 		}
 
