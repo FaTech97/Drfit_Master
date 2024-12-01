@@ -19,8 +19,8 @@ Common.Play,Play {0} level,Играть {0} уровень,{0} seviyesini oyna,{
 Common.Back,BACK,НАЗАД,GERİ,ZURÜCK,RETOUR,ATRÁS
 Common.PressToContinue,Press to start...,Нажмите для старта...,Basın başlatmak için...,"Drücken Sie, um zu starten...",Appuyez sur pour démarrer...,Presione para comenzar...
 Common.Shop,SHOP,МАГАЗИН,MAĞAZA,GESCHÄFT,BOUTIQUE,TIENDA
-Common.MainMenu.CameraAndroidText,TOUCH AND ROTATE,ПРИКОСНИСЬ И ВРАЩАЙ,,,,
-Common.MainMenu.CameraPCText,CLICK AND ROTATE,ЗАЖМИ И ВРАЩАЙ,,,,
+Common.MainMenu.CameraAndroidText,TOUCH AND ROTATE,ПРИКОСНИСЬ И ВРАЩАЙ,DOKUN VE DÖNDÜR,BERÜHREN UND DREHEN,TOUCHEZ ET FAITES PIVOTER,TOQUE Y GIRE
+Common.MainMenu.CameraPCText,CLICK AND ROTATE,ЗАЖМИ И ВРАЩАЙ,TIKLAYIN VE DÖNDÜRÜN,KLICKEN UND DREHEN,CLIQUEZ ET FAITES PIVOTER,HAGA CLIC Y GIRE
 Common.Settings,SETTINGS,НАСТРОЙКИ,AYARLAR,EINSTELLUNG,PARAMÈTRES,AJUSTES
 Common.DriftLeft,DRIFT TO THE LEFT,ДРИФТ ВЛЕВО,SOLA SÜRÜKLENME,DRIFT NACH LINKS,DRIFT À GAUCHE,DRIFT IZQUIERDA
 Common.DriftRight,DRIFT TO THE RIGHT,ДРИФТ ВПРАВО,SAĞA DOĞRU SÜRÜKLENME,NACH RECHTS DRIFTEN,DRIFT VERS LA DROITE,DERIVA A LA DERECHA
@@ -44,14 +44,22 @@ Windows.Lose.RepairPrice,"FOR
 {0}
 DIAMONDS","ЗА
 {0}
-АЛМАЗОВ",,,,
+АЛМАЗОВ","için
+{0}
+elmaslar","FÜR
+{0}
+DIAMANTEN","POUR
+{0}
+DIAMANTS","PARA
+{0}
+DIAMANTES"
 Windows.Lose.Restart,RESTART,ПЕРЕИГРАТЬ,TEKRAR OYNAMAK,STARTEN,REDÉMARRER,REINICIAR
 SHOP.GoToMenu,GO TO MENU,В МЕНЮ,MENÜDE,GEHE ZUM MENÜ,ALLER AU MENU,IR AL MENÚ
 SHOP.Buy,BUY,КУПИТЬ,ALMAK,KAUFEN,ACHETER,COMPRAR
 SHOP.Selected,SELECTED,ВЫБРАНО,ALMAK,AUSGEW,SÉLECTIONNÉ,SELECCIONADOS
 SHOP.Choose,СHOOSE,ВЫБРАТЬ,SEÇMEK,WÄHLEN SIE,CHOISIR,Elige
-SHOP.RepairPrice,repair price,цена за ремонт,,,,
-SHOP.LivesCount,lives count,жизней,,,,
+SHOP.RepairPrice,repair price,цена за ремонт,onarım fiyatı,reparaturpreis,precio de reparación,
+SHOP.LivesCount,lives count,жизней,hayatlar sayılır,leben zählen,las vidas cuentan,
 Settings.Title,SETTINGS,НАСТРОЙКИ,AYARLAR,EINSTELLUNG,PARAMÈTRES,AJUSTES
 Settings.Music,SOUNDS,ЗВУКИ,SESLER,MSN,SONS,SONIDOS
 Settings.Language,LANGUAGE,ЯЗЫК,DİL,SPRACHLICH,LANGUE,IDIOMA
