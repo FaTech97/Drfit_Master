@@ -9,7 +9,7 @@
     },
     "Player": {
       "Coins": 9820,
-      "PlayerHP": -13,
+      "PlayerHP": -14,
       "MaxHp": 6,
       "RepairPrice": 60,
       "BuysItemsIDs": [
@@ -19,7 +19,7 @@
       "CurrectItemId": 2
     }
   },
-  "idSave": 1139,
+  "idSave": 1147,
   "isFirstSession": false,
   "language": "ru",
   "promptDone": false
