@@ -5168,7 +5168,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 7a43916ff1ea0da44823779d29ef6ecb, type: 3}
       propertyPath: m_LocalScale.y
-      value: 4.3305817
+      value: 4.624195
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 7a43916ff1ea0da44823779d29ef6ecb, type: 3}
       propertyPath: m_LocalScale.z
@@ -5180,7 +5180,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 7a43916ff1ea0da44823779d29ef6ecb, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.52
+      value: -0.8136
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 7a43916ff1ea0da44823779d29ef6ecb, type: 3}
       propertyPath: m_LocalPosition.z
@@ -5214,6 +5214,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: 7a43916ff1ea0da44823779d29ef6ecb, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 1169deb8f935b0a49a7b414034be7e09, type: 2}
     - target: {fileID: 919132149155446097, guid: 7a43916ff1ea0da44823779d29ef6ecb, type: 3}
       propertyPath: m_Name
       value: door-open
@@ -5506,6 +5510,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: 285b1d6cac19c8e4f95cb834eafb618d, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 1169deb8f935b0a49a7b414034be7e09, type: 2}
     - target: {fileID: 919132149155446097, guid: 285b1d6cac19c8e4f95cb834eafb618d, type: 3}
       propertyPath: m_Name
       value: StoneBlock1x1 (4)
@@ -5806,6 +5814,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: 285b1d6cac19c8e4f95cb834eafb618d, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 1169deb8f935b0a49a7b414034be7e09, type: 2}
     - target: {fileID: 919132149155446097, guid: 285b1d6cac19c8e4f95cb834eafb618d, type: 3}
       propertyPath: m_Name
       value: StoneBlock1x1 (3)
@@ -6181,6 +6193,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: abb9c00add5a2424e87d66931e821170, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 1169deb8f935b0a49a7b414034be7e09, type: 2}
     - target: {fileID: 919132149155446097, guid: abb9c00add5a2424e87d66931e821170, type: 3}
       propertyPath: m_Name
       value: WoodBlock1x1 (2)

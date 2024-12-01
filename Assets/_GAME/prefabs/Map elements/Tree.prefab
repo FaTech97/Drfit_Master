@@ -96,7 +96,7 @@ PrefabInstance:
     - target: {fileID: -7511558181221131132, guid: 7f5e4276cba0d9840af80c32d7754321, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: bcc4f834af559b245a98686d25bf4791, type: 2}
+      objectReference: {fileID: 2100000, guid: 759220a82c9737c478505b97960a4ded, type: 2}
     - target: {fileID: 919132149155446097, guid: 7f5e4276cba0d9840af80c32d7754321, type: 3}
       propertyPath: m_Name
       value: GrassBlock1x1
@@ -178,7 +178,7 @@ PrefabInstance:
     - target: {fileID: -7511558181221131132, guid: abb9c00add5a2424e87d66931e821170, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: 00013106e9e092546a5981a4ff7d434e, type: 2}
+      objectReference: {fileID: 2100000, guid: a5fd9adeecffcd043af448dd38455621, type: 2}
     - target: {fileID: 919132149155446097, guid: abb9c00add5a2424e87d66931e821170, type: 3}
       propertyPath: m_Name
       value: WoodBlock1x1
