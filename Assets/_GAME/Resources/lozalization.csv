@@ -40,9 +40,9 @@ Windows.Lose.YouAreBroken,CAR WAS BROKEN!,МАШИНА СЛОМАНА!,ARABA BOZ
 Windows.Lose.AfterWatchAdvertisement,AFTER WATCHING THE ADVERTISEMENT,ПОСЛЕ ПРОСМОТРА РЕКЛАМЫ,REKLAMLARI İZLEDİKTEN SONRA,NACH DEM ANSCHAUEN DER WERBUNG,APRÈS AVOIR REGARDÉ LA PUBLICITÉ,DESPUÉS DE VER EL ANUNCIO
 Windows.Lose.Repair,REPAIR,ПОЧИНИТЬ,TAMİR ETMEK,REPARATUR,RÉPARATION,REPARACIÓN
 Windows.Lose.Free,Free,БЕСПЛАТНО,ÜCRET,Kostenlos,Gratuit,Gratis
-Windows.Lose.RepairPrice,"PRICE
+Windows.Lose.RepairPrice,"FOR
 {0}
-DIAMONDS","ЦЕНА
+DIAMONDS","ЗА
 {0}
 АЛМАЗОВ",,,,
 Windows.Lose.Restart,RESTART,ПЕРЕИГРАТЬ,TEKRAR OYNAMAK,STARTEN,REDÉMARRER,REINICIAR
