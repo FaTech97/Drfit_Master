@@ -40,7 +40,7 @@ public class LoseWindow : WindowBase
 		if (HP <= 0)
 		{
 			lostHPTextBox.text = LocalizationManager.Localize("Windows.Lose.YouAreBroken");
-			repairPriceText.text = _persistanseDataService.Data.Player.RepairPrice.ToString();
+			repairPriceText.text =  LocalizationManager.Localize("Windows.Lose.RepairPrice", _persistanseDataService.Data.Player.RepairPrice);
 		}
 		else
 			lostHPTextBox.text = LocalizationManager.Localize("Windows.Lose.YouLostLives", HP);

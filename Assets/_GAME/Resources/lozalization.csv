@@ -19,6 +19,8 @@ Common.Play,Play {0} level,Играть {0} уровень,{0} seviyesini oyna,{
 Common.Back,BACK,НАЗАД,GERİ,ZURÜCK,RETOUR,ATRÁS
 Common.PressToContinue,Press to start...,Нажмите для старта...,Basın başlatmak için...,"Drücken Sie, um zu starten...",Appuyez sur pour démarrer...,Presione para comenzar...
 Common.Shop,SHOP,МАГАЗИН,MAĞAZA,GESCHÄFT,BOUTIQUE,TIENDA
+Common.MainMenu.CameraAndroidText,TOUCH AND ROTATE,ПРИКОСНИСЬ И ВРАЩАЙ,,,,
+Common.MainMenu.CameraPCText,CLICK AND ROTATE,ЗАЖМИ И ВРАЩАЙ,,,,
 Common.Settings,SETTINGS,НАСТРОЙКИ,AYARLAR,EINSTELLUNG,PARAMÈTRES,AJUSTES
 Common.DriftLeft,DRIFT TO THE LEFT,ДРИФТ ВЛЕВО,SOLA SÜRÜKLENME,DRIFT NACH LINKS,DRIFT À GAUCHE,DRIFT IZQUIERDA
 Common.DriftRight,DRIFT TO THE RIGHT,ДРИФТ ВПРАВО,SAĞA DOĞRU SÜRÜKLENME,NACH RECHTS DRIFTEN,DRIFT VERS LA DROITE,DERIVA A LA DERECHA
@@ -38,14 +40,18 @@ Windows.Lose.YouAreBroken,CAR WAS BROKEN!,МАШИНА СЛОМАНА!,ARABA BOZ
 Windows.Lose.AfterWatchAdvertisement,AFTER WATCHING THE ADVERTISEMENT,ПОСЛЕ ПРОСМОТРА РЕКЛАМЫ,REKLAMLARI İZLEDİKTEN SONRA,NACH DEM ANSCHAUEN DER WERBUNG,APRÈS AVOIR REGARDÉ LA PUBLICITÉ,DESPUÉS DE VER EL ANUNCIO
 Windows.Lose.Repair,REPAIR,ПОЧИНИТЬ,TAMİR ETMEK,REPARATUR,RÉPARATION,REPARACIÓN
 Windows.Lose.Free,Free,БЕСПЛАТНО,ÜCRET,Kostenlos,Gratuit,Gratis
-Windows.Lose.RepairPrice,30,30,30,30,30,30
+Windows.Lose.RepairPrice,"PRICE
+{0}
+DIAMONDS","ЦЕНА
+{0}
+АЛМАЗОВ",,,,
 Windows.Lose.Restart,RESTART,ПЕРЕИГРАТЬ,TEKRAR OYNAMAK,STARTEN,REDÉMARRER,REINICIAR
 SHOP.GoToMenu,GO TO MENU,В МЕНЮ,MENÜDE,GEHE ZUM MENÜ,ALLER AU MENU,IR AL MENÚ
 SHOP.Buy,BUY,КУПИТЬ,ALMAK,KAUFEN,ACHETER,COMPRAR
 SHOP.Selected,SELECTED,ВЫБРАНО,ALMAK,AUSGEW,SÉLECTIONNÉ,SELECCIONADOS
 SHOP.Choose,СHOOSE,ВЫБРАТЬ,SEÇMEK,WÄHLEN SIE,CHOISIR,Elige
-SHOP.RepairPrice,repair price,цена за ремонт,HIZ:,GESCHWINDIGKEIT:,VITESSE:,VELOCIDAD:
-SHOP.LivesCount,lives count,жизней,BOYUT:,GRÖßE:,TAILLE:,TAMAÑO:
+SHOP.RepairPrice,repair price,цена за ремонт,,,,
+SHOP.LivesCount,lives count,жизней,,,,
 Settings.Title,SETTINGS,НАСТРОЙКИ,AYARLAR,EINSTELLUNG,PARAMÈTRES,AJUSTES
 Settings.Music,SOUNDS,ЗВУКИ,SESLER,MSN,SONS,SONIDOS
 Settings.Language,LANGUAGE,ЯЗЫК,DİL,SPRACHLICH,LANGUE,IDIOMA
