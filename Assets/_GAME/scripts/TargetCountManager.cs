@@ -26,6 +26,11 @@ public class TargetCountManager : MonoBehaviour
 
 	private void Start()
 	{
+		CalcItemsCound();
+	}
+
+	public void CalcItemsCound()
+	{
 		_targets = FindObjectsOfType<DestroyWhenTouch>().ToList();
 		foreach (DestroyWhenTouch destroyWhenTouch in _targets)
 		{

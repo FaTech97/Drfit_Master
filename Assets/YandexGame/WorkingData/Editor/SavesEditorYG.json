@@ -5,10 +5,10 @@
       "Language": 0
     },
     "Levels": {
-      "CurrentLevelIndex": 0
+      "CurrentLevelIndex": 2
     },
     "Player": {
-      "Coins": 10000,
+      "Coins": 10260,
       "PlayerHP": 3,
       "MaxHp": 3,
       "RepairPrice": 25,
@@ -16,7 +16,7 @@
       "CurrectItemId": 0
     }
   },
-  "idSave": 1162,
+  "idSave": 1171,
   "isFirstSession": false,
   "language": "ru",
   "promptDone": false
