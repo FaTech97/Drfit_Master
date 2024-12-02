@@ -22,8 +22,36 @@ Common.Shop,SHOP,МАГАЗИН,MAĞAZA,GESCHÄFT,BOUTIQUE,TIENDA
 Common.MainMenu.CameraAndroidText,TOUCH AND ROTATE,ПРИКОСНИСЬ И ВРАЩАЙ,DOKUN VE DÖNDÜR,BERÜHREN UND DREHEN,TOUCHEZ ET FAITES PIVOTER,TOQUE Y GIRE
 Common.MainMenu.CameraPCText,CLICK AND ROTATE,ЗАЖМИ И ВРАЩАЙ,TIKLAYIN VE DÖNDÜRÜN,KLICKEN UND DREHEN,CLIQUEZ ET FAITES PIVOTER,HAGA CLIC Y GIRE
 Common.Settings,SETTINGS,НАСТРОЙКИ,AYARLAR,EINSTELLUNG,PARAMÈTRES,AJUSTES
-Common.DriftLeft,DRIFT TO THE LEFT,ДРИФТ ВЛЕВО,SOLA SÜRÜKLENME,DRIFT NACH LINKS,DRIFT À GAUCHE,DRIFT IZQUIERDA
-Common.DriftRight,DRIFT TO THE RIGHT,ДРИФТ ВПРАВО,SAĞA DOĞRU SÜRÜKLENME,NACH RECHTS DRIFTEN,DRIFT VERS LA DROITE,DERIVA A LA DERECHA
+Education.HowToPlay,How to play?,Как играть?,Nasıl oynanır?,Wie man spielt?,Comment jouer?,¿Cómo jugar?
+Education.Play,Play,Играть,Oynamak,Spielt,Jouer,Jugar
+Education.HowToDrivePC,"You can control the car using the buttons 
+W (left) and D (right)
+or use the right arrow and left arrow buttons","Управлять машиной вы можете кнопками 
+W (влево) и D ( вправо)
+или используйте кнопки стралка вправо и стрелка влево","Sen düğmelerini kullanarak araba kontrol edebilirsiniz 
+W (sol) ve D (sağ)
+veya sağ ok ve sol ok düğmelerini kullanın","Sie können die Maschine mit den Tasten steuern 
+W (links) und D ( rechts)
+oder verwenden Sie die Tasten Pfeil nach rechts und Pfeil nach links","Vous pouvez contrôler la machine par des boutons 
+W (gauche) et D (droite)
+ou utilisez les boutons flèche droite et flèche gauche","Puedes controlar la máquina con botones 
+W (izquierda) y D (derecha)
+o use los botones flecha derecha y flecha izquierda"
+Education.HowToDriveAndroid,You can control the car by clicking on the right and left sides of the screen,Управлять машиной вы нажимайте на правую и левую части экрана,Ekranın sağ ve sol taraflarına tıklayarak aracı kontrol edebilirsiniz,"Um die Maschine zu steuern, tippen Sie auf die rechte und linke Seite des Bildschirms",Contrôlez la machine que vous cliquez sur le côté droit et gauche de l'écran,"Para controlar la máquina, haga clic en el lado derecho e izquierdo de la pantalla"
+Education.GameOver,"If you touch other items on the level, there will be an accident and a life will be taken away
+When your lives are over, you can fix the car for diamonds or for watching ads.","Если вы заденете другие предметы на уровне, то будет авария и отнимется жизнь
+Когда жизни закончатся вы сможете починить машину за алмазы или же за просмотр рекламы","Seviyedeki diğer nesnelere dokunursanız, bir kaza olacak ve canınız alınacaktır
+Hayatınız bittiğinde, arabanızı elmaslar için tamir edebilir veya reklamları izleyerek tamir edebilirsiniz","Wenn Sie andere Gegenstände auf der Ebene berühren, wird es einen Unfall geben und das Leben wird weggenommen
+Wenn das Leben vorbei ist, können Sie das Auto für Diamanten reparieren oder Anzeigen ansehen","Si vous touchez d'autres objets dans le niveau, il y aura un accident et prendra une vie
+Lorsque la vie est terminée, vous pouvez réparer la voiture pour les diamants ou pour regarder la publicité","Si tocas otros elementos en el nivel, habrá un accidente y se llevará una vida
+Cuando la vida termina usted será capaz de reparar el coche para los diamantes o para ver los anuncios"
+Education.HowToWin,"At each level, STEVE NOOB has to knock down all the diamond blocks
+For each downed block, 10 diamonds will be added to you","На каждом уровне Нубик долже сбить все алмазные блоки
+За каждый сбитый блок вам будем добавляться 10 алмазов","Her seviyede Nubik'in tüm elmas blokları yıkması gerekiyor
+Yıkılan her blok için size 10 elmas ekleneceğiz","Auf jeder Ebene muss der Nubik alle Diamantblöcke niederschlagen
+Für jeden Block, den Sie abgeschossen haben, werden 10 Diamanten hinzugefügt","A chaque niveau, le Nubik doit abattre tous les blocs de diamant
+Pour chaque bloc abattu, vous serez Ajouté 10 diamants","En cada nivel, Nubik debe derribar todos los bloques de diamantes
+Por cada bloque derribado se añadirá 10 diamantes"
 Common.Target,"TO WIN, KNOCK DOWN ALL THE DIAMOND BLOCKS",ДЛЯ ПОБЕДЫ СБЕЙТЕ ВСЕ АЛМАЗНЫЕ БЛОКИ,KAZANMAK İÇİN TÜM ELMAS BLOKLARI YIKIN,"UM ZU GEWINNEN, KLOPFEN SIE ALLE DIAMANTBLÖCKE AB",POUR GAGNER ABATTRE TOUS LES BLOCS DE DIAMANT,PARA GANAR DERRIBAR TODOS LOS BLOQUES DE DIAMANTES
 Common.CommingSoonAndGenerate,"This map is automatically generated every time you start
 There will be new levels soon","Эта карта автоматически генерируется при каждом запуске
@@ -59,7 +87,7 @@ SHOP.Buy,BUY,КУПИТЬ,ALMAK,KAUFEN,ACHETER,COMPRAR
 SHOP.Selected,SELECTED,ВЫБРАНО,ALMAK,AUSGEW,SÉLECTIONNÉ,SELECCIONADOS
 SHOP.Choose,СHOOSE,ВЫБРАТЬ,SEÇMEK,WÄHLEN SIE,CHOISIR,Elige
 SHOP.RepairPrice,repair price,цена за ремонт,onarım fiyatı,reparaturpreis,precio de reparación,
-SHOP.LivesCount,lives count,жизней,hayatlar sayılır,leben zählen,las vidas cuentan,
+SHOP.LivesCount,lives count,жизней,hayatlar sayılır,leben zählen,ы,
 Settings.Title,SETTINGS,НАСТРОЙКИ,AYARLAR,EINSTELLUNG,PARAMÈTRES,AJUSTES
 Settings.Music,SOUNDS,ЗВУКИ,SESLER,MSN,SONS,SONIDOS
 Settings.Language,LANGUAGE,ЯЗЫК,DİL,SPRACHLICH,LANGUE,IDIOMA
