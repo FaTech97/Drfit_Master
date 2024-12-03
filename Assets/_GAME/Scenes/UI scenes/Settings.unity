@@ -2717,6 +2717,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: GoToTG (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 3251495400582821832, guid: 2c2205df9cf85934387b0ee4f31c31b5, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4672431748755157328, guid: 2c2205df9cf85934387b0ee4f31c31b5, type: 3}
       propertyPath: m_Sprite
       value: 
@@ -2787,11 +2791,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6251532204824659218, guid: 2c2205df9cf85934387b0ee4f31c31b5, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 0
+      value: 432.01263
       objectReference: {fileID: 0}
     - target: {fileID: 6251532204824659218, guid: 2c2205df9cf85934387b0ee4f31c31b5, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 0
+      value: -290
       objectReference: {fileID: 0}
     - target: {fileID: 6251532204824659218, guid: 2c2205df9cf85934387b0ee4f31c31b5, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x

@@ -11,5 +11,7 @@ namespace Shop
 		Batauto = 4,
 		GreenCar = 5,
 		Bus = 6,
+		MiniBus = 7,
+		FastCar = 8
 	}
 }

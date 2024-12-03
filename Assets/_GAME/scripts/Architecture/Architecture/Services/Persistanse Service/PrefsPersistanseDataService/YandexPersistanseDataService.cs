@@ -1,10 +1,19 @@
 ﻿using System;
 using _GAME.scripts.Architecture.Architecture.Persistanse_Service;
 using Assets.SimpleLocalization.Scripts;
+using UnityEngine;
 using YG;
+
+
 
 public class YandexPersistentDataService : IPersistanseDataService
 {
+	const string RU_CODE = "ru";
+	const string EN_CODE = "en";
+	const string TU_CODE = "tr";
+	const string GE_CODE = "de";
+	const string FR_CODE = "fr";
+	const string SP_CODE = "es";
 	protected override void Initialization()
 	{
 		YandexGame.GetDataEvent += GetLoad;
@@ -13,19 +22,34 @@ public class YandexPersistentDataService : IPersistanseDataService
 	private void GetLoad()
 	{
 		SetData(YandexGame.savesData.data);
-		if (YandexGame.savesData.data.Settings.Language.ToString() != null)
+		Debug.Log("langCode: " + YandexGame.EnvironmentData.language);
+		if (YandexGame.savesData.data.Settings.Language == Langs.Unset)
 		{
-			LocalizationManager.Language = YandexGame.savesData.data.Settings.Language.ToString();
-		}
-		else if (YandexGame.savesData.language != null)
-		{
-			LocalizationManager.Language = YandexGame.savesData.language == "ru"
-				? Langs.Russian.ToString()
-				: Langs.English.ToString();
-		}
-		else
-		{
-			LocalizationManager.Language = Langs.English.ToString();
+			switch (YandexGame.EnvironmentData.language)
+			{
+				case RU_CODE:
+					YandexGame.savesData.data.Settings.Language = Langs.Russian;
+					break;
+				case EN_CODE:
+					YandexGame.savesData.data.Settings.Language = Langs.English;
+					break;
+				case TU_CODE:
+					YandexGame.savesData.data.Settings.Language = Langs.Turkish;
+					break;
+				case GE_CODE:
+					YandexGame.savesData.data.Settings.Language = Langs.German;
+					break;
+				case FR_CODE:
+					YandexGame.savesData.data.Settings.Language = Langs.French;
+					break;
+				case SP_CODE:
+					YandexGame.savesData.data.Settings.Language = Langs.Spanish;
+					break;
+				default:
+					YandexGame.savesData.data.Settings.Language = Langs.English;
+					break;
+			}
+			Debug.Log("DEFAULT LANG SET: " + YandexGame.savesData.data.Settings.Language.ToString());
 		}
 
 		InvokeDate();

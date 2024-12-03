@@ -8,7 +8,7 @@ using Zenject;
 public class Price : MonoBehaviour, IPointerClickHandler
 {
     private IPersistanseDataService _persistanseDataService;
-    private readonly int _priceCount = 10;
+    private readonly int _priceCount = 30;
 
     [Inject]
     private void Construct(IPersistanseDataService persistanseDataService)

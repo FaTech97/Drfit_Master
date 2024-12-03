@@ -17,4 +17,4 @@ MonoBehaviour:
   price: 500
   isOpen: 0
   HP: 5
-  RepairPrice: 45
+  RepairPrice: 75

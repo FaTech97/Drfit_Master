@@ -5,6 +5,7 @@ using UnityEngine.UI;
 
 public enum Langs
 {
+	Unset,
 	English,
 	Russian,
 	Turkish,

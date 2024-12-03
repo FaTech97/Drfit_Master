@@ -17,7 +17,7 @@ namespace _GAME.scripts.Architecture.Architecture.Persistanse_Service
 	public class SettingsData
 	{
 		public bool IsAudioMute = false;
-		public Langs Language;
+		public Langs Language = Langs.Unset;
 	}
 
 	[Serializable]
@@ -29,7 +29,7 @@ namespace _GAME.scripts.Architecture.Architecture.Persistanse_Service
 	[Serializable]
 	public class PlayerData
 	{
-		public int Coins = 10000;
+		public int Coins = 250;
 		public int PlayerHP = 3;
 		public int MaxHp = 3;
 		public int RepairPrice = 25;

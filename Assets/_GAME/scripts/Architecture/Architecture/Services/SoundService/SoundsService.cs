@@ -83,11 +83,13 @@ namespace _GAME.scripts.Architecture.Architecture.Services.SoundService
 		public void PlayAll()
 		{
 			AudioListener.pause = false;
+			AudioListener.volume = 1;
 		}
 
 		public void PauseAll()
 		{
 			AudioListener.pause = true;
+			AudioListener.volume = 0;
 		}
 	}
 }

@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4040694127565362958}
-  - component: {fileID: 4153759505218282001}
+  - component: {fileID: -3930519810350720874}
   m_Layer: 0
   m_Name: MainThemeSound
   m_TagString: Untagged
@@ -32,7 +32,7 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!82 &4153759505218282001
+--- !u!82 &-3930519810350720874
 AudioSource:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}

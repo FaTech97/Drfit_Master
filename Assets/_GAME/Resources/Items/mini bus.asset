@@ -10,11 +10,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ac5cd8301cd54e46a1dfb47f4dc6ee26, type: 3}
-  m_Name: GreenCar
+  m_Name: mini bus
   m_EditorClassIdentifier: 
-  id: 5
-  model: {fileID: 920658136319848229, guid: 4ad1fd44e40b2594093d5c0b3984d39f, type: 3}
-  price: 200
+  id: 7
+  model: {fileID: 6658481479378289815, guid: 624a12adfd2c4ff4c80449c4a5bc19c0, type: 3}
+  price: 500
   isOpen: 0
   HP: 5
   RepairPrice: 70

@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: 3 speed car
   m_EditorClassIdentifier: 
   id: 3
-  model: {fileID: 919132149155446097, guid: 758e4758019687641acc0aae641adf68, type: 3}
+  model: {fileID: 6630256701136974529, guid: fd1bed28fe115334c83a95dad83c7678, type: 3}
   price: 400
   isOpen: 0
   HP: 5
-  RepairPrice: 45
+  RepairPrice: 75
