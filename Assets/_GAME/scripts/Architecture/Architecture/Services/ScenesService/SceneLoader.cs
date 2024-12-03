@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections;
+using Unity.Services.Analytics;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -29,6 +30,11 @@ namespace _GAME.scripts.Architecture.Architecture.Services.ScenesService
 			}
 
 			onLoaded?.Invoke();
+			CustomEvent myEvent = new CustomEvent("load_level")
+			{
+				{ "level_name", nextScene }
+			};
+			AnalyticsService.Instance.RecordEvent(myEvent);
 			canvas.SetActive(false);
 		}
 	}

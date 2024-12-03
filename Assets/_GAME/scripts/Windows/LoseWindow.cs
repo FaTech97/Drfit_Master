@@ -5,6 +5,7 @@ using _GAME.scripts.Architecture.Architecture.Services.ScenesService;
 using _GAME.scripts.Architecture.Architecture.Services.SoundService;
 using _GAME.scripts.Architecture.Architecture.Services.SoundService.types;
 using Assets.SimpleLocalization.Scripts;
+using Unity.Services.Analytics;
 using UnityEngine;
 using UnityEngine.UI;
 using Zenject;
@@ -75,6 +76,12 @@ public class LoseWindow : WindowBase
 
 	private void ContinueForRV()
 	{
+		CustomEvent selectItem = new CustomEvent("lose_video_watch_repair")
+		{
+			{ "money_count", _persistanseDataService.Data.Player.Coins},
+			{ "active_car", _persistanseDataService.Data.Player.CurrectItemId.ToString()},
+		};
+		AnalyticsService.Instance.RecordEvent(selectItem);
 		_adService.ShawReward(1234, AddLivesAndRestart);
 	}
 
@@ -88,6 +95,12 @@ public class LoseWindow : WindowBase
 	{
 		_persistanseDataService.RefreshHP();
 		_persistanseDataService.SpendMoney(30);
+		CustomEvent selectItem = new CustomEvent("lose_pay_money_repair")
+		{
+			{ "money_count", _persistanseDataService.Data.Player.Coins},
+			{ "active_car", _persistanseDataService.Data.Player.CurrectItemId.ToString()},
+		};
+		AnalyticsService.Instance.RecordEvent(selectItem);
 		RestartLevel();
 	}
 

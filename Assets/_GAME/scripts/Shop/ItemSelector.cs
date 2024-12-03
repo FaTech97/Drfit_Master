@@ -5,6 +5,7 @@ using _GAME.scripts;
 using _GAME.scripts.Architecture.Architecture.Persistanse_Service;
 using _GAME.scripts.Architecture.Architecture.Services.ScenesService;
 using Assets.SimpleLocalization.Scripts;
+using Unity.Services.Analytics;
 using UnityEngine;
 using UnityEngine.Serialization;
 using UnityEngine.UI;
@@ -50,6 +51,11 @@ namespace Shop
 			_persistanseDataService.AddCar(_items[currentItemIndex].id);
 			_items[currentItemIndex].isOpen = true;
 			MakeButtonIsOpen(_items[currentItemIndex]);
+			CustomEvent selectItem = new CustomEvent("buy_item")
+			{
+				{ "item_name", _items[currentItemIndex].id.ToString() }
+			};
+			AnalyticsService.Instance.RecordEvent(selectItem);
 		}
 
 		private void InstantiateAll()
@@ -130,6 +136,11 @@ namespace Shop
 			_persistanseDataService.SetItem(_items[currentItemIndex]);
 			_priceText.gameObject.SetActive(false);
 			buttonText.text = LocalizationManager.Localize("SHOP.Selected");
+			CustomEvent selectItem = new CustomEvent("select_item")
+			{
+				{ "item_name", _items[currentItemIndex].id.ToString() }
+			};
+			AnalyticsService.Instance.RecordEvent(selectItem);
 		}
 
 		public void ChangeItem(int _change)
