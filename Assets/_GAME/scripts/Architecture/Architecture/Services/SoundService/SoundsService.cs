@@ -22,10 +22,10 @@ namespace _GAME.scripts.Architecture.Architecture.Services.SoundService
 
 		public void SetMuteForAll(bool isMute)
 		{
-			if(_isMuted == isMute)
-				return;
-
-			_isMuted = isMute;
+			// if(_isMuted == isMute)
+			// 	return;
+			//
+			// _isMuted = isMute;
 			if (isMute)
 				PauseAll();
 			else
@@ -68,10 +68,6 @@ namespace _GAME.scripts.Architecture.Architecture.Services.SoundService
 			if (activeUI == null)
 				throw new Exception($"[QWINO ERRROR] Could found SOUND with {id}. It doesn't found");
 			SetSoundAsActive(id, activeUI);
-			if (_isMuted)
-			{
-				activeUI.Pause();
-			}
 			return activeUI;
 		}
 
@@ -86,31 +82,12 @@ namespace _GAME.scripts.Architecture.Architecture.Services.SoundService
 
 		public void PlayAll()
 		{
-			foreach(KeyValuePair<SoundID, AudioSource> sound in activeSounds)
-			{
-				sound.Value.Play();
-			}
+			AudioListener.pause = false;
 		}
 
 		public void PauseAll()
 		{
-			List<SoundID> nullableValues = new List<SoundID>();
-			foreach(KeyValuePair<SoundID, AudioSource> sound in activeSounds)
-			{
-				try
-				{
-					sound.Value.Stop();
-				}
-				catch
-				{
-					nullableValues.Add(sound.Key);
-				}
-			}
-
-			foreach (SoundID id in nullableValues)
-			{
-				activeSounds.Remove(id);
-			}
+			AudioListener.pause = true;
 		}
 	}
 }

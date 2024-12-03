@@ -42,6 +42,7 @@ public class ReadyStadyGoText : MonoBehaviour
 			yield return new WaitForSecondsRealtime(timeBecomeText);
 			texts[i].gameObject.SetActive(false);
 		}
+		_soundsService.Stop(SoundID.Timer);
 		driftCarMove.StartCar();
 	}
 
