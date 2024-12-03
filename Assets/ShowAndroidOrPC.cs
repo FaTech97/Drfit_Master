@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Serialization;
+using YG;
 
 public class ShowAndroidOrPC : MonoBehaviour
 {
@@ -10,14 +11,14 @@ public class ShowAndroidOrPC : MonoBehaviour
     
     void Start()
     {
-        if (Application.platform == RuntimePlatform.Android || Application.platform == RuntimePlatform.IPhonePlayer) {
-            showOnlyForPC.SetActive(false);
-            showOnlyForAndroid.SetActive(true);
+        if (YandexGame.EnvironmentData.isDesktop) {
+            showOnlyForPC.SetActive(true);
+            showOnlyForAndroid.SetActive(false);
         }
         else
         {
-            showOnlyForPC.SetActive(true);
-            showOnlyForAndroid.SetActive(false);
+            showOnlyForPC.SetActive(false);
+            showOnlyForAndroid.SetActive(true);
         }
     }
 }

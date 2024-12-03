@@ -10,7 +10,7 @@ namespace Shop
 		public GameObject model;
 		public int price = 10;
 		public bool isOpen = false;
-		[Range(3, 10)] public int HP = 3;
+		[Range(3, 20)] public int HP = 3;
 		[Range(25, 300)] public int RepairPrice = 25;
 	}
 }
