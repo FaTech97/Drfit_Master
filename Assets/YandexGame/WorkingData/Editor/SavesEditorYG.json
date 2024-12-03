@@ -1,8 +1,8 @@
 {
   "data": {
     "Settings": {
-      "IsAudioMute": true,
-      "Language": 1
+      "IsAudioMute": false,
+      "Language": 2
     },
     "Levels": {
       "CurrentLevelIndex": 1
@@ -19,7 +19,7 @@
       "CurrectItemId": 7
     }
   },
-  "idSave": 1255,
+  "idSave": 1261,
   "isFirstSession": false,
   "language": "ru",
   "promptDone": false
