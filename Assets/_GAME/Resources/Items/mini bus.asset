@@ -16,5 +16,5 @@ MonoBehaviour:
   model: {fileID: 6658481479378289815, guid: 624a12adfd2c4ff4c80449c4a5bc19c0, type: 3}
   price: 500
   isOpen: 0
-  HP: 9
+  HP: 11
   RepairPrice: 70

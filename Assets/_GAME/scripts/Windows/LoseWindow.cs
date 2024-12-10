@@ -38,6 +38,8 @@ public class LoseWindow : WindowBase
 	{
 		var HP = _persistanseDataService.Data.Player.PlayerHP;
 		SetButtonVisible(HP <= 0);
+		ContinueForMonneyButton.interactable = _persistanseDataService.Data.Player.RepairPrice <=
+		                                       _persistanseDataService.Data.Player.Coins;
 		if (HP <= 0)
 		{
 			lostHPTextBox.text = LocalizationManager.Localize("Windows.Lose.YouAreBroken");

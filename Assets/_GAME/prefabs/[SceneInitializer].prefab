@@ -426,7 +426,7 @@ MonoBehaviour:
   RightButton: {fileID: 0}
   rsgText: {fileID: 1930200404571595141}
   Drag: 0.98
-  SteerAngle: 10
+  SteerAngle: 8
   Traction: 1
 --- !u!114 &2617039255793362392
 MonoBehaviour:
@@ -983,7 +983,7 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 12800000, guid: 103c69071affe654180ab16cfb8da919, type: 3}
-    m_FontSize: 22
+    m_FontSize: 25
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 0
@@ -2157,12 +2157,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0cd44c1031e13a943bb63640046fad76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_UiScaleMode: 0
+  m_UiScaleMode: 1
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
   m_ReferenceResolution: {x: 800, y: 600}
   m_ScreenMatchMode: 0
-  m_MatchWidthOrHeight: 1
+  m_MatchWidthOrHeight: 0.5
   m_PhysicalUnit: 3
   m_FallbackScreenDPI: 96
   m_DefaultSpriteDPI: 96
@@ -2800,7 +2800,7 @@ MonoBehaviour:
   - {fileID: 7924797028685555746}
   - {fileID: 6074213792761624207}
   - {fileID: 8194355799358759776}
-  timeBecomeText: 0.5
+  timeBecomeText: 0.4
   driftCarMove: {fileID: 4823195785374284813}
 --- !u!1 &8899223633403141615
 GameObject:
@@ -3854,7 +3854,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2989134935987014626, guid: 2ddf1e16bc4de6746961a7ac2e5bba46, type: 3}
       propertyPath: orthographic size
-      value: 35
+      value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 2989134935987014626, guid: 2ddf1e16bc4de6746961a7ac2e5bba46, type: 3}
       propertyPath: m_BackGroundColor.a
@@ -3963,13 +3963,35 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 2709577280556539994, guid: 2ddf1e16bc4de6746961a7ac2e5bba46, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 3743435394461375410}
   m_SourcePrefab: {fileID: 100100000, guid: 2ddf1e16bc4de6746961a7ac2e5bba46, type: 3}
 --- !u!4 &2015853411416571728 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 9028702433498819607, guid: 2ddf1e16bc4de6746961a7ac2e5bba46, type: 3}
   m_PrefabInstance: {fileID: 7401062328752968519}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &4841229789560976157 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2709577280556539994, guid: 2ddf1e16bc4de6746961a7ac2e5bba46, type: 3}
+  m_PrefabInstance: {fileID: 7401062328752968519}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &3743435394461375410
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4841229789560976157}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7a67263b59cfb494296d9b6673153637, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  DefaultResolution: {x: 1366, y: 768}
+  WidthOrHeight: 0.687
 --- !u!1001 &8238561556333084656
 PrefabInstance:
   m_ObjectHideFlags: 0
