@@ -76,10 +76,10 @@ public class OnGuiChangedHandler : MonoBehaviour
 		//     _collider.center.z + _collider.size.z / 2);
 		// var rightSpawn = new Vector3(_collider.center.x + _collider.size.x / 2, _collider.center.y - _collider.size.y / 2,
 		//     _collider.center.z + _collider.size.z / 2);
-		var leftBackSpawn = new Vector3(_collider.center.x - _collider.size.x / 2, _collider.center.y - _collider.size.y / 2,
-			_collider.center.z - _collider.size.z / 2);
-		var rightBackSpawn = new Vector3(_collider.center.x + _collider.size.x / 2, _collider.center.y - _collider.size.y / 2,
-			_collider.center.z - _collider.size.z / 2);
+		var leftBackSpawn = new Vector3(_collider.center.x - _collider.size.x / 2 + 0.5f, _collider.center.y - _collider.size.y / 2,
+			_collider.center.z - _collider.size.z / 2 + 1f);
+		var rightBackSpawn = new Vector3(_collider.center.x + _collider.size.x / 2 - 0.5f, _collider.center.y - _collider.size.y / 2,
+			_collider.center.z - _collider.size.z / 2 + 1f);
 		SpawnOneShadow(leftBackSpawn, "leftBack");
 		SpawnOneShadow(rightBackSpawn, "rightBack");
 	}

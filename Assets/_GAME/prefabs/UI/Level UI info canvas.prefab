@@ -32,7 +32,6 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 6157946574333842274}
-  - {fileID: 5540654508585560578}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -197,7 +196,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
-    m_AddedGameObjects: []
+    m_AddedGameObjects:
+    - targetCorrespondingSourceObject: {fileID: 1214747203683358046, guid: c1da04124a7930641aabb2ff7e02fb83, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 5540654508585560578}
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c1da04124a7930641aabb2ff7e02fb83, type: 3}
 --- !u!224 &6157946574333842274 stripped
@@ -211,7 +213,7 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 8582384302101560594}
+    m_TransformParent: {fileID: 6157946574333842274}
     m_Modifications:
     - target: {fileID: 1890772763257508034, guid: 12f43b37b4ffb714998ce967bb9488c5, type: 3}
       propertyPath: m_Pivot.x
@@ -263,19 +265,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1890772763257508034, guid: 12f43b37b4ffb714998ce967bb9488c5, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 1890772763257508034, guid: 12f43b37b4ffb714998ce967bb9488c5, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 1890772763257508034, guid: 12f43b37b4ffb714998ce967bb9488c5, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 1890772763257508034, guid: 12f43b37b4ffb714998ce967bb9488c5, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -90.00073
+      value: 1217.6472
       objectReference: {fileID: 0}
     - target: {fileID: 1890772763257508034, guid: 12f43b37b4ffb714998ce967bb9488c5, type: 3}
       propertyPath: m_AnchoredPosition.y

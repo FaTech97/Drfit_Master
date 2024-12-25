@@ -1165,6 +1165,10 @@ PrefabInstance:
       propertyPath: m_FontData.m_FontStyle
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4823195785374284813, guid: 5108bfff638394e4c8276711a168ae14, type: 3}
+      propertyPath: SteerAngle
+      value: 15
+      objectReference: {fileID: 0}
     - target: {fileID: 5179492702454073405, guid: 5108bfff638394e4c8276711a168ae14, type: 3}
       propertyPath: m_Color.b
       value: 1
@@ -1759,7 +1763,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 0}
-  m_AnchoredPosition: {x: -2.1021118, y: 173.56848}
+  m_AnchoredPosition: {x: -2.1020508, y: 173.56848}
   m_SizeDelta: {x: 4.2041, y: 66.0644}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &857444429
