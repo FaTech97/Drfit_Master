@@ -11,7 +11,7 @@
 Description
 
 ## Installation
-**Android:** xxx
+**
 
 **Yandex Games ( HTML5 ):** xxx
 

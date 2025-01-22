@@ -13,9 +13,14 @@ jobs:
       fail-fast: false
       matrix:
         targetPlatform:
-          - WebGL # WebGL.
           - Android # Build an Android .apk standalone app.
     steps:
+      - name: Get repository name
+        id: repo-name
+        run: |
+          REPO_NAME=$(echo "${{ github.repository }}" | cut -d'/' -f2)
+          echo "Repository name: $REPO_NAME"
+          echo "repo_name=$REPO_NAME" >> $GITHUB_OUTPUT
       - uses: actions/checkout@v4
         with:
           fetch-depth: 0
@@ -34,66 +39,22 @@ jobs:
           UNITY_PASSWORD: ${{ secrets.UNITY_PASSWORD }}
         with:
           targetPlatform: ${{ matrix.targetPlatform }}
+      - name: Extract APK from ZIP
+        run: |
+          mkdir -p builds/${{ matrix.targetPlatform }}
+          unzip -j build/${{ matrix.targetPlatform }}/*.zip -d builds/${{ matrix.targetPlatform }}
+      - name: Update README.md with APK download link
+        run: |
+          APK_FILE=$(ls builds/${{ matrix.targetPlatform }}/*.apk)
+          APK_NAME=$(basename $APK_FILE)
+          DOWNLOAD_URL="https://github.com/${{ github.repository }}/releases/latest/download/$APK_NAME"
+          sed -i "14i${{ matrix.targetPlatform }} : [Download $APK_NAME]($DOWNLOAD_URL)" README.md
+          git config --global user.name "GitHub Actions"
+          git config --global user.email "actions@github.com"
+          git add README.md
+          git commit -m "Update README.md with APK download link for ${{ matrix.targetPlatform }}"
+          git push
       - uses: actions/upload-artifact@v3
         with:
-          name: Build-${{ matrix.targetPlatform }}
-          path: build/${{ matrix.targetPlatform }}
-
-
-# jobs:
-#   build:
-#     runs-on: ubuntu-latest
-    
-#     steps:
-#       - name: Checkout repository
-#         uses: actions/checkout@v4
-
-#       - name: Set up JDK
-#         uses: actions/setup-java@v4
-#         with: 
-#           distribution: 'temurin' # Указываем дистрибутив JDK
-#           java-version: '11' # Указываем версию JDK для сборки Android
-
-#       - name: Fix permissions
-#         run: sudo chmod -R 777 $HOME
-
-#       - name: Activate Unity License
-#         uses: game-ci/unity-activate@v2
-#         with:
-#           unityLicense: ${{ secrets.UNITY_LICENSE }} # Лицензия Unity
-#           unityUsername: ${{ secrets.UNITY_USERNAME }} # Логин Unity
-#           unityPassword: ${{ secrets.UNITY_PASSWORD }} # Пароль Unity
-
-#       - name: Cache Unity Library
-#         uses: actions/cache@v4
-#         with:
-#           path: Library
-#           key: Library-${{ runner.os }}-${{ hashFiles('**/ProjectSettings/ProjectVersion.txt') }}
-#           restore-keys: |
-#             Library-${{ runner.os }}-
-
-#       - name: Build WebGL
-#         uses: game-ci/unity-builder@v3
-#         with:
-#           targetPlatform: WebGL
-#           projectPath: .
-#           buildMethod: BuildScript.BuildWebGL # Укажите ваш метод сборки для WebGL
-
-#       - name: Build Android
-#         uses: game-ci/unity-builder@v3
-#         with:
-#           targetPlatform: Android
-#           projectPath: .
-#           buildMethod: BuildScript.BuildAndroid # Укажите ваш метод сборки для Android
-
-#       - name: Upload WebGL Build
-#         uses: actions/upload-artifact@v4
-#         with:
-#           name: WebGL-Build
-#           path: build/WebGL
-
-#       - name: Upload Android Build
-#         uses: actions/upload-artifact@v4
-#         with:
-#           name: Android-Build
-#           path: build/Android
+          name: ${{ steps.repo-name.outputs.repo_name }}-${{ matrix.targetPlatform }}
+          path: builds/${{ matrix.targetPlatform }}
