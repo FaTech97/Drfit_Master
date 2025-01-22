@@ -11,12 +11,15 @@ jobs:
     
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v2
+        uses: actions/checkout@v4
 
       - name: Set up JDK
-        uses: actions/setup-java@v1
+        uses: actions/setup-java@v4
         with:
           java-version: '11' # Указываем версию JDK для сборки Android
+
+      - name: Fix permissions
+        run: sudo chmod -R 777 $HOME
 
       - name: Activate Unity License
         uses: game-ci/unity-activate@v2
@@ -26,7 +29,7 @@ jobs:
           unityPassword: ${{ secrets.UNITY_PASSWORD }} # Пароль Unity
 
       - name: Cache Unity Library
-        uses: actions/cache@v2
+        uses: actions/cache@v4
         with:
           path: Library
           key: Library-${{ runner.os }}-${{ hashFiles('**/ProjectSettings/ProjectVersion.txt') }}
