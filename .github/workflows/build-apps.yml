@@ -39,22 +39,38 @@ jobs:
           UNITY_PASSWORD: ${{ secrets.UNITY_PASSWORD }}
         with:
           targetPlatform: ${{ matrix.targetPlatform }}
+      - name: Upload build artifacts
+        uses: actions/upload-artifact@v3
+        with:
+          name: ${{ steps.repo-name.outputs.repo_name }}-${{ matrix.targetPlatform }}
+          path: build/${{ matrix.targetPlatform }}
+      
+      - name: Download build artifacts
+        uses: actions/download-artifact@v3
+        with:
+          name: ${{ steps.repo-name.outputs.repo_name }}-${{ matrix.targetPlatform }}
+          path: artifacts
+
       - name: Extract APK from ZIP
         run: |
           mkdir -p builds/${{ matrix.targetPlatform }}
-          unzip -j build/${{ matrix.targetPlatform }}/*.zip -d builds/${{ matrix.targetPlatform }}
+          unzip -j artifacts/*.zip -d builds/${{ matrix.targetPlatform }}
+
       - name: Update README.md with APK download link
         run: |
           APK_FILE=$(ls builds/${{ matrix.targetPlatform }}/*.apk)
           APK_NAME=$(basename $APK_FILE)
           DOWNLOAD_URL="https://github.com/${{ github.repository }}/releases/latest/download/$APK_NAME"
-          sed -i "14i${{ matrix.targetPlatform }} : [Download $APK_NAME]($DOWNLOAD_URL)" README.md
+          # Перезаписываем 14 строку README.md
+          sed -i "14s/.*/${{ matrix.targetPlatform }} : [Download $APK_NAME]($DOWNLOAD_URL)/" README.md
           git config --global user.name "GitHub Actions"
           git config --global user.email "actions@github.com"
           git add README.md
           git commit -m "Update README.md with APK download link for ${{ matrix.targetPlatform }}"
           git push
-      - uses: actions/upload-artifact@v3
+
+      - name: Upload APK to builds folder
+        uses: actions/upload-artifact@v3
         with:
-          name: ${{ steps.repo-name.outputs.repo_name }}-${{ matrix.targetPlatform }}
+          name: apk-builds
           path: builds/${{ matrix.targetPlatform }}
