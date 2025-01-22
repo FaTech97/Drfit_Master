@@ -33,27 +33,27 @@ jobs:
             Library-${{ runner.os }}-
 
       - name: Build WebGL
-        uses: game-ci/unity-builder@v2
+        uses: game-ci/unity-builder@v3
         with:
           targetPlatform: WebGL
           projectPath: .
           buildMethod: BuildScript.BuildWebGL # Укажите ваш метод сборки для WebGL
 
       - name: Build Android
-        uses: game-ci/unity-builder@v2
+        uses: game-ci/unity-builder@v3
         with:
           targetPlatform: Android
           projectPath: .
           buildMethod: BuildScript.BuildAndroid # Укажите ваш метод сборки для Android
 
       - name: Upload WebGL Build
-        uses: actions/upload-artifact@v2
+        uses: actions/upload-artifact@v4
         with:
           name: WebGL-Build
           path: build/WebGL
 
       - name: Upload Android Build
-        uses: actions/upload-artifact@v2
+        uses: actions/upload-artifact@v4
         with:
           name: Android-Build
           path: build/Android
