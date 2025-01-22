@@ -53,7 +53,7 @@ jobs:
 
       - name: Update README.md with APK download link
         run: |
-          APK_FILE=$(ls builds/${{ matrix.targetPlatform }}/*.apk)
+          APK_FILE=$(ls builds/*.apk)
           APK_NAME=$(basename $APK_FILE)
           DOWNLOAD_URL="https://github.com/${{ github.repository }}/releases/latest/download/$APK_NAME"
           sed -i "14s|.*|${{ matrix.targetPlatform }} : [Download $APK_NAME]($DOWNLOAD_URL)|" README.md
