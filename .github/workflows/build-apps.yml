@@ -51,6 +51,12 @@ jobs:
           name: ${{ steps.repo-name.outputs.repo_name }}-${{ matrix.targetPlatform }}
           path: artifacts
 
+      - name: Show files
+        run: |
+          cd artifacts
+          ls -l
+          cd ../
+
       - name: Extract APK from ZIP
         run: |
           mkdir -p builds/${{ matrix.targetPlatform }}
