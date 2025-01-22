@@ -19,7 +19,7 @@ jobs:
           java-version: '11' # Указываем версию JDK для сборки Android
 
       - name: Activate Unity License
-        uses: game-ci/unity-activate@v1
+        uses: game-ci/unity-activate@v2
         with:
           unityLicense: ${{ secrets.UNITY_LICENSE }} # Лицензия Unity
           unityUsername: ${{ secrets.UNITY_USERNAME }} # Логин Unity
