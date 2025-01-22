@@ -92,7 +92,6 @@ namespace Shop
 		{
 			prevButton.interactable = (_index != 0);
 			nextButton.interactable = (_index != transform.childCount - 1);
-			BuyButton.interactable = _persistanseDataService.Data.Player.Coins > _items[_index].price;
 			for (int i = 0; i < transform.childCount; i++)
 			{
 				transform.GetChild(i).gameObject.SetActive(i == _index);
@@ -103,10 +102,13 @@ namespace Shop
 			_sizeAligner.AlignObjectSizeToColliderSize(transform.GetChild(currentItemIndex).gameObject);
 			if (_items[currentItemIndex].isOpen)
 			{
+				BuyButton.interactable = true;
 				MakeButtonIsOpen(_items[currentItemIndex]);
 			}
 			else
 			{
+
+				BuyButton.interactable = _persistanseDataService.Data.Player.Coins > _items[_index].price;
 				_priceText.gameObject.SetActive(true);
 				_priceText.text = _items[_index].price.ToString();
 				buttonText.text = LocalizationManager.Localize("SHOP.Buy");

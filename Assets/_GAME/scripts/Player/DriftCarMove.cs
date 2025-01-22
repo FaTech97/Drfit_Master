@@ -138,21 +138,21 @@ public class DriftCarMove : MonoBehaviour
 
 	private void MoveForward()
 	{
-		if (_iSFinished || _isDestoyed)
-			return;
-		// TechDept переписать логику дрифта с падением машинки
-		_moveForce += transform.forward * (2f * MoveSpeed);
-		transform.position += _moveForce * Time.deltaTime;
-		_soundsService.Play(SoundID.Move);
+
 	}
 
 	private void Drift()
 	{
 		if (_iSFinished || _isDestoyed)
 			return;
+
+		// TechDept переписать логику дрифта с падением машинки
+		_moveForce += transform.forward * (2f * MoveSpeed);
+		transform.position += _moveForce * Time.deltaTime;
+
+		_soundsService.Play(SoundID.Move);
 		float steerInput = _inputService.MoveDirection;
 
-		_moveForce *= Drag;
 		if (Mathf.Abs(steerInput) > 0)
 		{
 			_soundsService.Play(SoundID.Drift);
@@ -164,9 +164,11 @@ public class DriftCarMove : MonoBehaviour
 		}
 
 		// Сопротивление и ограничение максимальной скорости
+		_moveForce *= Drag;
+		_moveForce = Vector3.ClampMagnitude(_moveForce, MaxSpeed);
+
 		_moveForce = Vector3.Lerp(_moveForce.normalized, transform.forward, Traction * Time.deltaTime) *
 		             _moveForce.magnitude;
-		_moveForce = Vector3.ClampMagnitude(_moveForce, MaxSpeed);
 	}
 
 	public void SetNewConfig(ShopItemConfig newItem)

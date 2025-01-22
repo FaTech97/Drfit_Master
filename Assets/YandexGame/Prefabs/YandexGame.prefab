@@ -46,7 +46,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   infoYG: {fileID: 11400000, guid: 162644796a8b0d044bce3d6fda0641e3, type: 2}
-  singleton: 1
+  singleton: 0
   ResolvedAuthorization:
     m_PersistentCalls:
       m_Calls: []
@@ -101,11 +101,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7a5b227a20855044e9f75626696e0719, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pauseType: 3
-  pauseMethod: 1
+  pauseType: 0
+  pauseMethod: 0
   closingADValues:
     timeScale: 1
-    audioPause: 0
+    audioPause: 1
     cursorVisible: 0
     cursorLockMode: 0
   awakeSetValues: 0

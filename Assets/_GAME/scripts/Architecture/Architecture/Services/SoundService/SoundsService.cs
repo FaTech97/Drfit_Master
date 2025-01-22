@@ -22,10 +22,6 @@ namespace _GAME.scripts.Architecture.Architecture.Services.SoundService
 
 		public void SetMuteForAll(bool isMute)
 		{
-			// if(_isMuted == isMute)
-			// 	return;
-			//
-			// _isMuted = isMute;
 			if (isMute)
 				PauseAll();
 			else

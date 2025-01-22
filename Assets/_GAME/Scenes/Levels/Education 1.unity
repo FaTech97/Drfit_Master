@@ -1165,10 +1165,6 @@ PrefabInstance:
       propertyPath: m_FontData.m_FontStyle
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 4823195785374284813, guid: 5108bfff638394e4c8276711a168ae14, type: 3}
-      propertyPath: SteerAngle
-      value: 15
-      objectReference: {fileID: 0}
     - target: {fileID: 5179492702454073405, guid: 5108bfff638394e4c8276711a168ae14, type: 3}
       propertyPath: m_Color.b
       value: 1

@@ -1109,6 +1109,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: GoToTG
       objectReference: {fileID: 0}
+    - target: {fileID: 3251495400582821832, guid: 2c2205df9cf85934387b0ee4f31c31b5, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4672431748755157328, guid: 2c2205df9cf85934387b0ee4f31c31b5, type: 3}
       propertyPath: m_Sprite
       value: 
@@ -1179,11 +1183,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6251532204824659218, guid: 2c2205df9cf85934387b0ee4f31c31b5, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 0
+      value: 387.11267
       objectReference: {fileID: 0}
     - target: {fileID: 6251532204824659218, guid: 2c2205df9cf85934387b0ee4f31c31b5, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 0
+      value: -210
       objectReference: {fileID: 0}
     - target: {fileID: 6251532204824659218, guid: 2c2205df9cf85934387b0ee4f31c31b5, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -2222,7 +2226,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1067201536
 RectTransform:
   m_ObjectHideFlags: 0
