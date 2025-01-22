@@ -15,7 +15,8 @@ jobs:
 
       - name: Set up JDK
         uses: actions/setup-java@v4
-        with:
+        with: 
+          distribution: 'temurin' # Указываем дистрибутив JDK
           java-version: '11' # Указываем версию JDK для сборки Android
 
       - name: Fix permissions
