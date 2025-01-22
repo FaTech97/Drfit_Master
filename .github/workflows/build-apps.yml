@@ -6,59 +6,94 @@ on:
       - master
 
 jobs:
-  build:
+  buildForAllSupportedPlatforms:
+    name: Build for ${{ matrix.targetPlatform }}
     runs-on: ubuntu-latest
-    
+    strategy:
+      fail-fast: false
+      matrix:
+        targetPlatform:
+          - WebGL # WebGL.
+          - Android # Build an Android .apk standalone app.
     steps:
-      - name: Checkout repository
-        uses: actions/checkout@v4
-
-      - name: Set up JDK
-        uses: actions/setup-java@v4
-        with: 
-          distribution: 'temurin' # Указываем дистрибутив JDK
-          java-version: '11' # Указываем версию JDK для сборки Android
-
-      - name: Fix permissions
-        run: sudo chmod -R 777 $HOME
-
-      - name: Activate Unity License
-        uses: game-ci/unity-activate@v2
+      - uses: actions/checkout@v4
         with:
-          unityLicense: ${{ secrets.UNITY_LICENSE }} # Лицензия Unity
-          unityUsername: ${{ secrets.UNITY_USERNAME }} # Логин Unity
-          unityPassword: ${{ secrets.UNITY_PASSWORD }} # Пароль Unity
-
-      - name: Cache Unity Library
-        uses: actions/cache@v4
+          fetch-depth: 0
+          lfs: true
+      - uses: actions/cache@v3
         with:
           path: Library
-          key: Library-${{ runner.os }}-${{ hashFiles('**/ProjectSettings/ProjectVersion.txt') }}
-          restore-keys: |
-            Library-${{ runner.os }}-
-
-      - name: Build WebGL
-        uses: game-ci/unity-builder@v3
+          key: Library-${{ matrix.targetPlatform }}
+          restore-keys: Library-
+      - if: matrix.targetPlatform == 'Android'
+        uses: jlumbroso/free-disk-space@v1.3.1
+      - uses: game-ci/unity-builder@v4
+        env:
+          UNITY_LICENSE: ${{ secrets.UNITY_LICENSE }}
+          UNITY_EMAIL: ${{ secrets.UNITY_EMAIL }}
+          UNITY_PASSWORD: ${{ secrets.UNITY_PASSWORD }}
         with:
-          targetPlatform: WebGL
-          projectPath: .
-          buildMethod: BuildScript.BuildWebGL # Укажите ваш метод сборки для WebGL
-
-      - name: Build Android
-        uses: game-ci/unity-builder@v3
+          targetPlatform: ${{ matrix.targetPlatform }}
+      - uses: actions/upload-artifact@v3
         with:
-          targetPlatform: Android
-          projectPath: .
-          buildMethod: BuildScript.BuildAndroid # Укажите ваш метод сборки для Android
+          name: Build-${{ matrix.targetPlatform }}
+          path: build/${{ matrix.targetPlatform }}
 
-      - name: Upload WebGL Build
-        uses: actions/upload-artifact@v4
-        with:
-          name: WebGL-Build
-          path: build/WebGL
 
-      - name: Upload Android Build
-        uses: actions/upload-artifact@v4
-        with:
-          name: Android-Build
-          path: build/Android
+# jobs:
+#   build:
+#     runs-on: ubuntu-latest
+    
+#     steps:
+#       - name: Checkout repository
+#         uses: actions/checkout@v4
+
+#       - name: Set up JDK
+#         uses: actions/setup-java@v4
+#         with: 
+#           distribution: 'temurin' # Указываем дистрибутив JDK
+#           java-version: '11' # Указываем версию JDK для сборки Android
+
+#       - name: Fix permissions
+#         run: sudo chmod -R 777 $HOME
+
+#       - name: Activate Unity License
+#         uses: game-ci/unity-activate@v2
+#         with:
+#           unityLicense: ${{ secrets.UNITY_LICENSE }} # Лицензия Unity
+#           unityUsername: ${{ secrets.UNITY_USERNAME }} # Логин Unity
+#           unityPassword: ${{ secrets.UNITY_PASSWORD }} # Пароль Unity
+
+#       - name: Cache Unity Library
+#         uses: actions/cache@v4
+#         with:
+#           path: Library
+#           key: Library-${{ runner.os }}-${{ hashFiles('**/ProjectSettings/ProjectVersion.txt') }}
+#           restore-keys: |
+#             Library-${{ runner.os }}-
+
+#       - name: Build WebGL
+#         uses: game-ci/unity-builder@v3
+#         with:
+#           targetPlatform: WebGL
+#           projectPath: .
+#           buildMethod: BuildScript.BuildWebGL # Укажите ваш метод сборки для WebGL
+
+#       - name: Build Android
+#         uses: game-ci/unity-builder@v3
+#         with:
+#           targetPlatform: Android
+#           projectPath: .
+#           buildMethod: BuildScript.BuildAndroid # Укажите ваш метод сборки для Android
+
+#       - name: Upload WebGL Build
+#         uses: actions/upload-artifact@v4
+#         with:
+#           name: WebGL-Build
+#           path: build/WebGL
+
+#       - name: Upload Android Build
+#         uses: actions/upload-artifact@v4
+#         with:
+#           name: Android-Build
+#           path: build/Android
