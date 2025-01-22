@@ -57,7 +57,7 @@ jobs:
           APK_NAME=$(basename $APK_FILE)
           DOWNLOAD_URL="https://github.com/${{ github.repository }}/releases/latest/download/$APK_NAME"
           # Перезаписываем 14 строку README.md
-          sed -i "14s/.*/${{ matrix.targetPlatform }} : [Download $APK_NAME]($DOWNLOAD_URL)/" README.md
+          sed -i "14s|.*|${{ matrix.targetPlatform }} : [Download $APK_NAME]($DOWNLOAD_URL)|" README.md
           git config --global user.name "GitHub Actions"
           git config --global user.email "actions@github.com"
           git add README.md
