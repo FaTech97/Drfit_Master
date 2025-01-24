@@ -50,11 +50,11 @@ jobs:
           name: ${{ steps.repo-name.outputs.repo_name }}-${{ matrix.targetPlatform }}
           path: builds/${{ matrix.targetPlatform }}
       
-      # - name: Download build artifacts
-      #   uses: actions/download-artifact@v3
-      #   with:
-      #     name: ${{ steps.repo-name.outputs.repo_name }}-${{ matrix.targetPlatform }}
-      #     path: builds
+      - name: Download build artifacts
+        uses: actions/download-artifact@v3
+        with:
+          name: ${{ steps.repo-name.outputs.repo_name }}-${{ matrix.targetPlatform }}
+          path: builds
 
       - name: Create Release
         id: create_release
