@@ -5,7 +5,7 @@ on:
     branches:
       - master
     paths-ignore:
-      - 'README.md'  
+      - "README.md"
 
 env:
   VERSION_PREFIX: v1.0
@@ -37,6 +37,7 @@ jobs:
           restore-keys: Library-
       - if: matrix.targetPlatform == 'Android'
         uses: jlumbroso/free-disk-space@v1.3.1
+
       - uses: game-ci/unity-builder@v4
         env:
           UNITY_LICENSE: ${{ secrets.UNITY_LICENSE }}
@@ -44,49 +45,58 @@ jobs:
           UNITY_PASSWORD: ${{ secrets.UNITY_PASSWORD }}
         with:
           targetPlatform: ${{ matrix.targetPlatform }}
-      - name: Upload build artifacts
-        uses: actions/upload-artifact@v3
-        with:
-          name: ${{ steps.repo-name.outputs.repo_name }}-${{ matrix.targetPlatform }}
-          path: build/${{ matrix.targetPlatform }}
-      
-      - name: Download build artifacts
-        uses: actions/download-artifact@v3
-        with:
-          name: ${{ steps.repo-name.outputs.repo_name }}-${{ matrix.targetPlatform }}
-          path: build/${{ matrix.targetPlatform }}
-
-      - name: Create Release
-        id: create_release
-        uses: actions/create-release@v1
-        env:
-          GITHUB_TOKEN: ${{ secrets.PAT }}
-        with:
-          tag_name: ${{env.VERSION_PREFIX}}.${{ github.run_number }}
-          release_name: Release  ${{env.VERSION_PREFIX}}.${{ github.run_number }}
-          draft: false
-          prerelease: false
-
-      - name: TEST
-        id: repo-test
-        run: |
-          pwd
-          echo "*****************************************************"
-          ls -l 
-          echo "*****************************************************"
-          cd build
-          ls -l
-          cd ${{ matrix.targetPlatform }}
 
       - name: Upload APK to Release
         uses: actions/upload-release-asset@v1
-        env:
-          GITHUB_TOKEN: ${{ secrets.PAT }}
         with:
-          upload_url: ${{ steps.create_release.outputs.upload_url }}
-          asset_path: build/${{ matrix.targetPlatform }}/Android.apk
-          asset_name: ${{ steps.repo-name.outputs.repo_name }}-${{env.VERSION_PREFIX}}.${{ github.run_number }} (${{ matrix.targetPlatform }}).apk
+          upload_url: ${{ github.event.release.upload_url }}
+          asset_path: build/${{ matrix.targetPlatform }}/${{ steps.repo-name.outputs.repo_name }}.apk
+          asset_name: ${{ steps.repo-name.outputs.repo_name }}.apk
           asset_content_type: application/vnd.android.package-archive
+
+      # - name: Upload build artifacts
+      #   uses: actions/upload-artifact@v3
+      #   with:
+      #     name: ${{ steps.repo-name.outputs.repo_name }}-${{ matrix.targetPlatform }}
+      #     path: build/${{ matrix.targetPlatform }}
+
+      # - name: Download build artifacts
+      #   uses: actions/download-artifact@v3
+      #   with:
+      #     name: ${{ steps.repo-name.outputs.repo_name }}-${{ matrix.targetPlatform }}
+      #     path: build/${{ matrix.targetPlatform }}
+
+      # - name: Create Release
+      #   id: create_release
+      #   uses: actions/create-release@v1
+      #   env:
+      #     GITHUB_TOKEN: ${{ secrets.PAT }}
+      #   with:
+      #     tag_name: ${{env.VERSION_PREFIX}}.${{ github.run_number }}
+      #     release_name: Release  ${{env.VERSION_PREFIX}}.${{ github.run_number }}
+      #     draft: false
+      #     prerelease: false
+
+      # - name: TEST
+      #   id: repo-test
+      #   run: |
+      #     pwd
+      #     echo "*****************************************************"
+      #     ls -l 
+      #     echo "*****************************************************"
+      #     cd build
+      #     ls -l
+      #     cd ${{ matrix.targetPlatform }}
+
+      # - name: Upload APK to Release
+      #   uses: actions/upload-release-asset@v1
+      #   env:
+      #     GITHUB_TOKEN: ${{ secrets.PAT }}
+      #   with:
+      #     upload_url: ${{ steps.create_release.outputs.upload_url }}
+      #     asset_path: build/${{ matrix.targetPlatform }}/Android.apk
+      #     asset_name: ${{ steps.repo-name.outputs.repo_name }}-${{env.VERSION_PREFIX}}.${{ github.run_number }} (${{ matrix.targetPlatform }}).apk
+      #     asset_content_type: application/vnd.android.package-archive
 
 # name: Build APK and Create Release
 
@@ -152,7 +162,6 @@ jobs:
 #           asset_name: app-release.apk  # Имя файла в релизе
 #           asset_content_type: application/vnd.android.package-archive
 
-
 # **********************************************************************************************
 
 # name: Build for WEB and Android
@@ -162,7 +171,7 @@ jobs:
 #     branches:
 #       - master
 #     paths-ignore:
-#       - 'README.md'  
+#       - 'README.md'
 
 # jobs:
 #   buildForAllSupportedPlatforms:
@@ -203,7 +212,7 @@ jobs:
 #         with:
 #           name: ${{ steps.repo-name.outputs.repo_name }}-${{ matrix.targetPlatform }}
 #           path: build/${{ matrix.targetPlatform }}
-      
+
 #       - name: Download build artifacts
 #         uses: actions/download-artifact@v3
 #         with:
