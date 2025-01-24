@@ -73,7 +73,7 @@ jobs:
         GITHUB_TOKEN: ${{ secrets.PAT }}
       with:
         upload_url: ${{ steps.create_release.outputs.upload_url }}
-        asset_path: ./builds/${{ steps.repo-name.outputs.repo_name }}-${{ matrix.targetPlatform }}.apk
+        asset_path: /home/runner/work/Drfit_Master/Drfit_Master/builds/${{ steps.repo-name.outputs.repo_name }}-${{ matrix.targetPlatform }}.apk
         asset_name: ${{ steps.repo-name.outputs.repo_name }}-${{ matrix.targetPlatform }}.apk
         asset_content_type: application/vnd.android.package-archive
         # asset_name: ${{ steps.repo-name.outputs.repo_name }}-${{env.VERSION_PREFIX}}.${{ github.run_number }} (${{ matrix.targetPlatform }}).apk
