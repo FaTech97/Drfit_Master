@@ -67,11 +67,11 @@ jobs:
         draft: false
         prerelease: false
 
-    - name: Install tree (if not installed)
-      run: sudo apt-get install tree
+    # - name: Install tree (if not installed)
+    #   run: sudo apt-get install tree
 
-    - name: Print directory tree
-      run: tree
+    # - name: Print directory tree
+    #   run: tree
 
     - name: Upload APK to Release
       uses: actions/upload-release-asset@v1
@@ -79,7 +79,7 @@ jobs:
         GITHUB_TOKEN: ${{ secrets.PAT }}
       with:
         upload_url: ${{ steps.create_release.outputs.upload_url }}
-        asset_path: builds/${{ steps.repo-name.outputs.repo_name }}-${{ matrix.targetPlatform }}.apk
+        asset_path: builds/Android.apk
         asset_name: ${{ steps.repo-name.outputs.repo_name }}-${{env.VERSION_PREFIX}}.${{ github.run_number }} (${{ matrix.targetPlatform }}).apk
         asset_content_type: application/vnd.android.package-archive
 
