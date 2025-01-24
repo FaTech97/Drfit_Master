@@ -1,11 +1,11 @@
 name: Build for WEB and Android
 
 on:
-  push:
+  pull_request:
     branches:
-    - master
+      - master
     paths-ignore:
-    - 'README.md'
+      - 'README.md'
 
 env:
   VERSION_PREFIX: v1.0
@@ -18,70 +18,75 @@ jobs:
       fail-fast: false
       matrix:
         targetPlatform:
-        - Android # Build an Android .apk standalone app.
+          - Android # Build an Android .apk standalone app.
     steps:
-    - name: Get repository name
-      id: repo-name
-      run: |
-        REPO_NAME=$(echo "${{ github.repository }}" | cut -d'/' -f2)
-        echo "Repository name: $REPO_NAME"
-        echo "repo_name=$REPO_NAME" >> $GITHUB_OUTPUT
-    - uses: actions/checkout@v4
-      with:
-        fetch-depth: 0
-        lfs: true
-    - uses: actions/cache@v3
-      with:
-        path: Library
-        key: Library-${{ matrix.targetPlatform }}
-        restore-keys: Library-
-    - if: matrix.targetPlatform == 'Android'
-      uses: jlumbroso/free-disk-space@v1.3.1
-    - uses: game-ci/unity-builder@v4
-      env:
-        UNITY_LICENSE: ${{ secrets.UNITY_LICENSE }}
-        UNITY_EMAIL: ${{ secrets.UNITY_EMAIL }}
-        UNITY_PASSWORD: ${{ secrets.UNITY_PASSWORD }}
-      with:
-        targetPlatform: ${{ matrix.targetPlatform }}
-    - name: Upload build artifacts
-      uses: actions/upload-artifact@v3
-      with:
-        name: ${{ steps.repo-name.outputs.repo_name }}-${{ matrix.targetPlatform }}
-        path: build/${{ matrix.targetPlatform }}
+      - name: Get repository name
+        id: repo-name
+        run: |
+          REPO_NAME=$(echo "${{ github.repository }}" | cut -d'/' -f2)
+          echo "Repository name: $REPO_NAME"
+          echo "repo_name=$REPO_NAME" >> $GITHUB_OUTPUT
 
-    - name: Download build artifacts
-      uses: actions/download-artifact@v3
-      with:
-        name: ${{ steps.repo-name.outputs.repo_name }}-${{ matrix.targetPlatform }}
-        path: builds
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          lfs: true
 
-    - name: Create Release
-      id: create_release
-      uses: actions/create-release@v1
-      env:
-        GITHUB_TOKEN: ${{ secrets.PAT }}
-      with:
-        tag_name: ${{env.VERSION_PREFIX}}.${{ github.run_number }}
-        release_name: Release ${{env.VERSION_PREFIX}}.${{ github.run_number }}
-        draft: false
-        prerelease: false
+      - uses: actions/cache@v3
+        with:
+          path: Library
+          key: Library-${{ matrix.targetPlatform }}
+          restore-keys: Library-
 
-    # - name: Install tree (if not installed)
-    #   run: sudo apt-get install tree
+      - if: matrix.targetPlatform == 'Android'
+        uses: jlumbroso/free-disk-space@v1.3.1
 
-    # - name: Print directory tree
-    #   run: tree
+      - uses: game-ci/unity-builder@v4
+        env:
+          UNITY_LICENSE: ${{ secrets.UNITY_LICENSE }}
+          UNITY_EMAIL: ${{ secrets.UNITY_EMAIL }}
+          UNITY_PASSWORD: ${{ secrets.UNITY_PASSWORD }}
+        with:
+          targetPlatform: ${{ matrix.targetPlatform }}
 
-    - name: Upload APK to Release
-      uses: actions/upload-release-asset@v1
-      env:
-        GITHUB_TOKEN: ${{ secrets.PAT }}
-      with:
-        upload_url: ${{ steps.create_release.outputs.upload_url }}
-        asset_path: builds/Android.apk
-        asset_name: ${{ steps.repo-name.outputs.repo_name }}-${{env.VERSION_PREFIX}}.${{ github.run_number }} (${{ matrix.targetPlatform }}).apk
-        asset_content_type: application/vnd.android.package-archive
+      - name: Upload build artifacts
+        uses: actions/upload-artifact@v3
+        with:
+          name: ${{ steps.repo-name.outputs.repo_name }}-${{ matrix.targetPlatform }}
+          path: build/${{ matrix.targetPlatform }}
 
+      - name: Download build artifacts
+        uses: actions/download-artifact@v3
+        with:
+          name: ${{ steps.repo-name.outputs.repo_name }}-${{ matrix.targetPlatform }}
+          path: builds
 
-        #/home/runner/work/Drfit_Master/Drfit_Master/builds
+      - name: Get Pull Request Description
+        id: pr-description
+        run: |
+          PR_DESCRIPTION=$(curl -s -H "Authorization: token ${{ secrets.PAT }}" \
+            -H "Accept: application/vnd.github.v3+json" \
+            "https://api.github.com/repos/${{ github.repository }}/pulls/${{ github.event.pull_request.number }}" | jq -r '.body')
+          echo "pr_description=$PR_DESCRIPTION" >> $GITHUB_OUTPUT
+
+      - name: Create Release
+        id: create_release
+        uses: actions/create-release@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.PAT }}
+        with:
+          tag_name: ${{env.VERSION_PREFIX}}.${{ github.run_number }}
+          release_name: Release ${{env.VERSION_PREFIX}}.${{ github.run_number }}
+          body: ${{ steps.pr-description.outputs.pr_description }}
+          draft: false
+          prerelease: false
+
+      - name: Upload APK to Release
+        uses: actions/upload-release-asset@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.PAT }}
+        with:
+          upload_url: ${{ steps.create_release.outputs.upload_url }}
+          asset_path: builds/Android.apk
+          asset_name: ${{ steps.repo-name.outputs.repo_name }}-${{env.VERSION_PREFIX}}.${{ github.run_number }} (${{ matrix.targetPlatform }}).apk
+          asset_content_type: application/vnd.android.package-archive
