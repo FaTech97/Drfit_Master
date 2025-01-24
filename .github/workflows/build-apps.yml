@@ -48,13 +48,13 @@ jobs:
         uses: actions/upload-artifact@v3
         with:
           name: ${{ steps.repo-name.outputs.repo_name }}-${{ matrix.targetPlatform }}
-          path: builds/${{ matrix.targetPlatform }}
+          path: build/${{ matrix.targetPlatform }}
       
       - name: Download build artifacts
         uses: actions/download-artifact@v3
         with:
           name: ${{ steps.repo-name.outputs.repo_name }}-${{ matrix.targetPlatform }}
-          path: builds
+          path: build/${{ matrix.targetPlatform }}
 
       - name: Create Release
         id: create_release
@@ -74,8 +74,9 @@ jobs:
           echo "*****************************************************"
           ls -l 
           echo "*****************************************************"
-          cd builds
+          cd build
           ls -l
+          cd ${{ matrix.targetPlatform }}
 
       - name: Upload APK to Release
         uses: actions/upload-release-asset@v1
@@ -83,7 +84,7 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.PAT }}
         with:
           upload_url: ${{ steps.create_release.outputs.upload_url }}
-          asset_path: builds/Android.apk
+          asset_path: build/${{ matrix.targetPlatform }}/Android.apk
           asset_name: ${{ steps.repo-name.outputs.repo_name }}-${{env.VERSION_PREFIX}}.${{ github.run_number }} (${{ matrix.targetPlatform }}).apk
           asset_content_type: application/vnd.android.package-archive
 
