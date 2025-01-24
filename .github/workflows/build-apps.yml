@@ -68,7 +68,7 @@ jobs:
           prerelease: false
 
       - name: TEST
-        id: repo-name
+        id: repo-test
         run: |
           pwd
           echo "*****************************************************"
