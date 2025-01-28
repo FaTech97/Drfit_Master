@@ -46,8 +46,10 @@ namespace _GAME.scripts.Architecture.Architecture.Services
 
 		private void BindPersistanseService()
 		{
-			Container.Bind<IPersistanseDataService>().To<YandexPersistentDataService>().AsSingle();
-
+			if (Application.platform == RuntimePlatform.WebGLPlayer || Application.isEditor)
+				Container.Bind<IPersistanseDataService>().To<YandexPersistentDataService>().AsSingle();
+			else
+				Container.Bind<IPersistanseDataService>().To<PrefsPersistanseDataService>().AsSingle();
 		}
 
 		private void BindUiService()
