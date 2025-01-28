@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Linq;
 using Shop;
+using UnityEngine;
 
 namespace _GAME.scripts.Architecture.Architecture.Persistanse_Service
 {
@@ -22,6 +23,7 @@ namespace _GAME.scripts.Architecture.Architecture.Persistanse_Service
 
 		protected void InvokeDate()
 		{
+			Debug.Log("INVOKED DATA");
 			OnDataWasLoad?.Invoke();
 		}
 

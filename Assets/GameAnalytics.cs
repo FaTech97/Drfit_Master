@@ -8,7 +8,7 @@ public class GameAnalytics : MonoBehaviour
 {
     async void Start()
     {
-        await UnityServices.InitializeAsync();
-        AnalyticsService.Instance.StartDataCollection();
+        // await UnityServices.InitializeAsync();
+        // AnalyticsService.Instance.StartDataCollection();
     }
 }
