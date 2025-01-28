@@ -7,7 +7,7 @@
 #### **3D Artist:** [Alexander Dvoretskii](https://t.me/MockingbirdVa)
 #### **Version:** 1.0
 
-![Пример скриншота](./Assets/_GAME/Media/Screenshots/релиз Обложка игры нубик EN.png)
+![LOGO](./Assets/_GAME/Media/Screenshots/релиз Обложка игры нубик EN.png)
 
 ## Description
 Welcome to the world of cubes, where Noob steve decided to master the art of drifting by car! In this game, you will control a Noob steve who rushes through blocky levels, knocking down diamond blocks. Will you be able to collect all the diamonds and become a real drift master?
