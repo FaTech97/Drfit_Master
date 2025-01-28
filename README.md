@@ -13,10 +13,9 @@
 Welcome to the world of cubes, where Noob steve decided to master the art of drifting by car! In this game, you will control a Noob steve who rushes through blocky levels, knocking down diamond blocks. Will you be able to collect all the diamonds and become a real drift master?
 
 ## Screenshots
-| ![Screen 1](./Assets/_GAME/Media/Screenshots/DESK-4.png) | ![Screen 2](./Assets/_GAME/Media/Screenshots/DESK-3.png)
+| ![Screen 1](./Assets/_GAME/Media/Screenshots/DESK-4.png) | ![Screen 2](./Assets/_GAME/Media/Screenshots/DESK-3.png) |
 |:-------------------------------------:|:-------------------------------------:|
-| ![Screen 3](./Assets/_GAME/Media/Screenshots/DESK-1.png) |  | ![Screen 3](./Assets/_GAME/Media/Screenshots/DESK-2.png)
-|:-------------------------------------:|:-------------------------------------:|
+| ![Screen 3](./Assets/_GAME/Media/Screenshots/DESK-1.png) | ![Screen 3](./Assets/_GAME/Media/Screenshots/DESK-2.png) |
 
 ## Support
 
