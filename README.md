@@ -1,4 +1,4 @@
-# MineDrift
+# Steve noob drifter
 
 #### **Study name:** QWINO games
 #### **Platform:** HTML5, Android
@@ -8,12 +8,7 @@
 #### **Version:** 1.0
 
 ## Description
-Description
-
-## Installation
-**
-
-**Yandex Games ( HTML5 ):** xxx
+Welcome to the world of cubes, where Noob steve decided to master the art of drifting by car! In this game, you will control a Noob steve who rushes through blocky levels, knocking down diamond blocks. Will you be able to collect all the diamonds and become a real drift master?
 
 ## Support
 
@@ -23,29 +18,8 @@ If you have any questions or issues, please contact us via tg.
 
 MyAwesomeGame is distributed under the license license.
 
-## Credits
-
-- **Developer:** YourName
-- **Concept Art:** YourName
-- **Programming:** YourName
-- **Music and Sound:** YourName
-
 ## Contact
 
 If you have any questions or suggestions, please contact us at email.
-
-## Version History
-
-<details>
-  <summary>Version 1.0</summary>
-  <div style="margin-left: 24px">
-    <h4>Whats new:</h4>
-    <li>Initial release of the game. </li>
-  </div>
-</details>
-
-## Future Updates
-
-Plans...
 
 ## Thank You!
