@@ -13,6 +13,7 @@
 
 		protected override void Initialization()
 		{
+			GetData();
 		}
 
 		public override void SetData(GameData newValue)
@@ -31,12 +32,17 @@
 			{
 				var jsonString = PlayerPrefs.GetString(PREFS_NAME);
 				GameData progress = JsonUtility.FromJson<GameData>(jsonString) ?? new GameData();
+				progress.Settings.Language = Langs.English;
 				Data = progress;
-				return progress;
+				InvokeDate();
+				return Data;
 			}
 			catch
 			{
-				return new GameData();
+				Data = new GameData();
+				Data.Settings.Language = Langs.English;
+				InvokeDate();
+				return Data;
 			}
 		}
 
